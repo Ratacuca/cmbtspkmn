@@ -19,6 +19,7 @@ public class Pokemon extends EspeciePokemon {
     private int vida;
     private Habilidad habilidad;
     private String[] estado;
+    private int prueba;
     
     public Pokemon (String nombre, int nivel, int ranking, int ataque, 
             int defensa, int ataque_especial, int defensa_especial, int vida, 
