@@ -43,9 +43,57 @@ public class VistarPreviaCombate extends javax.swing.JFrame {
 
         jButton1.setText("INICIAR");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pokemon1", "Pokemon2", "Pokemon3", "Pokemon4", "Pokemon5", "Pokemon6" }));
+        jComboBox1.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+                pokemon3(evt);
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                pokemon2(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+                pokemon5(evt);
+            }
+        });
+        jComboBox1.addHierarchyBoundsListener(new java.awt.event.HierarchyBoundsListener() {
+            public void ancestorMoved(java.awt.event.HierarchyEvent evt) {
+                pokemon4(evt);
+            }
+            public void ancestorResized(java.awt.event.HierarchyEvent evt) {
+                pokemon6(evt);
+            }
+        });
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pokemon1(evt);
+            }
+        });
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pokemon1", "Pokemon2", "Pokemon3", "Pokemon4", "Pokemon5", "Pokemon6" }));
+        jComboBox2.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+                pokemon3(evt);
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                pokemon2(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+                pokemon5(evt);
+            }
+        });
+        jComboBox2.addHierarchyBoundsListener(new java.awt.event.HierarchyBoundsListener() {
+            public void ancestorMoved(java.awt.event.HierarchyEvent evt) {
+                pokemon4(evt);
+            }
+            public void ancestorResized(java.awt.event.HierarchyEvent evt) {
+                pokemon6(evt);
+            }
+        });
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pokemon1(evt);
+            }
+        });
 
         jLabel3.setText("Seleccionar Pokémon inicial ");
 
@@ -81,21 +129,45 @@ public class VistarPreviaCombate extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(74, 74, 74))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void pokemon1(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pokemon1
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pokemon1
+
+    private void pokemon2(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_pokemon2
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pokemon2
+
+    private void pokemon3(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_pokemon3
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pokemon3
+
+    private void pokemon4(java.awt.event.HierarchyEvent evt) {//GEN-FIRST:event_pokemon4
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pokemon4
+
+    private void pokemon5(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_pokemon5
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pokemon5
+
+    private void pokemon6(java.awt.event.HierarchyEvent evt) {//GEN-FIRST:event_pokemon6
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pokemon6
 
     /**
      * @param args the command line arguments
