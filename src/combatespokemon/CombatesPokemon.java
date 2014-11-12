@@ -7,6 +7,9 @@
 package combatespokemon;
 import Vista.*;
 import Modelo.*;
+import Controlador.*;
+
+
 /**
  *
  * @author Mario Caceres
@@ -17,8 +20,13 @@ public class CombatesPokemon {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        VistaPrincipal vp = new VistaPrincipal();
-        vp.setVisible(true);
+        
+        VistaPrincipal vista = new VistaPrincipal();
+        ControladorPrincipal controladorPrincipal = new ControladorPrincipal(vista);
+        vista.setVisible(true);
+        
+        
+        
     }
     
 }
