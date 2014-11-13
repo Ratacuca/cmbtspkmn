@@ -6,6 +6,8 @@
 
 package Vista;
 
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
 /**
  *
  * @author Mario Caceres
@@ -30,10 +32,10 @@ public class VistaCombate extends javax.swing.JFrame {
 
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        jB_Atacar1 = new javax.swing.JButton();
+        jB_Cambiar1 = new javax.swing.JButton();
+        jB_Atacar2 = new javax.swing.JButton();
+        jB_Cambiar2 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -47,13 +49,13 @@ public class VistaCombate extends javax.swing.JFrame {
 
         jLabel4.setText("Jugador 2");
 
-        jButton2.setText("Atacar ");
+        jB_Atacar1.setText("Atacar ");
 
-        jButton3.setText("Cambiar");
+        jB_Cambiar1.setText("Cambiar");
 
-        jButton4.setText("Atacar");
+        jB_Atacar2.setText("Atacar");
 
-        jButton5.setText("Cambiar");
+        jB_Cambiar2.setText("Cambiar");
 
         jLabel5.setText("nombre pokémon");
 
@@ -80,18 +82,18 @@ public class VistaCombate extends javax.swing.JFrame {
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton2)
+                                .addComponent(jB_Atacar1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton3)))
+                                .addComponent(jB_Cambiar1)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jButton4)
+                                    .addComponent(jB_Atacar2)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jButton5))
+                                    .addComponent(jB_Cambiar2))
                                 .addComponent(jLabel4)))
                         .addContainerGap(248, Short.MAX_VALUE))))
             .addComponent(jSeparator1)
@@ -103,8 +105,8 @@ public class VistaCombate extends javax.swing.JFrame {
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton2))
+                    .addComponent(jB_Cambiar1)
+                    .addComponent(jB_Atacar1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -117,8 +119,8 @@ public class VistaCombate extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton5)
-                    .addComponent(jButton4))
+                    .addComponent(jB_Cambiar2)
+                    .addComponent(jB_Atacar2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -163,12 +165,33 @@ public class VistaCombate extends javax.swing.JFrame {
             }
         });
     }
+public JButton getBotonAtacar1(){
+        return this.jB_Atacar1;
+    }
+
+public JButton getBotonAtacar2(){
+        return this.jB_Atacar2;
+    }
+
+public JButton getBotonCambiar1(){
+        return this.jB_Cambiar1;
+    }
+
+public JButton getBotonCambiar2(){
+        return this.jB_Cambiar2;
+    }
+public void agregarListener(ActionListener al) {
+       this.jB_Atacar1.addActionListener(al);
+       this.jB_Atacar2.addActionListener(al);
+       this.jB_Cambiar1.addActionListener(al);
+       this.jB_Cambiar2.addActionListener(al);
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jB_Atacar1;
+    private javax.swing.JButton jB_Atacar2;
+    private javax.swing.JButton jB_Cambiar1;
+    private javax.swing.JButton jB_Cambiar2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -179,3 +202,4 @@ public class VistaCombate extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }
+

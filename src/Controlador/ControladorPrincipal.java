@@ -34,8 +34,10 @@ public class ControladorPrincipal implements ActionListener{
     
     public void generarCombate(){
         VistaPreviaCombate vpc = new VistaPreviaCombate(vistaPrincipal.getjC_TipoSimulacion());
+        int tipo_combate = vistaPrincipal.getjC_TipoSimulacion();
         //acciones
         vpc.setVisible(true);
+        ControladorCombate cc = new ControladorCombate(vpc, tipo_combate);
         System.out.println("Se selecciono simular combate");
     }
 }

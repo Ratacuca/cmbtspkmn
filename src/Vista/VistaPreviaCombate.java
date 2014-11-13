@@ -32,7 +32,7 @@ public class VistaPreviaCombate extends javax.swing.JFrame {
 
         jL_Jugador1 = new javax.swing.JLabel();
         jL_Jugador2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jB_Iniciar = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox();
         jComboBox2 = new javax.swing.JComboBox();
         jLabel3 = new javax.swing.JLabel();
@@ -46,7 +46,7 @@ public class VistaPreviaCombate extends javax.swing.JFrame {
 
         jL_Jugador2.setText("Jugador 2");
 
-        jButton1.setText("INICIAR");
+        jB_Iniciar.setText("INICIAR");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pokemon1", "Pokemon2", "Pokemon3", "Pokemon4", "Pokemon5", "Pokemon6" }));
         jComboBox1.addAncestorListener(new javax.swing.event.AncestorListener() {
@@ -133,13 +133,13 @@ public class VistaPreviaCombate extends javax.swing.JFrame {
                 .addComponent(jSeparator1)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(241, 241, 241))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jL_Titulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(149, 149, 149))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(242, 242, 242)
+                .addComponent(jB_Iniciar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,9 +160,9 @@ public class VistaPreviaCombate extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(32, 32, 32))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addComponent(jB_Iniciar)
+                .addGap(45, 45, 45))
         );
 
         pack();
@@ -193,6 +193,15 @@ public class VistaPreviaCombate extends javax.swing.JFrame {
     }//GEN-LAST:event_pokemon6
 
    
+    public void agregarListener(ActionListener al){
+        this.jB_Iniciar.addActionListener(al);
+        
+    }
+    
+    public JButton getBotonIniciar(){
+        return this.jB_Iniciar;
+    }
+    
     public VistaPreviaCombate(int tipo_combate){
         initComponents();
         switch(tipo_combate){
@@ -245,7 +254,7 @@ public class VistaPreviaCombate extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jB_Iniciar;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jComboBox2;
     private javax.swing.JLabel jL_Jugador1;
