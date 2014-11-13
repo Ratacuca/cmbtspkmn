@@ -343,7 +343,7 @@ public class VistaCampeonato extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(343, 420, 110, 23);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Paulo\\Desktop\\campeonato.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/campeonato.png"))); // NOI18N
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(0, 0, 800, 480);
