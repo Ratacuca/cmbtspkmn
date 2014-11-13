@@ -237,7 +237,7 @@ public class VistaCampeonato extends javax.swing.JFrame {
 
         jLabel37.setText("jLabel37");
         getContentPane().add(jLabel37);
-        jLabel37.setBounds(90, 200, 60, 14);
+        jLabel37.setBounds(90, 204, 60, 10);
 
         jLabel38.setText("jLabel38");
         getContentPane().add(jLabel38);
