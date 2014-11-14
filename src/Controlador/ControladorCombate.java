@@ -25,7 +25,8 @@ public class ControladorCombate implements ActionListener{
     private int tipo_simulacion;
     private Combate combate;
     
-    public ControladorCombate(VistaPreviaCombate vista, int tipo_simulacion){
+    public ControladorCombate(VistaPreviaCombate vista, int tipo_simulacion,
+            Entrenador entrenador1, Entrenador entrenador2){
         this.tipo_simulacion = tipo_simulacion;
         vpc = vista;
         this.vpc.agregarListener(this);
@@ -43,12 +44,15 @@ public class ControladorCombate implements ActionListener{
         else if (vc.getBotonAtacar1() == (JButton) e.getSource()){
             this.va = new VistaAtaque();
             va.setVisible(true);}
+            
         else if (vc.getBotonAtacar2() == (JButton) e.getSource()){
             this.va = new VistaAtaque();
             va.setVisible(true);}
+        
         else if (vc.getBotonCambiar1() == (JButton) e.getSource()){
             this.ve = new VistaEquipo();
             ve.setVisible(true);}
+        
         else if (vc.getBotonCambiar2() == (JButton) e.getSource()){
             this.ve = new VistaEquipo();
             ve.setVisible(true);}

@@ -37,7 +37,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jB_SimularCombate = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        jB_crear_entrenador = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -65,7 +65,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         jButton2.setText("Simular Torneo");
 
-        jButton4.setText("Crear Entrenador");
+        jB_crear_entrenador.setText("Crear Entrenador");
 
         jLabel2.setText("Entrenador Actual:");
 
@@ -94,7 +94,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE))
+                            .addComponent(jB_crear_entrenador, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(46, 46, 46))))
@@ -126,7 +126,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
                         .addGap(5, 5, 5)
                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(30, 30, 30)
-                .addComponent(jButton4)
+                .addComponent(jB_crear_entrenador)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
                 .addContainerGap(125, Short.MAX_VALUE))
@@ -141,10 +141,15 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
    public void agregarListener(ActionListener al) {
        this.jB_SimularCombate.addActionListener(al);
+       this.jB_crear_entrenador.addActionListener(al);
    }
    
    public JButton getBotonSimularCombate() { 
         return this.jB_SimularCombate;
+    }
+   
+   public JButton getBotonCrearEntrenador() { 
+        return this.jB_crear_entrenador;
     }
    
    public int getjC_TipoSimulacion() {
@@ -154,8 +159,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jB_SimularCombate;
+    private javax.swing.JButton jB_crear_entrenador;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
     private javax.swing.JComboBox jC_TipoSimulacion;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;

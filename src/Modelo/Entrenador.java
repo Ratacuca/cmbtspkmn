@@ -27,6 +27,9 @@ public class Entrenador {
         this.region = region;
         this.victorias_torre_batalla = victorias_torre_batalla;
     }
+    public Entrenador(){
+        
+    }
 
     /**
      * @return the nombre
@@ -46,6 +49,7 @@ public class Entrenador {
      * @return the pokemones
      */
     public Pokemon[] getPokemones() {
+        
         return pokemones;
     }
 

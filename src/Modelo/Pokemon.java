@@ -38,6 +38,9 @@ public class Pokemon extends EspeciePokemon {
         this.ranking = ranking;
         this.vida = vida;
     }
+    public Pokemon (String nombre){
+        this.nombre = nombre;
+    }
 
     /**
      * @return the nombre
