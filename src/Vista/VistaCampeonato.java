@@ -93,260 +93,197 @@ public class VistaCampeonato extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(10, 4, 60, 14);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 4, 60, -1));
 
         jLabel3.setText("jLabel3");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(10, 36, 60, 10);
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 36, 60, 10));
 
         jLabel4.setText("jLabel4");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(10, 66, 60, 14);
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 66, 60, -1));
 
         jLabel5.setText("jLabel5");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(10, 96, 60, 14);
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 96, 60, -1));
 
         jLabel6.setText("jLabel6");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(10, 124, 60, 14);
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 124, 60, -1));
 
         jLabel7.setText("jLabel7");
-        getContentPane().add(jLabel7);
-        jLabel7.setBounds(10, 156, 60, 14);
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 156, 60, -1));
 
         jLabel8.setText("jLabel8");
-        getContentPane().add(jLabel8);
-        jLabel8.setBounds(10, 186, 60, 14);
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 186, 60, -1));
 
         jLabel9.setText("jLabel9");
-        getContentPane().add(jLabel9);
-        jLabel9.setBounds(10, 220, 60, 10);
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 60, 10));
 
         jLabel10.setText("jLabel10");
-        getContentPane().add(jLabel10);
-        jLabel10.setBounds(10, 250, 60, 10);
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 60, 10));
 
         jLabel11.setText("jLabel11");
-        getContentPane().add(jLabel11);
-        jLabel11.setBounds(10, 280, 60, 14);
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 60, -1));
 
         jLabel12.setText("jLabel12");
-        getContentPane().add(jLabel12);
-        jLabel12.setBounds(10, 310, 60, 14);
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 60, -1));
 
         jLabel13.setText("jLabel13");
-        getContentPane().add(jLabel13);
-        jLabel13.setBounds(10, 340, 60, 14);
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 60, -1));
 
         jLabel14.setText("jLabel14");
-        getContentPane().add(jLabel14);
-        jLabel14.setBounds(10, 370, 60, 14);
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 60, -1));
 
         jLabel15.setText("jLabel15");
-        getContentPane().add(jLabel15);
-        jLabel15.setBounds(10, 400, 60, 14);
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 60, -1));
 
         jLabel16.setText("jLabel16");
-        getContentPane().add(jLabel16);
-        jLabel16.setBounds(10, 430, 60, 14);
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, 60, -1));
 
         jLabel17.setText("jLabel17");
-        getContentPane().add(jLabel17);
-        jLabel17.setBounds(10, 460, 60, 14);
+        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, 60, -1));
 
         jLabel18.setText("jLabel18");
-        getContentPane().add(jLabel18);
-        jLabel18.setBounds(730, 4, 60, 14);
+        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 4, 60, -1));
 
         jLabel19.setText("jLabel19");
-        getContentPane().add(jLabel19);
-        jLabel19.setBounds(730, 34, 60, 14);
+        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 34, 60, -1));
 
         jLabel20.setText("jLabel20");
-        getContentPane().add(jLabel20);
-        jLabel20.setBounds(730, 66, 60, 14);
+        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 66, 60, -1));
 
         jLabel21.setText("jLabel21");
-        getContentPane().add(jLabel21);
-        jLabel21.setBounds(730, 100, 60, 10);
+        getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 100, 60, 10));
 
         jLabel22.setText("jLabel22");
-        getContentPane().add(jLabel22);
-        jLabel22.setBounds(730, 124, 60, 14);
+        getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 124, 60, -1));
 
         jLabel23.setText("jLabel23");
-        getContentPane().add(jLabel23);
-        jLabel23.setBounds(730, 154, 60, 14);
+        getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 154, 60, -1));
 
         jLabel24.setText("jLabel24");
-        getContentPane().add(jLabel24);
-        jLabel24.setBounds(730, 190, 60, 10);
+        getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 190, 60, 10));
 
         jLabel25.setText("jLabel25");
-        getContentPane().add(jLabel25);
-        jLabel25.setBounds(730, 220, 60, 10);
+        getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 220, 60, 10));
 
         jLabel26.setText("jLabel26");
-        getContentPane().add(jLabel26);
-        jLabel26.setBounds(730, 250, 60, 10);
+        getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 250, 60, 10));
 
         jLabel27.setText("jLabel27");
-        getContentPane().add(jLabel27);
-        jLabel27.setBounds(730, 280, 60, 14);
+        getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 280, 60, -1));
 
         jLabel28.setText("jLabel28");
-        getContentPane().add(jLabel28);
-        jLabel28.setBounds(730, 310, 60, 14);
+        getContentPane().add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 310, 60, -1));
 
         jLabel29.setText("jLabel29");
-        getContentPane().add(jLabel29);
-        jLabel29.setBounds(730, 340, 60, 14);
+        getContentPane().add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 340, 60, -1));
 
         jLabel30.setText("jLabel30");
-        getContentPane().add(jLabel30);
-        jLabel30.setBounds(730, 370, 60, 14);
+        getContentPane().add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 370, 60, -1));
 
         jLabel31.setText("jLabel31");
-        getContentPane().add(jLabel31);
-        jLabel31.setBounds(730, 400, 60, 14);
+        getContentPane().add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 400, 60, -1));
 
         jLabel32.setText("jLabel32");
-        getContentPane().add(jLabel32);
-        jLabel32.setBounds(730, 430, 60, 14);
+        getContentPane().add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 430, 60, -1));
 
         jLabel33.setText("jLabel33");
-        getContentPane().add(jLabel33);
-        jLabel33.setBounds(730, 464, 60, 10);
+        getContentPane().add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 464, 60, 10));
 
         jLabel34.setText("jLabel34");
-        getContentPane().add(jLabel34);
-        jLabel34.setBounds(90, 20, 60, 14);
+        getContentPane().add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 60, -1));
 
         jLabel35.setText("jLabel35");
-        getContentPane().add(jLabel35);
-        jLabel35.setBounds(90, 84, 60, 10);
+        getContentPane().add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 84, 60, 10));
 
         jLabel36.setText("jLabel36");
-        getContentPane().add(jLabel36);
-        jLabel36.setBounds(90, 140, 60, 14);
+        getContentPane().add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 60, -1));
 
         jLabel37.setText("jLabel37");
-        getContentPane().add(jLabel37);
-        jLabel37.setBounds(90, 204, 60, 10);
+        getContentPane().add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 204, 60, 10));
 
         jLabel38.setText("jLabel38");
-        getContentPane().add(jLabel38);
-        jLabel38.setBounds(90, 266, 60, 14);
+        getContentPane().add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 266, 60, -1));
 
         jLabel39.setText("jLabel39");
-        getContentPane().add(jLabel39);
-        jLabel39.setBounds(90, 328, 60, 10);
+        getContentPane().add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 328, 60, 10));
 
         jLabel40.setText("jLabel40");
-        getContentPane().add(jLabel40);
-        jLabel40.setBounds(90, 384, 60, 14);
+        getContentPane().add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 384, 60, -1));
 
         jLabel41.setText("jLabel41");
-        getContentPane().add(jLabel41);
-        jLabel41.setBounds(90, 446, 60, 14);
+        getContentPane().add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 446, 60, -1));
 
         jLabel42.setText("jLabel42");
-        getContentPane().add(jLabel42);
-        jLabel42.setBounds(650, 20, 60, 14);
+        getContentPane().add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 20, 60, -1));
 
         jLabel43.setText("jLabel43");
-        getContentPane().add(jLabel43);
-        jLabel43.setBounds(650, 84, 60, 10);
+        getContentPane().add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 84, 60, 10));
 
         jLabel44.setText("jLabel44");
-        getContentPane().add(jLabel44);
-        jLabel44.setBounds(650, 140, 60, 14);
+        getContentPane().add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 140, 60, -1));
 
         jLabel45.setText("jLabel45");
-        getContentPane().add(jLabel45);
-        jLabel45.setBounds(650, 200, 60, 14);
+        getContentPane().add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 200, 60, -1));
 
         jLabel46.setText("jLabel46");
-        getContentPane().add(jLabel46);
-        jLabel46.setBounds(650, 266, 60, 10);
+        getContentPane().add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 266, 60, 10));
 
         jLabel47.setText("jLabel47");
-        getContentPane().add(jLabel47);
-        jLabel47.setBounds(650, 328, 60, 10);
+        getContentPane().add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 328, 60, 10));
 
         jLabel48.setText("jLabel48");
-        getContentPane().add(jLabel48);
-        jLabel48.setBounds(650, 386, 60, 10);
+        getContentPane().add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 386, 60, 10));
 
         jLabel49.setText("jLabel49");
-        getContentPane().add(jLabel49);
-        jLabel49.setBounds(650, 446, 60, 14);
+        getContentPane().add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 446, 60, -1));
 
         jLabel50.setText("jLabel50");
-        getContentPane().add(jLabel50);
-        jLabel50.setBounds(160, 56, 70, 10);
+        getContentPane().add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 56, 70, 10));
 
         jLabel51.setText("jLabel51");
-        getContentPane().add(jLabel51);
-        jLabel51.setBounds(170, 170, 60, 10);
+        getContentPane().add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 60, 10));
 
         jLabel52.setText("jLabel52");
-        getContentPane().add(jLabel52);
-        jLabel52.setBounds(170, 300, 60, 10);
+        getContentPane().add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, 60, 10));
 
         jLabel53.setText("jLabel53");
-        getContentPane().add(jLabel53);
-        jLabel53.setBounds(170, 414, 60, 10);
+        getContentPane().add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 414, 60, 10));
 
         jLabel54.setText("jLabel54");
-        getContentPane().add(jLabel54);
-        jLabel54.setBounds(580, 54, 60, 14);
+        getContentPane().add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 54, 60, -1));
 
         jLabel55.setText("jLabel55");
-        getContentPane().add(jLabel55);
-        jLabel55.setBounds(580, 170, 60, 10);
+        getContentPane().add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 170, 60, 10));
 
         jLabel56.setText("jLabel56");
-        getContentPane().add(jLabel56);
-        jLabel56.setBounds(580, 300, 60, 10);
+        getContentPane().add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 300, 60, 10));
 
         jLabel57.setText("jLabel57");
-        getContentPane().add(jLabel57);
-        jLabel57.setBounds(580, 414, 60, 10);
+        getContentPane().add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 414, 60, 10));
 
         jLabel58.setText("jLabel58");
-        getContentPane().add(jLabel58);
-        jLabel58.setBounds(260, 110, 60, 14);
+        getContentPane().add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, 60, -1));
 
         jLabel59.setText("jLabel59");
-        getContentPane().add(jLabel59);
-        jLabel59.setBounds(260, 354, 60, 14);
+        getContentPane().add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 354, 60, -1));
 
         jLabel60.setText("jLabel60");
-        getContentPane().add(jLabel60);
-        jLabel60.setBounds(490, 110, 60, 14);
+        getContentPane().add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 110, 60, -1));
 
         jLabel61.setText("jLabel61");
-        getContentPane().add(jLabel61);
-        jLabel61.setBounds(490, 356, 60, 10);
+        getContentPane().add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 356, 60, 10));
 
         jLabel62.setText("jLabel62");
-        getContentPane().add(jLabel62);
-        jLabel62.setBounds(370, 236, 60, 14);
+        getContentPane().add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 236, 60, -1));
 
         jButton1.setText("Iniciar Combate");
-        getContentPane().add(jButton1);
-        jButton1.setBounds(343, 420, 110, 23);
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 420, 110, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/campeonato.png"))); // NOI18N
         jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, 0, 800, 480);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
