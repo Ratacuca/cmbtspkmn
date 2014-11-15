@@ -33,24 +33,25 @@ public class VistaCrearEntrenador extends javax.swing.JFrame {
         return jC_Region.getSelectedIndex();
     }
    
-   public int getPokemon1(){
-        return jList1.getSelectedIndex();
+   public int getJL_Pokemon1(){
+        return jL_Pokemon1.getSelectedIndex();
     }
-   public int getjC_Pokemon2() {
-        return jC_Pokemon2.getSelectedIndex();
+   public int getJL_Pokemon2(){
+        return jL_Pokemon2.getSelectedIndex();
     }
-   public int getjC_Pokemon3() {
-        return jC_Pokemon3.getSelectedIndex();
+   public int getJL_Pokemon3(){
+        return jL_Pokemon3.getSelectedIndex();
     }
-   public int getjC_Pokemon4() {
-        return jC_Pokemon4.getSelectedIndex();
+   public int getJL_Pokemon4(){
+        return jL_Pokemon4.getSelectedIndex();
     }
-   public int getjC_Pokemon5() {
-        return jC_Pokemon5.getSelectedIndex();
+   public int getJL_Pokemon5(){
+        return jL_Pokemon5.getSelectedIndex();
     }
-   public int getjC_Pokemon6() {
-        return jC_Pokemon6.getSelectedIndex();
+   public int getJL_Pokemon6(){
+        return jL_Pokemon6.getSelectedIndex();
     }
+   
    
    
     /**
@@ -69,36 +70,33 @@ public class VistaCrearEntrenador extends javax.swing.JFrame {
         jC_Region = new javax.swing.JComboBox();
         jB_Crear = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jC_Pokemon2 = new javax.swing.JComboBox();
-        jC_Pokemon3 = new javax.swing.JComboBox();
-        jC_Pokemon4 = new javax.swing.JComboBox();
-        jC_Pokemon5 = new javax.swing.JComboBox();
-        jC_Pokemon6 = new javax.swing.JComboBox();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jL_Pokemon1 = new javax.swing.JList();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jL_Pokemon2 = new javax.swing.JList();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jL_Pokemon3 = new javax.swing.JList();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jL_Pokemon5 = new javax.swing.JList();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jL_Pokemon4 = new javax.swing.JList();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jL_Pokemon6 = new javax.swing.JList();
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Crear Nuevo Entrenador");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
 
         jLabel2.setText("Nombre:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 54, -1, -1));
 
         jLabel3.setText("Region:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 92, -1, -1));
 
         jText_Nombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jText_NombreActionPerformed(evt);
             }
         });
-        getContentPane().add(jText_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 51, 138, -1));
 
         jC_Region.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kanto", "Johto", "Hoenn", "Sinnoh", "Teselia", "Kalos" }));
-        getContentPane().add(jC_Region, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 89, -1, -1));
 
         jB_Crear.setText("Crear");
         jB_Crear.addActionListener(new java.awt.event.ActionListener() {
@@ -106,34 +104,129 @@ public class VistaCrearEntrenador extends javax.swing.JFrame {
                 jB_CrearActionPerformed(evt);
             }
         });
-        getContentPane().add(jB_Crear, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 250, -1, -1));
 
         jLabel4.setText("Equipo Pokemon:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 142, -1, -1));
 
-        jC_Pokemon2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Bulbasaur", "Charizard", "Squirtle" }));
-        getContentPane().add(jC_Pokemon2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 174, -1, -1));
-
-        jC_Pokemon3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Bulbasaur", "Charizard", "Squirtle" }));
-        getContentPane().add(jC_Pokemon3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 174, -1, -1));
-
-        jC_Pokemon4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Bulbasaur", "Charizard", "Squirtle" }));
-        getContentPane().add(jC_Pokemon4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 174, -1, -1));
-
-        jC_Pokemon5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Bulbasaur", "Charizard", "Squirtle" }));
-        getContentPane().add(jC_Pokemon5, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 174, -1, -1));
-
-        jC_Pokemon6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Bulbasaur", "Charizard", "Squirtle" }));
-        getContentPane().add(jC_Pokemon6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 174, -1, -1));
-
-        jList1.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+        jL_Pokemon1.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Bulbasaur", "Charizard", "Blastoise" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(jList1);
+        jL_Pokemon1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane1.setViewportView(jL_Pokemon1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 80, 70));
+        jL_Pokemon2.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Bulbasaur", "Charizard", "Blastoise" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        jL_Pokemon2.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane2.setViewportView(jL_Pokemon2);
+
+        jL_Pokemon3.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Bulbasaur", "Charizard", "Blastoise" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        jL_Pokemon3.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane3.setViewportView(jL_Pokemon3);
+
+        jL_Pokemon5.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Bulbasaur", "Charizard", "Blastoise" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        jL_Pokemon5.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane4.setViewportView(jL_Pokemon5);
+
+        jL_Pokemon4.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Bulbasaur", "Charizard", "Blastoise" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        jL_Pokemon4.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane5.setViewportView(jL_Pokemon4);
+
+        jL_Pokemon6.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Bulbasaur", "Charizard", "Blastoise" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        jL_Pokemon6.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane6.setViewportView(jL_Pokemon6);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addComponent(jC_Region, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel2)
+                        .addGap(10, 10, 10)
+                        .addComponent(jText_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel4))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jB_Crear)
+                .addGap(25, 25, 25))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel2))
+                    .addComponent(jText_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel3))
+                    .addComponent(jC_Region, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addComponent(jLabel4)
+                .addGap(14, 14, 14)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addComponent(jB_Crear)
+                .addGap(20, 20, 20))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -183,18 +276,23 @@ public class VistaCrearEntrenador extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jB_Crear;
-    private javax.swing.JComboBox jC_Pokemon2;
-    private javax.swing.JComboBox jC_Pokemon3;
-    private javax.swing.JComboBox jC_Pokemon4;
-    private javax.swing.JComboBox jC_Pokemon5;
-    private javax.swing.JComboBox jC_Pokemon6;
     private javax.swing.JComboBox jC_Region;
+    private javax.swing.JList jL_Pokemon1;
+    private javax.swing.JList jL_Pokemon2;
+    private javax.swing.JList jL_Pokemon3;
+    private javax.swing.JList jL_Pokemon4;
+    private javax.swing.JList jL_Pokemon5;
+    private javax.swing.JList jL_Pokemon6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JList jList1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTextField jText_Nombre;
     // End of variables declaration//GEN-END:variables
 

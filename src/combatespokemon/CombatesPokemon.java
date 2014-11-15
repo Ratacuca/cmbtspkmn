@@ -8,6 +8,9 @@ package combatespokemon;
 import Vista.*;
 import Modelo.*;
 import Controlador.*;
+import java.io.IOException;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 
 /**
@@ -19,11 +22,16 @@ public class CombatesPokemon {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    
+    public static void main(String[] args) throws ClassNotFoundException, 
+            InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException, IOException {
         
+        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         VistaPrincipal vista = new VistaPrincipal();
         ControladorPrincipal controladorPrincipal = new ControladorPrincipal(vista);
+        controladorPrincipal.leerBD("BD.txt");
         vista.setVisible(true);
+        
         
         
         

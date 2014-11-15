@@ -6,10 +6,17 @@
 
 package Controlador;
 
-import Vista.*;
 import Modelo.*;
+import Vista.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
 
 /**
@@ -36,6 +43,13 @@ public class ControladorPrincipal implements ActionListener{
         if (vistaPrincipal.getBotonCrearEntrenador() == (JButton) e.getSource()){
             generarEntrenador();
         }
+        if (vistaPrincipal.getBotonCargarEntrenador() == (JButton) e.getSource()){
+            try {
+                leerBD("BD.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 
         
     }
@@ -57,4 +71,22 @@ public class ControladorPrincipal implements ActionListener{
         ControladorEntrenador ce = new ControladorEntrenador(vce);
         
     }
+    public void leerBD(String ruta) throws FileNotFoundException, IOException{
+        File adquisicion = new File(ruta);
+        FileReader carga = new FileReader(adquisicion);
+        BufferedReader procesador = new BufferedReader(carga);
+        String linea = procesador.readLine();
+        int l = 1;
+        while(linea!=null){
+            String[] linealeida = linea.split(" ");
+            vistaPrincipal.setjC_Entrenador(linealeida[0]);
+            l++;
+            linea = procesador.readLine();
+        } 
+        carga.close();
+        procesador.close();
+        
+        }
+        
+    
 }
