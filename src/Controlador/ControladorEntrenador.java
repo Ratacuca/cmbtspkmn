@@ -95,114 +95,32 @@ public class ControladorEntrenador implements ActionListener{
     }
     
     public String getPokemon1(){
-        
-        String nombre = null;
-        
-        if ((vista.getJL_Pokemon1()== 0)){
-            nombre = "Bulbasaur";
-        }
-        if ((vista.getJL_Pokemon1()== 1)){
-            nombre = "Charizard";
-        }
-        if ((vista.getJL_Pokemon1()== 2)){
-            nombre = "Squirtle";
-        }
-        else{
-            nombre = "Bulbasaur";
-        }
-        
+        String nombre = vista.getJL_Pokemon1();
         return nombre;
     }
     public String getPokemon2(){
-        
-        String nombre = null;
-        
-        if ((vista.getJL_Pokemon2()== 0)){
-            nombre = "Bulbasaur";
-        }
-        if ((vista.getJL_Pokemon2()== 1)){
-            nombre = "Charizard";
-        }
-        if ((vista.getJL_Pokemon2()== 2)){
-            nombre = "Squirtle";
-        }
-        else{
-            nombre = "Bulbasaur";
-        }
+        String nombre = vista.getJL_Pokemon2();
         return nombre;
     }
     public String getPokemon3(){
-        
-        String nombre = null;
-        
-        if ((vista.getJL_Pokemon3()== 0)){
-            nombre = "Bulbasaur";
-        }
-        if ((vista.getJL_Pokemon3()== 1)){
-            nombre = "Charizard";
-        }
-        if ((vista.getJL_Pokemon3()== 2)){
-            nombre = "Squirtle";
-        }
-        else{
-            nombre = "Bulbasaur";
-        }
+        String nombre = vista.getJL_Pokemon3();
         return nombre;
     }
     public String getPokemon4(){
-        
-        String nombre = null;
-        
-        if ((vista.getJL_Pokemon4()== 0)){
-            nombre = "Bulbasaur";
-        }
-        if ((vista.getJL_Pokemon4()== 1)){
-            nombre = "Charizard";
-        }
-        if ((vista.getJL_Pokemon4()== 2)){
-            nombre = "Squirtle";
-        }
-        else{
-            nombre = "Bulbasaur";
-        }
+        String nombre = vista.getJL_Pokemon4();
         return nombre;
     }
     public String getPokemon5(){
-        
-        String nombre = null;
-        
-        if ((vista.getJL_Pokemon5()== 0)){
-            nombre = "Bulbasaur";
-        }
-        if ((vista.getJL_Pokemon5()== 1)){
-            nombre = "Charizard";
-        }
-        if ((vista.getJL_Pokemon5()== 2)){
-            nombre = "Squirtle";
-        }
-        else{
-            nombre = "Bulbasaur";
-        }
+        String nombre = vista.getJL_Pokemon5();
         return nombre;
     }
     public String getPokemon6(){
-        
-        String nombre = null;
-        
-        if ((vista.getJL_Pokemon6()== 0)){
-            nombre = "Bulbasaur";
-        }
-        if ((vista.getJL_Pokemon6()== 1)){
-            nombre = "Charizard";
-        }
-        if ((vista.getJL_Pokemon6()== 2)){
-            nombre = "Squirtle";
-        }
-        else{
-            nombre = "Bulbasaur";
-        }
+        String nombre = vista.getJL_Pokemon6();
         return nombre;
     }
+   
+    
+    
     private void guardarEntrenador(String nombre, String region, String distincion, 
             int victorias, int torre, String[] pokemones) throws IOException {
         String nombreArchivo = "BD.txt";

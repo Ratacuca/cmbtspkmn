@@ -45,8 +45,6 @@ public class VistaCombate extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
         jLabel3.setText("Jugador 1");
 
         jLabel4.setText("Jugador 2");

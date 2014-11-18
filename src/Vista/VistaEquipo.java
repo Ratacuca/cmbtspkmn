@@ -54,7 +54,6 @@ public class VistaEquipo extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(406, 310));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 

@@ -40,7 +40,6 @@ public class VistaPreviaCombate extends javax.swing.JFrame {
         jL_Titulo = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jL_Jugador1.setText("Jugador 1");

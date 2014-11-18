@@ -33,24 +33,55 @@ public class VistaCrearEntrenador extends javax.swing.JFrame {
         return jC_Region.getSelectedIndex();
     }
    
-   public int getJL_Pokemon1(){
-        return jL_Pokemon1.getSelectedIndex();
+   public String getJL_Pokemon1(){
+       if (jL_Pokemon1.getSelectedIndex() == -1){
+          return jL_Pokemon1.getModel().getElementAt(0).toString();
+       }
+       else{
+         return jL_Pokemon1.getSelectedValue().toString();  
+       }
     }
-   public int getJL_Pokemon2(){
-        return jL_Pokemon2.getSelectedIndex();
+   public String getJL_Pokemon2(){
+       if (jL_Pokemon2.getSelectedIndex() == -1){
+          return jL_Pokemon2.getModel().getElementAt(0).toString();
+       }
+       else{
+         return jL_Pokemon2.getSelectedValue().toString();  
+       }
     }
-   public int getJL_Pokemon3(){
-        return jL_Pokemon3.getSelectedIndex();
+   public String getJL_Pokemon3(){
+       if (jL_Pokemon3.getSelectedIndex() == -1){
+          return jL_Pokemon3.getModel().getElementAt(0).toString();
+       }
+       else{
+         return jL_Pokemon3.getSelectedValue().toString();  
+       }
     }
-   public int getJL_Pokemon4(){
-        return jL_Pokemon4.getSelectedIndex();
+   public String getJL_Pokemon4(){
+       if (jL_Pokemon4.getSelectedIndex() == -1){
+          return jL_Pokemon4.getModel().getElementAt(0).toString();
+       }
+       else{
+         return jL_Pokemon4.getSelectedValue().toString();  
+       }
     }
-   public int getJL_Pokemon5(){
-        return jL_Pokemon5.getSelectedIndex();
+   public String getJL_Pokemon5(){
+       if (jL_Pokemon5.getSelectedIndex() == -1){
+          return jL_Pokemon5.getModel().getElementAt(0).toString();
+       }
+       else{
+         return jL_Pokemon5.getSelectedValue().toString();  
+       }
     }
-   public int getJL_Pokemon6(){
-        return jL_Pokemon6.getSelectedIndex();
+   public String getJL_Pokemon6(){
+       if (jL_Pokemon6.getSelectedIndex() == -1){
+          return jL_Pokemon6.getModel().getElementAt(0).toString();
+       }
+       else{
+         return jL_Pokemon6.getSelectedValue().toString();  
+       }
     }
+   
    
    
    
@@ -82,6 +113,8 @@ public class VistaCrearEntrenador extends javax.swing.JFrame {
         jL_Pokemon4 = new javax.swing.JList();
         jScrollPane6 = new javax.swing.JScrollPane();
         jL_Pokemon6 = new javax.swing.JList();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Crear Nuevo Entrenador");

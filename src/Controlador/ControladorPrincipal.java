@@ -43,13 +43,17 @@ public class ControladorPrincipal implements ActionListener{
         if (vistaPrincipal.getBotonCrearEntrenador() == (JButton) e.getSource()){
             generarEntrenador();
         }
-        if (vistaPrincipal.getBotonCargarEntrenador() == (JButton) e.getSource()){
+        if (vistaPrincipal.getBotonCargarEntrenador1() == (JButton) e.getSource()){
             try {
+                vistaPrincipal.removerJc_Entrenador1();
+                vistaPrincipal.removerJc_Entrenador2();
                 leerBD("BD.txt");
             } catch (IOException ex) {
                 Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        
+        
                 
         
     }
@@ -57,9 +61,12 @@ public class ControladorPrincipal implements ActionListener{
     public void generarCombate(){
         VistaPreviaCombate vpc = new VistaPreviaCombate(vistaPrincipal.getjC_TipoSimulacion());
         int tipo_combate = vistaPrincipal.getjC_TipoSimulacion();
-        Entrenador entrenador1 = new Entrenador(); // aqui se instanciaran los entrenadores cuando se tenga la bd
+        String nombre1 = vistaPrincipal.getjC_Nombre1();
+        String nombre2 = vistaPrincipal.getjC_Nombre2();
+        
+        Entrenador entrenador1 = new Entrenador(); 
         Entrenador entrenador2 = new Entrenador();
-        //acciones
+        
         vpc.setVisible(true);
         ControladorCombate cc = new ControladorCombate(vpc, tipo_combate, entrenador1, entrenador2);
         System.out.println("Se selecciono simular combate");
@@ -79,7 +86,8 @@ public class ControladorPrincipal implements ActionListener{
         int l = 1;
         while(linea!=null){
             String[] linealeida = linea.split(" ");
-            vistaPrincipal.setjC_Entrenador(linealeida[0]);
+            vistaPrincipal.setjC_Entrenador1(linealeida[0]);
+            vistaPrincipal.setjC_Entrenador2(linealeida[0]);
             l++;
             linea = procesador.readLine();
         } 

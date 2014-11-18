@@ -9,7 +9,7 @@ package Modelo;
 
 public class Pokemon extends EspeciePokemon {
     
-    private String nombre;
+    private String pseudonimo;
     private int nivel;
     private int ranking;
     private int ataque;
@@ -17,169 +17,166 @@ public class Pokemon extends EspeciePokemon {
     private int ataque_especial;
     private int defensa_especial;
     private int vida;
+    private int vida_restante;
     private Habilidad habilidad;
-    private String[] estado;
-    private int prueba;
-    private int pruebamario;
-    private int hola; 
+    private Boolean confuso;
+    private Boolean paralizado;
+    private Boolean envenenado;
+    private Boolean congelado;
+    private Boolean dormido;
+    private Boolean quemado;
+    
     
     public Pokemon (String nombre, int nivel, int ranking, int ataque, 
             int defensa, int ataque_especial, int defensa_especial, int vida, 
-            Habilidad habilidad, String[] estado){
+            Habilidad habilidad){
         
         this.ataque = ataque;
         this.ataque_especial= ataque_especial;
         this.defensa = defensa;
         this.defensa_especial = defensa_especial;
-        this.estado = estado;
+        
         this.habilidad = habilidad;
         this.nivel = nivel;
-        this.nombre = nombre;
+        this.pseudonimo = nombre;
         this.ranking = ranking;
         this.vida = vida;
     }
     public Pokemon (String nombre){
-        this.nombre = nombre;
+        
+        this.pseudonimo = nombre;
     }
 
-    /**
-     * @return the nombre
-     */
-    public String getNombre() {
-        return nombre;
+    public String getPseudonimo() {
+        return pseudonimo;
     }
 
-    /**
-     * @param nombre the nombre to set
-     */
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setPseudonimo(String pseudonimo) {
+        this.pseudonimo = pseudonimo;
     }
 
-    /**
-     * @return the nivel
-     */
     public int getNivel() {
         return nivel;
     }
 
-    /**
-     * @param nivel the nivel to set
-     */
     public void setNivel(int nivel) {
         this.nivel = nivel;
     }
 
-    /**
-     * @return the ranking
-     */
     public int getRanking() {
         return ranking;
     }
 
-    /**
-     * @param ranking the ranking to set
-     */
     public void setRanking(int ranking) {
         this.ranking = ranking;
     }
 
-    /**
-     * @return the ataque
-     */
     public int getAtaque() {
         return ataque;
     }
 
-    /**
-     * @param ataque the ataque to set
-     */
     public void setAtaque(int ataque) {
         this.ataque = ataque;
     }
 
-    /**
-     * @return the defensa
-     */
     public int getDefensa() {
         return defensa;
     }
 
-    /**
-     * @param defensa the defensa to set
-     */
     public void setDefensa(int defensa) {
         this.defensa = defensa;
     }
 
-    /**
-     * @return the ataque_especial
-     */
     public int getAtaque_especial() {
         return ataque_especial;
     }
 
-    /**
-     * @param ataque_especial the ataque_especial to set
-     */
     public void setAtaque_especial(int ataque_especial) {
         this.ataque_especial = ataque_especial;
     }
 
-    /**
-     * @return the defensa_especial
-     */
     public int getDefensa_especial() {
         return defensa_especial;
     }
 
-    /**
-     * @param defensa_especial the defensa_especial to set
-     */
     public void setDefensa_especial(int defensa_especial) {
         this.defensa_especial = defensa_especial;
     }
 
-    /**
-     * @return the vida
-     */
     public int getVida() {
         return vida;
     }
 
-    /**
-     * @param vida the vida to set
-     */
     public void setVida(int vida) {
         this.vida = vida;
     }
 
-    /**
-     * @return the habilidad
-     */
+    public int getVida_restante() {
+        return vida_restante;
+    }
+
+    public void setVida_restante(int vida_restante) {
+        this.vida_restante = vida_restante;
+    }
+
     public Habilidad getHabilidad() {
         return habilidad;
     }
 
-    /**
-     * @param habilidad the habilidad to set
-     */
     public void setHabilidad(Habilidad habilidad) {
         this.habilidad = habilidad;
     }
 
-    /**
-     * @return the estado
-     */
-    public String[] getEstado() {
-        return estado;
+    public Boolean getConfuso() {
+        return confuso;
     }
 
-    /**
-     * @param estado the estado to set
-     */
-    public void setEstado(String[] estado) {
-        this.estado = estado;
+    public void setConfuso(Boolean confuso) {
+        this.confuso = confuso;
     }
+
+    public Boolean getParalizado() {
+        return paralizado;
+    }
+
+    public void setParalizado(Boolean paralizado) {
+        this.paralizado = paralizado;
+    }
+
+    public Boolean getEnvenenado() {
+        return envenenado;
+    }
+
+    public void setEnvenenado(Boolean envenenado) {
+        this.envenenado = envenenado;
+    }
+
+    public Boolean getCongelado() {
+        return congelado;
+    }
+
+    public void setCongelado(Boolean congelado) {
+        this.congelado = congelado;
+    }
+
+    public Boolean getDormido() {
+        return dormido;
+    }
+
+    public void setDormido(Boolean dormido) {
+        this.dormido = dormido;
+    }
+
+    public Boolean getQuemado() {
+        return quemado;
+    }
+
+    public void setQuemado(Boolean quemado) {
+        this.quemado = quemado;
+    }
+
+    
+
+    
     
 }

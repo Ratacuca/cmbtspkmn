@@ -5,3 +5,8 @@ mario Kanto Entrenador 0 0 Bulbasaur Bulbasaur Bulbasaur Bulbasaur Bulbasaur Bul
 crismateo Kanto Entrenador 0 0 Bulbasaur Bulbasaur Bulbasaur Bulbasaur Bulbasaur Bulbasaur
 asd Kanto Entrenador 0 0 Bulbasaur Bulbasaur Bulbasaur Bulbasaur Bulbasaur Bulbasaur
 pedrito Kanto Entrenador 0 0 Bulbasaur Bulbasaur Squirtle Bulbasaur Squirtle Bulbasaur
+qwerty Kanto Entrenador 0 0 Bulbasaur Bulbasaur Bulbasaur Bulbasaur Bulbasaur Bulbasaur
+alberto Kanto Entrenador 0 0 Bulbasaur Bulbasaur Bulbasaur Bulbasaur Bulbasaur Bulbasaur
+criskenobi Kanto Entrenador 0 0 Bulbasaur Bulbasaur Bulbasaur Bulbasaur Bulbasaur Bulbasaur
+ Kanto Entrenador 0 0 Bulbasaur Charizard Charizard Charizard Charizard Charizard
+prueba Kanto Entrenador 0 0 Bulbasaur Bulbasaur Bulbasaur Bulbasaur Bulbasaur Bulbasaur

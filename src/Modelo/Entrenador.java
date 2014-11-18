@@ -27,6 +27,11 @@ public class Entrenador {
         this.region = region;
         this.victorias_torre_batalla = victorias_torre_batalla;
     }
+    public Entrenador(String nombre, Pokemon[] pokemones){
+        this.nombre = nombre;
+        this.pokemones = pokemones;
+        
+    }
     public Entrenador(){
         
     }
