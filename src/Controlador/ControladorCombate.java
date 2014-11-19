@@ -28,9 +28,10 @@ public class ControladorCombate implements ActionListener{
     public ControladorCombate(VistaPreviaCombate vista, int tipo_simulacion,
             Entrenador entrenador1, Entrenador entrenador2){
         this.tipo_simulacion = tipo_simulacion;
-        vpc = vista;
+        this.vpc = vista;
         this.vpc.agregarListener(this);
         this.combate = new Combate();
+        
     }
     
     @Override

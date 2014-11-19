@@ -10,3 +10,6 @@ alberto Kanto Entrenador 0 0 Bulbasaur Bulbasaur Bulbasaur Bulbasaur Bulbasaur B
 criskenobi Kanto Entrenador 0 0 Bulbasaur Bulbasaur Bulbasaur Bulbasaur Bulbasaur Bulbasaur
  Kanto Entrenador 0 0 Bulbasaur Charizard Charizard Charizard Charizard Charizard
 prueba Kanto Entrenador 0 0 Bulbasaur Bulbasaur Bulbasaur Bulbasaur Bulbasaur Bulbasaur
+ Kanto Entrenador 0 0 Charmander                                         Charmander                                         Charmander                                         Charmander                                         Charmander                                         Charmander                                        
+ Kanto Entrenador 0 0 Squirtle                                           Bulbasaur                                          Charmander                                         Squirtle                                           Bulbasaur                                          Charmander                                        
+Mario Kalos Entrenador 0 0 Squirtle                                           Squirtle                                           Squirtle                                           Squirtle                                           Squirtle                                           Squirtle                                          

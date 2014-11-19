@@ -5,16 +5,19 @@
  */
 
 package Controlador;
-import Vista.*;
 import Modelo.*;
+import Vista.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JButton;
 import java.io.FileWriter;
-import java.io.PrintWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JButton;
 
 /**
  *
@@ -24,9 +27,19 @@ public class ControladorEntrenador implements ActionListener{
     
     private VistaCrearEntrenador vista;
     
-    public ControladorEntrenador(VistaCrearEntrenador vce){
+    public ControladorEntrenador(VistaCrearEntrenador vce)throws SQLException{
         vista = vce;
         this.vista.agregarListener(this);
+        ControladorBD cBD = new ControladorBD();
+        ArrayList<String> JLpokemones = cBD.obtenerNombresPokemones();
+        vista.setJL_Pokemon1(JLpokemones);
+        vista.setJL_Pokemon2(JLpokemones);
+        vista.setJL_Pokemon3(JLpokemones);
+        vista.setJL_Pokemon4(JLpokemones);
+        vista.setJL_Pokemon5(JLpokemones);
+        vista.setJL_Pokemon6(JLpokemones);
+ 
+        
     }
     
     @Override
@@ -38,14 +51,6 @@ public class ControladorEntrenador implements ActionListener{
             int medallas_adquiridas = 0;
             int victorias_torre_batalla = 0;
             String distincion = "Entrenador";
-//            Pokemon[] pokemones = new Pokemon[6];    
-//                pokemones[0] = new Pokemon(getPokemon1());
-//                pokemones[1] = new Pokemon(getPokemon2());
-//                pokemones[2] = new Pokemon(getPokemon3());
-//                pokemones[3] = new Pokemon(getPokemon4());
-//                pokemones[4] = new Pokemon(getPokemon5());
-//                pokemones[5] = new Pokemon(getPokemon6());
-            
             String[] pokemones = new String[6];
             pokemones[0]= getPokemon1();
             pokemones[1]= getPokemon2();

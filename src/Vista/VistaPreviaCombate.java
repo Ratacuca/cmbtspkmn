@@ -33,8 +33,8 @@ public class VistaPreviaCombate extends javax.swing.JFrame {
         jL_Jugador1 = new javax.swing.JLabel();
         jL_Jugador2 = new javax.swing.JLabel();
         jB_Iniciar = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox();
-        jComboBox2 = new javax.swing.JComboBox();
+        jC_Inicial1 = new javax.swing.JComboBox();
+        jC_Inicial2 = new javax.swing.JComboBox();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jL_Titulo = new javax.swing.JLabel();
@@ -51,8 +51,7 @@ public class VistaPreviaCombate extends javax.swing.JFrame {
         jB_Iniciar.setText("INICIAR");
         getContentPane().add(jB_Iniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 175, -1, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pokemon1", "Pokemon2", "Pokemon3", "Pokemon4", "Pokemon5", "Pokemon6" }));
-        jComboBox1.addAncestorListener(new javax.swing.event.AncestorListener() {
+        jC_Inicial1.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
                 pokemon3(evt);
             }
@@ -63,7 +62,7 @@ public class VistaPreviaCombate extends javax.swing.JFrame {
                 pokemon5(evt);
             }
         });
-        jComboBox1.addHierarchyBoundsListener(new java.awt.event.HierarchyBoundsListener() {
+        jC_Inicial1.addHierarchyBoundsListener(new java.awt.event.HierarchyBoundsListener() {
             public void ancestorMoved(java.awt.event.HierarchyEvent evt) {
                 pokemon4(evt);
             }
@@ -71,20 +70,19 @@ public class VistaPreviaCombate extends javax.swing.JFrame {
                 pokemon6(evt);
             }
         });
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        jC_Inicial1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pokemon1(evt);
             }
         });
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 115, -1, -1));
+        getContentPane().add(jC_Inicial1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 115, -1, -1));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pokemon1", "Pokemon2", "Pokemon3", "Pokemon4", "Pokemon5", "Pokemon6" }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+        jC_Inicial2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pokemon1(evt);
             }
         });
-        jComboBox2.addHierarchyBoundsListener(new java.awt.event.HierarchyBoundsListener() {
+        jC_Inicial2.addHierarchyBoundsListener(new java.awt.event.HierarchyBoundsListener() {
             public void ancestorMoved(java.awt.event.HierarchyEvent evt) {
                 pokemon4(evt);
             }
@@ -92,7 +90,7 @@ public class VistaPreviaCombate extends javax.swing.JFrame {
                 pokemon6(evt);
             }
         });
-        jComboBox2.addAncestorListener(new javax.swing.event.AncestorListener() {
+        jC_Inicial2.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
                 pokemon3(evt);
             }
@@ -103,7 +101,7 @@ public class VistaPreviaCombate extends javax.swing.JFrame {
                 pokemon5(evt);
             }
         });
-        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(434, 115, -1, -1));
+        getContentPane().add(jC_Inicial2, new org.netbeans.lib.awtextra.AbsoluteConstraints(434, 115, -1, -1));
 
         jLabel3.setText("Seleccionar Pokémon inicial ");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 83, -1, -1));
@@ -111,6 +109,7 @@ public class VistaPreviaCombate extends javax.swing.JFrame {
         jLabel4.setText("Seleccionar Pokémon inicial");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(407, 83, -1, -1));
 
+        jL_Titulo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jL_Titulo.setText("jLabel5");
         getContentPane().add(jL_Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 418, -1));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 35, 557, 10));
@@ -152,22 +151,40 @@ public class VistaPreviaCombate extends javax.swing.JFrame {
         return this.jB_Iniciar;
     }
     
-    public VistaPreviaCombate(int tipo_combate){
+    public VistaPreviaCombate(int tipo_combate, String nombre1, String nombre2){
         initComponents();
+        jL_Jugador1.setText(nombre1);
+        jL_Jugador2.setText(nombre2);
         switch(tipo_combate){
             case 0:
                 jL_Titulo.setText("Combate Usuario vs Sistema Simulado");
-                jComboBox2.setEnabled(false);
+                jC_Inicial2.setEnabled(false);
                 break;
             case 1:
                 jL_Titulo.setText("Combate Usuario vs Usuario por Turnos");
                 break;
             case 2:
                 jL_Titulo.setText("Combate Usuario vs Sistema por Turnos");
-                jComboBox2.setEnabled(false);
+                jC_Inicial2.setEnabled(false);
                 break;
         }
 }
+    public void setjC_Equipo1(String[] equipo) {
+        this.jC_Inicial1.addItem(equipo[0]);
+        this.jC_Inicial1.addItem(equipo[1]);
+        this.jC_Inicial1.addItem(equipo[2]);
+        this.jC_Inicial1.addItem(equipo[3]);
+        this.jC_Inicial1.addItem(equipo[4]);
+        this.jC_Inicial1.addItem(equipo[5]);
+    }
+    public void setjC_Equipo2(String[] equipo) {
+        this.jC_Inicial2.addItem(equipo[0]);
+        this.jC_Inicial2.addItem(equipo[1]);
+        this.jC_Inicial2.addItem(equipo[2]);
+        this.jC_Inicial2.addItem(equipo[3]);
+        this.jC_Inicial2.addItem(equipo[4]);
+        this.jC_Inicial2.addItem(equipo[5]);
+    }
     /**
      * @param args the command line arguments
      */
@@ -205,8 +222,8 @@ public class VistaPreviaCombate extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jB_Iniciar;
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JComboBox jComboBox2;
+    private javax.swing.JComboBox jC_Inicial1;
+    private javax.swing.JComboBox jC_Inicial2;
     private javax.swing.JLabel jL_Jugador1;
     private javax.swing.JLabel jL_Jugador2;
     private javax.swing.JLabel jL_Titulo;
@@ -214,4 +231,6 @@ public class VistaPreviaCombate extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
+
+    
 }

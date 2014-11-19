@@ -36,10 +36,20 @@ public class ControladorBD {
             System.out.println("Nombre: " + nombre);
             pokemones.add(nombre);
         }
-        
+        rst.close();
+        conexion.close();
         return pokemones;
     }
     
-    
+    public void guardarEntrenador(String nombre, int id, String categoria) throws SQLException{
+        
+        ResultSet rst;
+        Statement stmt;
+        stmt = conexion.createStatement();
+        String consulta = "INSERT INTO entrenador (id_entrenador,nombre_entrenador, categoria_entrenador) values ("+id+", '"+nombre+"','"+categoria+"')";
+        int resultado = stmt.executeUpdate(consulta);
+        
+        conexion.close();
+    }
     
 }

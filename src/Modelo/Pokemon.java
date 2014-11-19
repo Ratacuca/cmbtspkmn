@@ -27,25 +27,22 @@ public class Pokemon extends EspeciePokemon {
     private Boolean quemado;
     
     
-    public Pokemon (String nombre, int nivel, int ranking, int ataque, 
-            int defensa, int ataque_especial, int defensa_especial, int vida, 
-            Habilidad habilidad){
+    public Pokemon (String nombre_especie, String especie, 
+            String naturaleza_primaria, String naturaleza_secundaria, 
+            String[] debilidades, String[] fortalezas, int id_pokedex, 
+            String pseudonimo, int nivel, int ataque, int defensa, int ataque_especial, int defensa_especial, int vida){
         
-        this.ataque = ataque;
-        this.ataque_especial= ataque_especial;
-        this.defensa = defensa;
-        this.defensa_especial = defensa_especial;
-        
-        this.habilidad = habilidad;
-        this.nivel = nivel;
-        this.pseudonimo = nombre;
-        this.ranking = ranking;
-        this.vida = vida;
+       super(nombre_especie, especie, naturaleza_primaria, naturaleza_secundaria, debilidades, fortalezas, id_pokedex);
+       this.pseudonimo = pseudonimo;
+       this.ataque = ataque;
+       this.ataque_especial = ataque_especial;
+       this.defensa = defensa;
+       this.defensa_especial = defensa_especial;
+       this.nivel = nivel;
+       this.vida = vida;
+       
     }
-    public Pokemon (String nombre){
-        
-        this.pseudonimo = nombre;
-    }
+    
 
     public String getPseudonimo() {
         return pseudonimo;

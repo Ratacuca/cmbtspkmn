@@ -15,6 +15,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
@@ -41,7 +42,11 @@ public class ControladorPrincipal implements ActionListener{
             generarCombate();
         }
         if (vistaPrincipal.getBotonCrearEntrenador() == (JButton) e.getSource()){
-            generarEntrenador();
+            try {
+                generarEntrenador();
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         if (vistaPrincipal.getBotonCargarEntrenador1() == (JButton) e.getSource()){
             try {
@@ -59,20 +64,28 @@ public class ControladorPrincipal implements ActionListener{
     }
     
     public void generarCombate(){
-        VistaPreviaCombate vpc = new VistaPreviaCombate(vistaPrincipal.getjC_TipoSimulacion());
-        int tipo_combate = vistaPrincipal.getjC_TipoSimulacion();
         String nombre1 = vistaPrincipal.getjC_Nombre1();
         String nombre2 = vistaPrincipal.getjC_Nombre2();
-        
-        Entrenador entrenador1 = new Entrenador(); 
-        Entrenador entrenador2 = new Entrenador();
-        
+        VistaPreviaCombate vpc = new VistaPreviaCombate(vistaPrincipal.getjC_TipoSimulacion(), nombre1, nombre2);
+        int tipo_combate = vistaPrincipal.getjC_TipoSimulacion();
+        Pokemon[] equipo1 = equipoPrueba1();
+        Pokemon[] equipo2 = equipoPrueba2();
+        Entrenador entrenador1 = new Entrenador(nombre1, equipo1); 
+        Entrenador entrenador2 = new Entrenador(nombre2, equipo2);
+        String[] nombres1 = new String[6];
+        String[] nombres2 = new String[6];
+        for (int i = 0; i < 6; i++) {
+            nombres1[i]=equipo1[i].getPseudonimo();
+            nombres2[i]=equipo2[i].getPseudonimo();    
+        }
+        vpc.setjC_Equipo1(nombres1);
+        vpc.setjC_Equipo2(nombres2);
         vpc.setVisible(true);
         ControladorCombate cc = new ControladorCombate(vpc, tipo_combate, entrenador1, entrenador2);
         System.out.println("Se selecciono simular combate");
     }
     
-    public void generarEntrenador(){
+    public void generarEntrenador() throws SQLException{
         VistaCrearEntrenador vce = new VistaCrearEntrenador();
         vce.setVisible(true);
         ControladorEntrenador ce = new ControladorEntrenador(vce);
@@ -95,6 +108,53 @@ public class ControladorPrincipal implements ActionListener{
         procesador.close();
         
         }
-        
+     public Pokemon[] equipoPrueba1(){
+         Pokemon[] equipo = new Pokemon[6];
+         String[] debilidades_Charmander = new String[2];
+         String[] fortalezas_Charmander= new String[2];
+         debilidades_Charmander[0] = "Agua";
+         fortalezas_Charmander[0] = "Planta";
+         String[] debilidades_Squirtle= new String[2];
+         String[] fortalezas_Squirtle= new String[2];
+         debilidades_Squirtle[0] = "Planta";
+         fortalezas_Squirtle[0] = "Fuego";
+         Pokemon pokemon1 = new Pokemon("Charmander", "Charmander", "Fuego", "Fuego", debilidades_Charmander, fortalezas_Charmander, 1, "Charmander", 100, 50, 40, 70, 20, 200);
+         Pokemon pokemon2 = new Pokemon("Charmander", "Charmander", "Fuego", "Fuego", debilidades_Charmander, fortalezas_Charmander, 1, "Charmander", 100, 50, 40, 70, 20, 200);
+         Pokemon pokemon3 = new Pokemon("Squirtle", "Squirtle", "Agua", "Agua", debilidades_Squirtle, fortalezas_Squirtle, 2, "Squirtle", 100, 60, 20, 50, 30, 200);
+         Pokemon pokemon4 = new Pokemon("Charmander", "Charmander", "Fuego", "Fuego", debilidades_Charmander, fortalezas_Charmander, 1, "Charmander", 100, 50, 40, 70, 20, 200);
+         Pokemon pokemon5 = new Pokemon("Squirtle", "Squirtle", "Agua", "Agua", debilidades_Squirtle, fortalezas_Squirtle, 2, "Squirtle", 100, 60, 20, 50, 30, 200);
+         Pokemon pokemon6 = new Pokemon("Charmander", "Charmander", "Fuego", "Fuego", debilidades_Charmander, fortalezas_Charmander, 1, "Charmander", 100, 50, 40, 70, 20, 200);
+         equipo[0]=pokemon1;
+         equipo[1]=pokemon2;
+         equipo[2]=pokemon3;
+         equipo[3]=pokemon4;
+         equipo[4]=pokemon5;
+         equipo[5]=pokemon6;
+         return equipo;
+     }   
+     public Pokemon[] equipoPrueba2(){
+         Pokemon[] equipo = new Pokemon[6];
+         String[] debilidades_Charmander = new String[2];
+         String[] fortalezas_Charmander= new String[2];
+         debilidades_Charmander[0] = "Agua";
+         fortalezas_Charmander[0] = "Planta";
+         String[] debilidades_Squirtle= new String[2];
+         String[] fortalezas_Squirtle= new String[2];
+         debilidades_Squirtle[0] = "Planta";
+         fortalezas_Squirtle[0] = "Fuego";
+         Pokemon pokemon1 = new Pokemon("Squirtle", "Squirtle", "Agua", "Agua", debilidades_Squirtle, fortalezas_Squirtle, 2, "Squirtle", 100, 60, 20, 50, 30, 200);
+         Pokemon pokemon2 = new Pokemon("Charmander", "Charmander", "Fuego", "Fuego", debilidades_Charmander, fortalezas_Charmander, 1, "Charmander", 100, 50, 40, 70, 20, 200);
+         Pokemon pokemon3 = new Pokemon("Squirtle", "Squirtle", "Agua", "Agua", debilidades_Squirtle, fortalezas_Squirtle, 2, "Squirtle", 100, 60, 20, 50, 30, 200);
+         Pokemon pokemon4 = new Pokemon("Charmander", "Charmander", "Fuego", "Fuego", debilidades_Charmander, fortalezas_Charmander, 1, "Charmander", 100, 50, 40, 70, 20, 200);
+         Pokemon pokemon5 = new Pokemon("Squirtle", "Squirtle", "Agua", "Agua", debilidades_Squirtle, fortalezas_Squirtle, 2, "Squirtle", 100, 60, 20, 50, 30, 200);
+         Pokemon pokemon6 = new Pokemon("Squirtle", "Squirtle", "Agua", "Agua", debilidades_Squirtle, fortalezas_Squirtle, 2, "Squirtle", 100, 60, 20, 50, 30, 200);
+         equipo[0]=pokemon1;
+         equipo[1]=pokemon2;
+         equipo[2]=pokemon3;
+         equipo[3]=pokemon4;
+         equipo[4]=pokemon5;
+         equipo[5]=pokemon6;
+         return equipo;
+     }   
     
 }
