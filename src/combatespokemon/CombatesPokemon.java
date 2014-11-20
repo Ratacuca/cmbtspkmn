@@ -33,9 +33,11 @@ public class CombatesPokemon {
         ControladorPrincipal controladorPrincipal = new ControladorPrincipal(vista);
         controladorPrincipal.leerBD("BD.txt");
         vista.setVisible(true);
-//        ControladorBD cbd = new ControladorBD();
+        ControladorBD cbd = new ControladorBD();
 //        cbd.obtenerNombresPokemones();
-        
+        Pokemon[] equipo;
+        equipo = cbd.crearEquipoPokemon("Charmander", "Squirtle", "Bulbasaur", "Charizard", "Mewtwo", "Rayquaza");
+        System.out.println(equipo[0].getNombre_especie() + equipo[1].getNombre_especie()+equipo[5].getEspecie());
         
         
     }

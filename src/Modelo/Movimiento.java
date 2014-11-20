@@ -7,31 +7,42 @@
 package Modelo;
 
 
-public class Movimiento{
+public abstract class Movimiento{
     
     private int cantidad_pp;
     private int precision;
     private int potencia;
-    private int nivel_requerido;
-    private String tipo;
-    private String efecto;
+    private String nombre;
+    private int tipo;
+    private Boolean envenena;
+    private Boolean confunde;
+    private Boolean paraliza;
+    private Boolean congela;
+    private Boolean quema;
+    private Boolean duerme;
     private String tipo_ataque;
     private Boolean contacto;
     private int blanco;
     
-    public Movimiento(int cantidad_pp, int precision, int potencia, String tipo,
-            String efecto, String tipo_ataque, Boolean contacto, int blanco){
-        
-        this.blanco = blanco;
-        this.cantidad_pp = cantidad_pp;
-        this.contacto = contacto;
-        this.efecto = efecto;
-        this.potencia = potencia;
-        this.precision = precision;
-        this.tipo = tipo;
-        this.tipo_ataque = tipo_ataque;
-    }
+   
 
+    public Movimiento(int cantidad_pp, int precision, int potencia, String nombre, 
+            int tipo, Boolean envenena, Boolean confunde, Boolean paraliza, 
+            Boolean congela, Boolean quema, Boolean duerme, Boolean contacto){
+        
+    this.cantidad_pp = cantidad_pp;
+    this.precision = precision;
+    this.potencia = potencia;
+    this.nombre = nombre;
+    this.tipo = tipo;
+    this.envenena = envenena;
+    this.confunde = confunde;
+    this.paraliza = paraliza;
+    this.congela = congela;
+    this.quema = quema;
+    this.duerme = duerme;
+    this.contacto = contacto;   
+    }
     /**
      * @return the cantidad_pp
      */
@@ -74,47 +85,22 @@ public class Movimiento{
         this.potencia = potencia;
     }
 
-    /**
-     * @return the nivel_requerido
-     */
-    public int getNivel_requerido() {
-        return nivel_requerido;
-    }
-
-    /**
-     * @param nivel_requerido the nivel_requerido to set
-     */
-    public void setNivel_requerido(int nivel_requerido) {
-        this.nivel_requerido = nivel_requerido;
-    }
-
+    
     /**
      * @return the tipo
      */
-    public String getTipo() {
+    public int getTipo() {
         return tipo;
     }
 
     /**
      * @param tipo the tipo to set
      */
-    public void setTipo(String tipo) {
+    public void setTipo(int tipo) {
         this.tipo = tipo;
     }
 
-    /**
-     * @return the efecto
-     */
-    public String getEfecto() {
-        return efecto;
-    }
-
-    /**
-     * @param efecto the efecto to set
-     */
-    public void setEfecto(String efecto) {
-        this.efecto = efecto;
-    }
+    
 
     /**
      * @return the tipo_ataque

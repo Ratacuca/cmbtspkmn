@@ -30,6 +30,17 @@ public abstract class EspeciePokemon {
         this.nombre_especie = nombre_especie;
         
     }
+    public EspeciePokemon(String nombre_especie, String especie, 
+            String naturaleza_primaria, String naturaleza_secundaria, 
+            int id_pokedex){
+        
+        this.especie = especie;
+        this.id_pokedex = id_pokedex;
+        this.naturaleza_primaria = naturaleza_primaria;
+        this.naturaleza_secundaria = naturaleza_secundaria;
+        this.nombre_especie = nombre_especie;
+        
+    }
 
     public String getNombre_especie() {
         return nombre_especie;

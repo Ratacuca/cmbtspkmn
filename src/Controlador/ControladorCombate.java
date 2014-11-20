@@ -24,6 +24,9 @@ public class ControladorCombate implements ActionListener{
     private VistaEquipo ve;
     private int tipo_simulacion;
     private Combate combate;
+    private int turno;
+    private Pokemon[] equipo1;
+    private Pokemon[] equipo2;
     
     public ControladorCombate(VistaPreviaCombate vista, int tipo_simulacion,
             Entrenador entrenador1, Entrenador entrenador2){
@@ -31,6 +34,8 @@ public class ControladorCombate implements ActionListener{
         this.vpc = vista;
         this.vpc.agregarListener(this);
         this.combate = new Combate();
+        this.equipo1 = entrenador1.getPokemones();
+        this.equipo2 = entrenador2.getPokemones();
         
     }
     
@@ -42,19 +47,19 @@ public class ControladorCombate implements ActionListener{
             System.out.println("Se inicio el Combate");
             this.vc.agregarListener(this);}
         
-        else if (vc.getBotonAtacar1() == (JButton) e.getSource()){
+        if (vc.getBotonAtacar1() == (JButton) e.getSource()){
             this.va = new VistaAtaque();
             va.setVisible(true);}
             
-        else if (vc.getBotonAtacar2() == (JButton) e.getSource()){
+        if (vc.getBotonAtacar2() == (JButton) e.getSource()){
             this.va = new VistaAtaque();
             va.setVisible(true);}
         
-        else if (vc.getBotonCambiar1() == (JButton) e.getSource()){
+        if (vc.getBotonCambiar1() == (JButton) e.getSource()){
             this.ve = new VistaEquipo();
             ve.setVisible(true);}
         
-        else if (vc.getBotonCambiar2() == (JButton) e.getSource()){
+        if (vc.getBotonCambiar2() == (JButton) e.getSource()){
             this.ve = new VistaEquipo();
             ve.setVisible(true);}
             

@@ -14,7 +14,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
@@ -58,7 +57,6 @@ public class ControladorEntrenador implements ActionListener{
             pokemones[3]= getPokemon4();
             pokemones[4]= getPokemon5();
             pokemones[5]= getPokemon6();
-            
             try {
                 guardarEntrenador(nombre, region, distincion, medallas_adquiridas,
                         victorias_torre_batalla, pokemones);

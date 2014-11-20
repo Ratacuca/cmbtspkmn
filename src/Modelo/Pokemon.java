@@ -42,6 +42,19 @@ public class Pokemon extends EspeciePokemon {
        this.vida = vida;
        
     }
+    public Pokemon (String nombre_especie, String especie, 
+            String naturaleza_primaria, String naturaleza_secundaria, int id_pokedex, 
+            int nivel, int ataque, int defensa, int ataque_especial, int defensa_especial, int vida){
+        
+       super(nombre_especie, especie, naturaleza_primaria, naturaleza_secundaria, id_pokedex);
+       this.ataque = ataque;
+       this.ataque_especial = ataque_especial;
+       this.defensa = defensa;
+       this.defensa_especial = defensa_especial;
+       this.nivel = nivel;
+       this.vida = vida;
+       
+    }
     
 
     public String getPseudonimo() {
