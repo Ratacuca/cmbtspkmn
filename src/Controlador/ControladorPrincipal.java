@@ -57,12 +57,29 @@ public class ControladorPrincipal implements ActionListener{
                 Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        if (vistaPrincipal.getBotonSimularTorneo() == (JButton) e.getSource()){
+            try {
+                generarTorneo();
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
         
         
                 
         
     }
     
+    public void generarTorneo() throws SQLException{
+        VistaCampeonato vt = new VistaCampeonato(vistaPrincipal.getjC_TipoTorneo());
+        int tipo_torneo = vistaPrincipal.getjC_TipoTorneo();
+        Entrenador[] participantes = participantes();
+        if(tipo_torneo == 0){
+        vt.jL_participante1.setText("hola");
+        vt.setVisible(true);
+        ControladorCampeonato ccamp = new ControladorCampeonato(vt);
+        }
+    }
     public void generarCombate(){
         String nombre1 = vistaPrincipal.getjC_Nombre1();
         String nombre2 = vistaPrincipal.getjC_Nombre2();
@@ -156,5 +173,73 @@ public class ControladorPrincipal implements ActionListener{
          equipo[5]=pokemon6;
          return equipo;
      }   
+     public Entrenador[] participantes(){
+         Entrenador[] participantesPrueba = new Entrenador[32];
+         Entrenador entrenador1 = new Entrenador("1",1);
+         Entrenador entrenador2 = new Entrenador("2",2);
+         Entrenador entrenador3 = new Entrenador("3",3);
+         Entrenador entrenador4 = new Entrenador("4",4);
+         Entrenador entrenador5 = new Entrenador("5",5);
+         Entrenador entrenador6 = new Entrenador("6",6);
+         Entrenador entrenador7 = new Entrenador("7",7);
+         Entrenador entrenador8 = new Entrenador("8",8);
+         Entrenador entrenador9 = new Entrenador("9",9);
+         Entrenador entrenador10 = new Entrenador("10",10);
+         Entrenador entrenador11 = new Entrenador("11",11);
+         Entrenador entrenador13 = new Entrenador("12",12);
+         Entrenador entrenador14 = new Entrenador("13",13);
+         Entrenador entrenador15 = new Entrenador("14",14);
+         Entrenador entrenador16 = new Entrenador("15",15);
+         Entrenador entrenador17 = new Entrenador("16",16);
+         Entrenador entrenador18 = new Entrenador("17",17);
+         Entrenador entrenador19 = new Entrenador("18",18);
+         Entrenador entrenador20 = new Entrenador("19",19);
+         Entrenador entrenador21 = new Entrenador("20",20);
+         Entrenador entrenador22 = new Entrenador("21",21);
+         Entrenador entrenador23 = new Entrenador("22",22);
+         Entrenador entrenador24 = new Entrenador("23",23);
+         Entrenador entrenador25 = new Entrenador("24",24);
+         Entrenador entrenador26 = new Entrenador("25",25);
+         Entrenador entrenador27 = new Entrenador("26",26);
+         Entrenador entrenador28 = new Entrenador("27",27);
+         Entrenador entrenador29 = new Entrenador("28",28);
+         Entrenador entrenador30 = new Entrenador("29",29);
+         Entrenador entrenador31 = new Entrenador("30",30);
+         Entrenador entrenador32 = new Entrenador("31",31);
+         Entrenador entrenador12 = new Entrenador("32",32);
+         participantesPrueba[0] = entrenador1;
+         participantesPrueba[1] = entrenador2;
+         participantesPrueba[2] = entrenador3;
+         participantesPrueba[3] = entrenador4;
+         participantesPrueba[4] = entrenador5;
+         participantesPrueba[5] = entrenador6;
+         participantesPrueba[6] = entrenador7;
+         participantesPrueba[7] = entrenador8;
+         participantesPrueba[8] = entrenador9;
+         participantesPrueba[9] = entrenador10;
+         participantesPrueba[10] = entrenador11;
+         participantesPrueba[11] = entrenador12;
+         participantesPrueba[12] = entrenador13;
+         participantesPrueba[13] = entrenador14;
+         participantesPrueba[14] = entrenador15;
+         participantesPrueba[15] = entrenador16;
+         participantesPrueba[16] = entrenador17;
+         participantesPrueba[17] = entrenador18;
+         participantesPrueba[18] = entrenador19;
+         participantesPrueba[19] = entrenador20;
+         participantesPrueba[20] = entrenador21;
+         participantesPrueba[21] = entrenador22;
+         participantesPrueba[22] = entrenador23;
+         participantesPrueba[23] = entrenador24;
+         participantesPrueba[24] = entrenador25;
+         participantesPrueba[25] = entrenador26;
+         participantesPrueba[26] = entrenador27;
+         participantesPrueba[27] = entrenador28;
+         participantesPrueba[28] = entrenador29;
+         participantesPrueba[29] = entrenador30;
+         participantesPrueba[30] = entrenador31;
+         participantesPrueba[31] = entrenador32;
+         return participantesPrueba;
+     }
     
 }

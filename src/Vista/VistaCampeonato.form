@@ -18,24 +18,27 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
-    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,1,-8,0,0,3,37"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,1,-32,0,0,3,31"/>
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
     <Property name="useNullLayout" type="boolean" value="false"/>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="jL_participante1">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="10" y="4" width="60" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel3">
+    <Component class="javax.swing.JLabel" name="jL_participante2">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel3"/>
       </Properties>
@@ -45,7 +48,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel4">
+    <Component class="javax.swing.JLabel" name="jL_participante3">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel4"/>
       </Properties>
@@ -55,7 +58,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel5">
+    <Component class="javax.swing.JLabel" name="jL_participante4">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel5"/>
       </Properties>
@@ -65,7 +68,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel6">
+    <Component class="javax.swing.JLabel" name="jL_participante5">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel6"/>
       </Properties>
@@ -75,7 +78,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel7">
+    <Component class="javax.swing.JLabel" name="jL_participante6">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel7"/>
       </Properties>
@@ -85,7 +88,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel8">
+    <Component class="javax.swing.JLabel" name="jL_participante7">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel8"/>
       </Properties>
@@ -95,7 +98,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel9">
+    <Component class="javax.swing.JLabel" name="jL_participante8">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel9"/>
       </Properties>
@@ -105,7 +108,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel10">
+    <Component class="javax.swing.JLabel" name="jL_participante9">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel10"/>
       </Properties>
@@ -115,7 +118,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel11">
+    <Component class="javax.swing.JLabel" name="jL_participante10">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel11"/>
       </Properties>
@@ -125,7 +128,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel12">
+    <Component class="javax.swing.JLabel" name="jL_participante11">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel12"/>
       </Properties>
@@ -135,7 +138,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel13">
+    <Component class="javax.swing.JLabel" name="jL_participante12">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel13"/>
       </Properties>
@@ -145,7 +148,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel14">
+    <Component class="javax.swing.JLabel" name="jL_participante13">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel14"/>
       </Properties>
@@ -155,7 +158,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel15">
+    <Component class="javax.swing.JLabel" name="jL_participante14">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel15"/>
       </Properties>
@@ -165,7 +168,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel16">
+    <Component class="javax.swing.JLabel" name="jL_participante15">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel16"/>
       </Properties>
@@ -175,7 +178,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel17">
+    <Component class="javax.swing.JLabel" name="jL_participante16">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel17"/>
       </Properties>
@@ -185,7 +188,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel18">
+    <Component class="javax.swing.JLabel" name="jL_participante17">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel18"/>
       </Properties>
@@ -195,7 +198,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel19">
+    <Component class="javax.swing.JLabel" name="jL_participante18">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel19"/>
       </Properties>
@@ -205,7 +208,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel20">
+    <Component class="javax.swing.JLabel" name="jL_participante19">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel20"/>
       </Properties>
@@ -215,7 +218,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel21">
+    <Component class="javax.swing.JLabel" name="jL_participante20">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel21"/>
       </Properties>
@@ -225,7 +228,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel22">
+    <Component class="javax.swing.JLabel" name="jL_participante21">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel22"/>
       </Properties>
@@ -235,7 +238,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel23">
+    <Component class="javax.swing.JLabel" name="jL_participante22">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel23"/>
       </Properties>
@@ -245,7 +248,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel24">
+    <Component class="javax.swing.JLabel" name="jL_participante23">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel24"/>
       </Properties>
@@ -255,7 +258,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel25">
+    <Component class="javax.swing.JLabel" name="jL_participante24">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel25"/>
       </Properties>
@@ -265,7 +268,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel26">
+    <Component class="javax.swing.JLabel" name="jL_participante25">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel26"/>
       </Properties>
@@ -275,7 +278,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel27">
+    <Component class="javax.swing.JLabel" name="jL_participante26">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel27"/>
       </Properties>
@@ -285,7 +288,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel28">
+    <Component class="javax.swing.JLabel" name="jL_participante27">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel28"/>
       </Properties>
@@ -295,7 +298,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel29">
+    <Component class="javax.swing.JLabel" name="jL_participante28">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel29"/>
       </Properties>
@@ -305,7 +308,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel30">
+    <Component class="javax.swing.JLabel" name="jL_participante29">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel30"/>
       </Properties>
@@ -315,7 +318,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel31">
+    <Component class="javax.swing.JLabel" name="jL_participante30">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel31"/>
       </Properties>
@@ -325,7 +328,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel32">
+    <Component class="javax.swing.JLabel" name="jL_participante31">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel32"/>
       </Properties>
@@ -335,7 +338,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel33">
+    <Component class="javax.swing.JLabel" name="jL_participante32">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel33"/>
       </Properties>
@@ -345,7 +348,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel34">
+    <Component class="javax.swing.JLabel" name="jL_participante_1_1">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel34"/>
       </Properties>
@@ -355,7 +358,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel35">
+    <Component class="javax.swing.JLabel" name="jL_participante_1_2">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel35"/>
       </Properties>
@@ -365,7 +368,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel36">
+    <Component class="javax.swing.JLabel" name="jL_participante_1_3">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel36"/>
       </Properties>
@@ -375,7 +378,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel37">
+    <Component class="javax.swing.JLabel" name="jL_participante_1_4">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel37"/>
       </Properties>
@@ -385,7 +388,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel38">
+    <Component class="javax.swing.JLabel" name="jL_participante_1_5">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel38"/>
       </Properties>
@@ -395,7 +398,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel39">
+    <Component class="javax.swing.JLabel" name="jL_participante_1_6">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel39"/>
       </Properties>
@@ -405,7 +408,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel40">
+    <Component class="javax.swing.JLabel" name="jL_participante_1_7">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel40"/>
       </Properties>
@@ -415,7 +418,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel41">
+    <Component class="javax.swing.JLabel" name="jL_participante_1_8">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel41"/>
       </Properties>
@@ -425,7 +428,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel42">
+    <Component class="javax.swing.JLabel" name="jL_participante_1_9">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel42"/>
       </Properties>
@@ -435,7 +438,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel43">
+    <Component class="javax.swing.JLabel" name="jL_participante_1_10">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel43"/>
       </Properties>
@@ -445,7 +448,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel44">
+    <Component class="javax.swing.JLabel" name="jL_participante_1_11">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel44"/>
       </Properties>
@@ -455,7 +458,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel45">
+    <Component class="javax.swing.JLabel" name="jL_participante_1_12">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel45"/>
       </Properties>
@@ -465,7 +468,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel46">
+    <Component class="javax.swing.JLabel" name="jL_participante_1_13">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel46"/>
       </Properties>
@@ -475,7 +478,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel47">
+    <Component class="javax.swing.JLabel" name="jL_participante_1_14">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel47"/>
       </Properties>
@@ -485,7 +488,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel48">
+    <Component class="javax.swing.JLabel" name="jL_participante_1_15">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel48"/>
       </Properties>
@@ -495,7 +498,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel49">
+    <Component class="javax.swing.JLabel" name="jL_participante_1_16">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel49"/>
       </Properties>
@@ -505,7 +508,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel50">
+    <Component class="javax.swing.JLabel" name="jL_participante_2_1">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel50"/>
       </Properties>
@@ -515,7 +518,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel51">
+    <Component class="javax.swing.JLabel" name="jL_participante_2_2">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel51"/>
       </Properties>
@@ -525,7 +528,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel52">
+    <Component class="javax.swing.JLabel" name="jL_participante_2_3">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel52"/>
       </Properties>
@@ -535,7 +538,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel53">
+    <Component class="javax.swing.JLabel" name="jL_participante_2_4">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel53"/>
       </Properties>
@@ -545,7 +548,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel54">
+    <Component class="javax.swing.JLabel" name="jL_participante_2_5">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel54"/>
       </Properties>
@@ -555,7 +558,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel55">
+    <Component class="javax.swing.JLabel" name="jL_participante_2_6">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel55"/>
       </Properties>
@@ -565,7 +568,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel56">
+    <Component class="javax.swing.JLabel" name="jL_participante_2_7">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel56"/>
       </Properties>
@@ -575,7 +578,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel57">
+    <Component class="javax.swing.JLabel" name="jL_participante_2_8">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel57"/>
       </Properties>
@@ -585,7 +588,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel58">
+    <Component class="javax.swing.JLabel" name="jL_participante_3_1">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel58"/>
       </Properties>
@@ -595,7 +598,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel59">
+    <Component class="javax.swing.JLabel" name="jL_participante_3_2">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel59"/>
       </Properties>
@@ -605,7 +608,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel60">
+    <Component class="javax.swing.JLabel" name="jL_participante_3_3">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel60"/>
       </Properties>
@@ -615,7 +618,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel61">
+    <Component class="javax.swing.JLabel" name="jL_participante_3_4">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel61"/>
       </Properties>
@@ -625,13 +628,14 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel62">
+    <Component class="javax.swing.JLabel" name="jL_participante_5_1">
       <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel62"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="370" y="236" width="60" height="-1"/>
+          <AbsoluteConstraints x="350" y="40" width="100" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -645,16 +649,35 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
+    <Component class="javax.swing.JLabel" name="jL_participante_4_1">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Imagenes/campeonato.png"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="jLabel2"/>
+        <Property name="text" type="java.lang.String" value="jLabel3"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="0" width="800" height="-1"/>
+          <AbsoluteConstraints x="290" y="236" width="60" height="-1"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jL_participante_4_2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel4"/>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="450" y="236" width="60" height="-1"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Imagenes/campeonato1.png"/>
+        </Property>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="0" y="0" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>

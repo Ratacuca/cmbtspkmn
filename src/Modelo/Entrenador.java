@@ -15,6 +15,7 @@ public class Entrenador {
     private int medallas_adquiridas;
     private int victorias_torre_batalla;
     private String distincion;
+    private int ranking;
     
     
     public Entrenador(String nombre, Pokemon[] pokemones, String region,
@@ -35,6 +36,10 @@ public class Entrenador {
     public Entrenador(){
         
     }
+    public Entrenador(String nombre,int ranking){
+        this.ranking = ranking;
+        this.nombre = nombre;
+    }
 
     /**
      * @return the nombre
@@ -48,6 +53,12 @@ public class Entrenador {
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+    public int getRanking() {
+        return ranking;
+    }
+    public void setRanking(int ranking) {
+        this.ranking = ranking;
     }
 
     /**
