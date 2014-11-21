@@ -185,6 +185,18 @@ public class VistaPreviaCombate extends javax.swing.JFrame {
         this.jC_Inicial2.addItem(equipo[4]);
         this.jC_Inicial2.addItem(equipo[5]);
     }
+    public String getjC_Inicial1(){
+        return jC_Inicial1.getSelectedItem().toString();
+    }
+    public String getjC_Inicial2(){
+        return jC_Inicial2.getSelectedItem().toString();
+    }
+    public int getIndexjC_Inicial1(){
+        return jC_Inicial1.getSelectedIndex();
+    }
+    public int getIndexjC_Inicial2(){
+        return jC_Inicial2.getSelectedIndex();
+    }
     /**
      * @param args the command line arguments
      */

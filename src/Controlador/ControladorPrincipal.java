@@ -19,6 +19,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -40,6 +41,7 @@ public class ControladorPrincipal implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if (vistaPrincipal.getBotonSimularCombate() == (JButton) e.getSource()) {
             generarCombate();
+            
         }
         if (vistaPrincipal.getBotonCrearEntrenador() == (JButton) e.getSource()){
             try {
@@ -127,20 +129,26 @@ public class ControladorPrincipal implements ActionListener{
         }
      public Pokemon[] equipoPrueba1(){
          Pokemon[] equipo = new Pokemon[6];
-         String[] debilidades_Charmander = new String[2];
-         String[] fortalezas_Charmander= new String[2];
-         debilidades_Charmander[0] = "Agua";
-         fortalezas_Charmander[0] = "Planta";
-         String[] debilidades_Squirtle= new String[2];
-         String[] fortalezas_Squirtle= new String[2];
-         debilidades_Squirtle[0] = "Planta";
-         fortalezas_Squirtle[0] = "Fuego";
-         Pokemon pokemon1 = new Pokemon("Charmander", "Charmander", "Fuego", "Fuego", debilidades_Charmander, fortalezas_Charmander, 1, "Charmander", 100, 50, 40, 70, 20, 200);
-         Pokemon pokemon2 = new Pokemon("Charmander", "Charmander", "Fuego", "Fuego", debilidades_Charmander, fortalezas_Charmander, 1, "Charmander", 100, 50, 40, 70, 20, 200);
-         Pokemon pokemon3 = new Pokemon("Squirtle", "Squirtle", "Agua", "Agua", debilidades_Squirtle, fortalezas_Squirtle, 2, "Squirtle", 100, 60, 20, 50, 30, 200);
-         Pokemon pokemon4 = new Pokemon("Charmander", "Charmander", "Fuego", "Fuego", debilidades_Charmander, fortalezas_Charmander, 1, "Charmander", 100, 50, 40, 70, 20, 200);
-         Pokemon pokemon5 = new Pokemon("Squirtle", "Squirtle", "Agua", "Agua", debilidades_Squirtle, fortalezas_Squirtle, 2, "Squirtle", 100, 60, 20, 50, 30, 200);
-         Pokemon pokemon6 = new Pokemon("Charmander", "Charmander", "Fuego", "Fuego", debilidades_Charmander, fortalezas_Charmander, 1, "Charmander", 100, 50, 40, 70, 20, 200);
+         int[] debilidades_Charmander = new int[2];
+         int[] fortalezas_Charmander= new int[2];
+         debilidades_Charmander[0] = 1;
+         fortalezas_Charmander[0] = 2;
+         int[] debilidades_Squirtle= new int[2];
+         int[] fortalezas_Squirtle= new int[2];
+         debilidades_Squirtle[0] = 1;
+         fortalezas_Squirtle[0] = 2;
+         Pokemon pokemon1 = new Pokemon("Charmander", "Charmander", 7, 7, debilidades_Charmander, fortalezas_Charmander, 1, "Charmander", 100, 50, 40, 70, 20, 200, 200);
+         Pokemon pokemon2 = new Pokemon("Charmander", "Charmander", 7, 7, debilidades_Charmander, fortalezas_Charmander, 1, "Charmander", 100, 50, 40, 70, 20, 200, 200);
+         Pokemon pokemon3 = new Pokemon("Squirtle", "Squirtle", 2, 2, debilidades_Squirtle, fortalezas_Squirtle, 2, "Squirtle", 100, 60, 20, 50, 30, 200, 200);
+         Pokemon pokemon4 = new Pokemon("Charmander", "Charmander", 7, 7, debilidades_Charmander, fortalezas_Charmander, 1, "Charmander", 100, 50, 40, 70, 20, 200, 200);
+         Pokemon pokemon5 = new Pokemon("Squirtle", "Squirtle", 2, 2, debilidades_Squirtle, fortalezas_Squirtle, 2, "Squirtle", 100, 60, 20, 50, 30, 200, 200);
+         Pokemon pokemon6 = new Pokemon("Charmander", "Charmander", 7, 7, debilidades_Charmander, fortalezas_Charmander, 1, "Charmander", 100, 50, 40, 70, 20, 200, 200);
+         pokemon1.setMovimientos(movimientosPruebaCharmander());
+         pokemon2.setMovimientos(movimientosPruebaCharmander());
+         pokemon3.setMovimientos(movimientosPruebaSquirtle());
+         pokemon4.setMovimientos(movimientosPruebaCharmander());
+         pokemon5.setMovimientos(movimientosPruebaSquirtle());
+         pokemon6.setMovimientos(movimientosPruebaCharmander());
          equipo[0]=pokemon1;
          equipo[1]=pokemon2;
          equipo[2]=pokemon3;
@@ -151,20 +159,26 @@ public class ControladorPrincipal implements ActionListener{
      }   
      public Pokemon[] equipoPrueba2(){
          Pokemon[] equipo = new Pokemon[6];
-         String[] debilidades_Charmander = new String[2];
-         String[] fortalezas_Charmander= new String[2];
-         debilidades_Charmander[0] = "Agua";
-         fortalezas_Charmander[0] = "Planta";
-         String[] debilidades_Squirtle= new String[2];
-         String[] fortalezas_Squirtle= new String[2];
-         debilidades_Squirtle[0] = "Planta";
-         fortalezas_Squirtle[0] = "Fuego";
-         Pokemon pokemon1 = new Pokemon("Squirtle", "Squirtle", "Agua", "Agua", debilidades_Squirtle, fortalezas_Squirtle, 2, "Squirtle", 100, 60, 20, 50, 30, 200);
-         Pokemon pokemon2 = new Pokemon("Charmander", "Charmander", "Fuego", "Fuego", debilidades_Charmander, fortalezas_Charmander, 1, "Charmander", 100, 50, 40, 70, 20, 200);
-         Pokemon pokemon3 = new Pokemon("Squirtle", "Squirtle", "Agua", "Agua", debilidades_Squirtle, fortalezas_Squirtle, 2, "Squirtle", 100, 60, 20, 50, 30, 200);
-         Pokemon pokemon4 = new Pokemon("Charmander", "Charmander", "Fuego", "Fuego", debilidades_Charmander, fortalezas_Charmander, 1, "Charmander", 100, 50, 40, 70, 20, 200);
-         Pokemon pokemon5 = new Pokemon("Squirtle", "Squirtle", "Agua", "Agua", debilidades_Squirtle, fortalezas_Squirtle, 2, "Squirtle", 100, 60, 20, 50, 30, 200);
-         Pokemon pokemon6 = new Pokemon("Squirtle", "Squirtle", "Agua", "Agua", debilidades_Squirtle, fortalezas_Squirtle, 2, "Squirtle", 100, 60, 20, 50, 30, 200);
+         int[] debilidades_Charmander = new int[2];
+         int[] fortalezas_Charmander= new int[2];
+         debilidades_Charmander[0] = 1;
+         fortalezas_Charmander[0] = 2;
+         int[] debilidades_Squirtle= new int[2];
+         int[] fortalezas_Squirtle= new int[2];
+         debilidades_Squirtle[0] = 1;
+         fortalezas_Squirtle[0] = 2;
+         Pokemon pokemon1 = new Pokemon("Squirtle", "Squirtle", 2, 2, debilidades_Squirtle, fortalezas_Squirtle, 2, "Squirtle", 100, 60, 20, 50, 30, 200, 200);
+         Pokemon pokemon2 = new Pokemon("Charmander", "Charmander", 7, 7, debilidades_Charmander, fortalezas_Charmander, 1, "Charmander", 100, 50, 40, 70, 20, 200, 200);
+         Pokemon pokemon3 = new Pokemon("Squirtle", "Squirtle", 2, 2, debilidades_Squirtle, fortalezas_Squirtle, 2, "Squirtle", 100, 60, 20, 50, 30, 200, 200);
+         Pokemon pokemon4 = new Pokemon("Charmander", "Charmander", 7, 7, debilidades_Charmander, fortalezas_Charmander, 1, "Charmander", 100, 50, 40, 70, 20, 200, 200);
+         Pokemon pokemon5 = new Pokemon("Squirtle", "Squirtle", 2, 2, debilidades_Squirtle, fortalezas_Squirtle, 2, "Squirtle", 100, 60, 20, 50, 30, 200, 200);
+         Pokemon pokemon6 = new Pokemon("Squirtle", "Squirtle", 2, 2, debilidades_Squirtle, fortalezas_Squirtle, 2, "Squirtle", 100, 60, 20, 50, 30, 200, 200);
+         pokemon1.setMovimientos(movimientosPruebaSquirtle());
+         pokemon2.setMovimientos(movimientosPruebaCharmander());
+         pokemon3.setMovimientos(movimientosPruebaSquirtle());
+         pokemon4.setMovimientos(movimientosPruebaCharmander());
+         pokemon5.setMovimientos(movimientosPruebaSquirtle());
+         pokemon6.setMovimientos(movimientosPruebaSquirtle());
          equipo[0]=pokemon1;
          equipo[1]=pokemon2;
          equipo[2]=pokemon3;
@@ -172,7 +186,31 @@ public class ControladorPrincipal implements ActionListener{
          equipo[4]=pokemon5;
          equipo[5]=pokemon6;
          return equipo;
-     }   
+     }  
+     public MovimientoAprendido[] movimientosPruebaCharmander(){
+         MovimientoAprendido[] movimientos = new MovimientoAprendido[4];
+         MovimientoAprendido movimiento1 = new MovimientoAprendido(10, 90, 100, "Lanzallamas", 7, false, false, false, false, true, false, false, 10);
+         MovimientoAprendido movimiento2 = new MovimientoAprendido(30, 90, 100, "Arañazo", 11, false, false, false, false, false, false, true, 30);
+         MovimientoAprendido movimiento3 = new MovimientoAprendido(20, 90, 100, "Ascuas", 7, false, false, false, false, true, false, false, 20);
+         MovimientoAprendido movimiento4 = new MovimientoAprendido(20, 90, 100, "Placaje", 11, false, false, false, false, false, false, true, 20);
+         movimientos[0] = movimiento1;
+         movimientos[1] = movimiento2;
+         movimientos[2] = movimiento3;
+         movimientos[3] = movimiento4;
+         return movimientos;
+     }
+     public MovimientoAprendido[] movimientosPruebaSquirtle(){
+         MovimientoAprendido[] movimientos = new MovimientoAprendido[4];
+         MovimientoAprendido movimiento1 = new MovimientoAprendido(10, 90, 100, "Hidrobomba", 2, false, true, false, false, false, false, false, 10);
+         MovimientoAprendido movimiento2 = new MovimientoAprendido(30, 90, 100, "Arañazo", 11, false, false, false, false, false, false, true, 30);
+         MovimientoAprendido movimiento3 = new MovimientoAprendido(20, 90, 100, "Embestida", 11, false, false, false, false, false, false, true, 20);
+         MovimientoAprendido movimiento4 = new MovimientoAprendido(20, 90, 100, "Burbujas", 2, false, false, false, false, false, false, false, 20);
+         movimientos[0] = movimiento1;
+         movimientos[1] = movimiento2;
+         movimientos[2] = movimiento3;
+         movimientos[3] = movimiento4;
+         return movimientos;
+     }
      public Entrenador[] participantes(){
          Entrenador[] participantesPrueba = new Entrenador[32];
          Entrenador entrenador1 = new Entrenador("1",1);
