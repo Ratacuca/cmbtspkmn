@@ -22,6 +22,7 @@ import javax.swing.JButton;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import javax.swing.JLabel;
 
 /**
  *
@@ -77,47 +78,47 @@ public class ControladorPrincipal implements ActionListener{
         VistaCampeonato vt = new VistaCampeonato();
         int tipo_torneo = vistaPrincipal.getjC_TipoTorneo();
         Entrenador[] participantes = participantes();
-        List textos = new ArrayList();
-        textos.add("jL_participante1");
-        textos.add("jL_participante2");
-        textos.add("jL_participante3");
-        textos.add("jL_participante4");
-        textos.add("jL_participante5");
-        textos.add("jL_participante6");
-        textos.add("jL_participante7");
-        textos.add("jL_participante8");
-        textos.add("jL_participante9");
-        textos.add("jL_participante10");
-        textos.add("jL_participante11");
-        textos.add("jL_participante12");
-        textos.add("jL_participante13");
-        textos.add("jL_participante14");
-        textos.add("jL_participante15");
-        textos.add("jL_participante16");
-        textos.add("jL_participante17");
-        textos.add("jL_participante18");
-        textos.add("jL_participante19");
-        textos.add("jL_participante20");
-        textos.add("jL_participante21");
-        textos.add("jL_participante22");
-        textos.add("jL_participante23");
-        textos.add("jL_participante24");
-        textos.add("jL_participante25");
-        textos.add("jL_participante26");
-        textos.add("jL_participante27");
-        textos.add("jL_participante28");
-        textos.add("jL_participante29");
-        textos.add("jL_participante30");
-        textos.add("jL_participante31");
-        textos.add("jL_participante32");
+        ArrayList<JLabel> textos = new ArrayList();
+        textos.add(vt.getLabel1());
+        textos.add(vt.getLabel2());
+        textos.add(vt.getLabel3());
+        textos.add(vt.getLabel4());
+        textos.add(vt.getLabel5());
+        textos.add(vt.getLabel6());
+        textos.add(vt.getLabel7());
+        textos.add(vt.getLabel8());
+        textos.add(vt.getLabel9());
+        textos.add(vt.getLabel10());
+        textos.add(vt.getLabel11());
+        textos.add(vt.getLabel12());
+        textos.add(vt.getLabel13());
+        textos.add(vt.getLabel14());
+        textos.add(vt.getLabel15());
+        textos.add(vt.getLabel16());
+        textos.add(vt.getLabel17());
+        textos.add(vt.getLabel18());
+        textos.add(vt.getLabel19());
+        textos.add(vt.getLabel20());
+        textos.add(vt.getLabel21());
+        textos.add(vt.getLabel22());
+        textos.add(vt.getLabel23());
+        textos.add(vt.getLabel24());
+        textos.add(vt.getLabel25());
+        textos.add(vt.getLabel26());
+        textos.add(vt.getLabel27());
+        textos.add(vt.getLabel28());
+        textos.add(vt.getLabel29());
+        textos.add(vt.getLabel30());
+        textos.add(vt.getLabel31());
+        textos.add(vt.getLabel32());
         if(tipo_torneo == 0){
         Collections.shuffle(textos);
         int i;
-        String a;
+        JLabel a;
         for(i=0;i<textos.size();i++){
-            a = textos.get(i).toString();
+            a = textos.get(i);
             String b = participantes[i].getNombre();
-            
+            a.setText(b);
         }
         
         vt.setVisible(true);

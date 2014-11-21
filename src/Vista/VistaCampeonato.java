@@ -5,6 +5,12 @@
  */
 
 package Vista;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
+import javax.swing.JButton;
+import javax.swing.JList;
+import javax.swing.JLabel;
 
 /**
  *
@@ -21,6 +27,135 @@ public class VistaCampeonato extends javax.swing.JFrame {
 
     public VistaCampeonato(int jc_TipoTorneo) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public JLabel getLabel1(){
+       return jL_participante1;
+
+    }
+    
+    public JLabel getLabel2(){
+       return jL_participante2;
+    }
+    
+    public JLabel getLabel3(){
+      return jL_participante3;
+    }
+    
+    public JLabel getLabel4(){
+       return jL_participante4;
+    }
+    
+    public JLabel getLabel5(){
+       return jL_participante5;
+    }
+    
+    public JLabel getLabel6(){
+       return jL_participante6;
+    }
+    
+    public JLabel getLabel7(){
+       return jL_participante7;
+    }
+    
+    public JLabel getLabel8(){
+       return jL_participante8;
+    }
+    
+    public JLabel getLabel9(){
+       return jL_participante9;
+    }
+    
+    public JLabel getLabel10(){
+       return jL_participante10;
+    }
+    
+    public JLabel getLabel11(){
+       return jL_participante11;
+    }
+    
+    public JLabel getLabel12(){
+       return jL_participante12;
+    }
+    
+    public JLabel getLabel13(){
+       return jL_participante13;
+    }
+    
+    public JLabel getLabel14(){
+       return jL_participante14;
+    }
+       
+    public JLabel getLabel15(){
+       return jL_participante15;
+    }
+    
+    public JLabel getLabel16(){
+       return jL_participante16;
+    }
+    
+    public JLabel getLabel17(){
+       return jL_participante17;
+    }
+    
+    public JLabel getLabel18(){
+       return jL_participante18;
+    }
+    
+    public JLabel getLabel19(){
+       return jL_participante19;
+    }
+    
+    public JLabel getLabel20(){
+       return jL_participante20;
+    }
+    
+    public JLabel getLabel21(){
+       return jL_participante21;
+    }
+    
+    public JLabel getLabel22(){
+       return jL_participante22;
+    }
+    
+    public JLabel getLabel23(){
+       return jL_participante23;
+    }
+    
+    public JLabel getLabel24(){
+       return jL_participante24;
+    }
+    
+    public JLabel getLabel25(){
+       return jL_participante25;
+    }
+    
+    public JLabel getLabel26(){
+       return jL_participante26;
+    }
+    
+    public JLabel getLabel27(){
+       return jL_participante27;
+    }
+    
+    public JLabel getLabel28(){
+       return jL_participante28;
+    }
+    
+    public JLabel getLabel29(){
+       return jL_participante29;
+    }
+    
+    public JLabel getLabel30(){
+       return jL_participante30;
+    }
+    
+    public JLabel getLabel31(){
+       return jL_participante31;
+    }
+    
+    public JLabel getLabel32(){
+       return jL_participante32;
     }
 
     /**
@@ -98,7 +233,6 @@ public class VistaCampeonato extends javax.swing.JFrame {
         jL_participante_4_2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jL_participante1.setText("jLabel1");
@@ -337,7 +471,7 @@ public class VistaCampeonato extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    public javax.swing.JLabel jL_participante1;
+    private javax.swing.JLabel jL_participante1;
     private javax.swing.JLabel jL_participante10;
     private javax.swing.JLabel jL_participante11;
     private javax.swing.JLabel jL_participante12;
