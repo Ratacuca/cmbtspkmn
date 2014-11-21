@@ -11,15 +11,15 @@ public abstract class EspeciePokemon {
     
     private String nombre_especie;
     private String especie;
-    private String naturaleza_primaria;
-    private String naturaleza_secundaria;
-    private String[] debilidades;
-    private String[] fortalezas;
+    private int naturaleza_primaria;
+    private int naturaleza_secundaria;
+    private int[] debilidades;
+    private int[] fortalezas;
     private int id_pokedex;
     
     public EspeciePokemon(String nombre_especie, String especie, 
-            String naturaleza_primaria, String naturaleza_secundaria, 
-            String[] debilidades, String[] fortalezas, int id_pokedex){
+            int naturaleza_primaria, int naturaleza_secundaria, 
+            int[] debilidades, int[] fortalezas, int id_pokedex){
         
         this.debilidades = debilidades;
         this.especie = especie;
@@ -31,7 +31,7 @@ public abstract class EspeciePokemon {
         
     }
     public EspeciePokemon(String nombre_especie, String especie, 
-            String naturaleza_primaria, String naturaleza_secundaria, 
+            int naturaleza_primaria, int naturaleza_secundaria, 
             int id_pokedex){
         
         this.especie = especie;
@@ -58,35 +58,35 @@ public abstract class EspeciePokemon {
         this.especie = especie;
     }
 
-    public String getNaturaleza_primaria() {
+    public int getNaturaleza_primaria() {
         return naturaleza_primaria;
     }
 
-    public void setNaturaleza_primaria(String naturaleza_primaria) {
+    public void setNaturaleza_primaria(int naturaleza_primaria) {
         this.naturaleza_primaria = naturaleza_primaria;
     }
 
-    public String getNaturaleza_secundaria() {
+    public int getNaturaleza_secundaria() {
         return naturaleza_secundaria;
     }
 
-    public void setNaturaleza_secundaria(String naturaleza_secundaria) {
+    public void setNaturaleza_secundaria(int naturaleza_secundaria) {
         this.naturaleza_secundaria = naturaleza_secundaria;
     }
 
-    public String[] getDebilidades() {
+    public int[] getDebilidades() {
         return debilidades;
     }
 
-    public void setDebilidades(String[] debilidades) {
+    public void setDebilidades(int[] debilidades) {
         this.debilidades = debilidades;
     }
 
-    public String[] getFortalezas() {
+    public int[] getFortalezas() {
         return fortalezas;
     }
 
-    public void setFortalezas(String[] fortalezas) {
+    public void setFortalezas(int[] fortalezas) {
         this.fortalezas = fortalezas;
     }
 

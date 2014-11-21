@@ -143,6 +143,14 @@ public abstract class Movimiento{
     public void setBlanco(int blanco) {
         this.blanco = blanco;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
     
     
 }

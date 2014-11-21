@@ -8,11 +8,16 @@ package combatespokemon;
 import Controlador.*;
 import Modelo.*;
 import Vista.*;
+import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+
 
 
 /**
@@ -33,13 +38,11 @@ public class CombatesPokemon {
         ControladorPrincipal controladorPrincipal = new ControladorPrincipal(vista);
         controladorPrincipal.leerBD("BD.txt");
         vista.setVisible(true);
-        ControladorBD cbd = new ControladorBD();
-//        cbd.obtenerNombresPokemones();
-        Pokemon[] equipo;
-        equipo = cbd.crearEquipoPokemon("Charmander", "Squirtle", "Bulbasaur", "Charizard", "Mewtwo", "Rayquaza");
-        System.out.println(equipo[0].getNombre_especie() + equipo[1].getNombre_especie()+equipo[5].getEspecie());
         
+       
         
     }
+        
+    
     
 }

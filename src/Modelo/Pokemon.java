@@ -25,12 +25,14 @@ public class Pokemon extends EspeciePokemon {
     private Boolean congelado;
     private Boolean dormido;
     private Boolean quemado;
+    private MovimientoAprendido[] movimientos = new MovimientoAprendido[4];
+    private Boolean debilitado;
     
     
     public Pokemon (String nombre_especie, String especie, 
-            String naturaleza_primaria, String naturaleza_secundaria, 
-            String[] debilidades, String[] fortalezas, int id_pokedex, 
-            String pseudonimo, int nivel, int ataque, int defensa, int ataque_especial, int defensa_especial, int vida){
+            int naturaleza_primaria, int naturaleza_secundaria, 
+            int[] debilidades, int[] fortalezas, int id_pokedex, 
+            String pseudonimo, int nivel, int ataque, int defensa, int ataque_especial, int defensa_especial, int vida, int vida_restante){
         
        super(nombre_especie, especie, naturaleza_primaria, naturaleza_secundaria, debilidades, fortalezas, id_pokedex);
        this.pseudonimo = pseudonimo;
@@ -40,11 +42,13 @@ public class Pokemon extends EspeciePokemon {
        this.defensa_especial = defensa_especial;
        this.nivel = nivel;
        this.vida = vida;
+       this.vida_restante = vida_restante;
+       this.debilitado = false;
        
     }
     public Pokemon (String nombre_especie, String especie, 
-            String naturaleza_primaria, String naturaleza_secundaria, int id_pokedex, 
-            int nivel, int ataque, int defensa, int ataque_especial, int defensa_especial, int vida){
+            int naturaleza_primaria, int naturaleza_secundaria, int id_pokedex, 
+            int nivel, int ataque, int defensa, int ataque_especial, int defensa_especial, int vida, int vida_restante){
         
        super(nombre_especie, especie, naturaleza_primaria, naturaleza_secundaria, id_pokedex);
        this.ataque = ataque;
@@ -53,6 +57,8 @@ public class Pokemon extends EspeciePokemon {
        this.defensa_especial = defensa_especial;
        this.nivel = nivel;
        this.vida = vida;
+       this.vida_restante = vida_restante;
+       this.debilitado = false;
        
     }
     
@@ -183,6 +189,22 @@ public class Pokemon extends EspeciePokemon {
 
     public void setQuemado(Boolean quemado) {
         this.quemado = quemado;
+    }
+
+    public MovimientoAprendido[] getMovimientos() {
+        return movimientos;
+    }
+
+    public void setMovimientos(MovimientoAprendido[] movimientos) {
+        this.movimientos = movimientos;
+    }
+
+    public Boolean getDebilitado() {
+        return debilitado;
+    }
+
+    public void setDebilitado(Boolean debilitado) {
+        this.debilitado = debilitado;
     }
 
     
