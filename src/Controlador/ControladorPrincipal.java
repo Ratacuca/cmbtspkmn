@@ -37,8 +37,7 @@ public class ControladorPrincipal implements ActionListener{
     public ControladorPrincipal(VistaPrincipal vp){
         vistaPrincipal = vp;
         this.vistaPrincipal.agregarListener(this);
-        
-        
+              
     }
     
     @Override
