@@ -45,26 +45,17 @@ public class ControladorCombate implements ActionListener{
             this.vc = new VistaCombate();
             vc.setVisible(true);
             System.out.println("Se inicio el Combate");
-            this.vc.agregarListener(this);}
-        
-        if (vc.getBotonAtacar1() == (JButton) e.getSource()){
-            this.va = new VistaAtaque();
-            va.setVisible(true);}
+            this.vc.agregarListener(this);
             
-        if (vc.getBotonAtacar2() == (JButton) e.getSource()){
-            this.va = new VistaAtaque();
-            va.setVisible(true);}
-        
-        if (vc.getBotonCambiar1() == (JButton) e.getSource()){
-            this.ve = new VistaEquipo();
-            ve.setVisible(true);}
-        
-        if (vc.getBotonCambiar2() == (JButton) e.getSource()){
-            this.ve = new VistaEquipo();
-            ve.setVisible(true);}
-            
-        }    
         }
+        
+        
+            
+        } 
+    
+    
+  
+}
     
         
 

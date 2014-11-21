@@ -179,6 +179,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
        this.jB_SimularCombate.addActionListener(al);
        this.jB_crear_entrenador.addActionListener(al);
        this.jB_CargarEntrenador1.addActionListener(al);
+       this.jB_SimularTorneo.addActionListener(al);
        
    }
    

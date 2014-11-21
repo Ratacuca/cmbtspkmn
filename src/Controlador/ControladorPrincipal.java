@@ -71,7 +71,7 @@ public class ControladorPrincipal implements ActionListener{
     }
     
     public void generarTorneo() throws SQLException{
-        VistaCampeonato vt = new VistaCampeonato(vistaPrincipal.getjC_TipoTorneo());
+        VistaCampeonato vt = new VistaCampeonato();
         int tipo_torneo = vistaPrincipal.getjC_TipoTorneo();
         Entrenador[] participantes = participantes();
         if(tipo_torneo == 0){
