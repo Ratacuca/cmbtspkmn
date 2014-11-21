@@ -20,6 +20,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 
 /**
  *
@@ -76,8 +80,49 @@ public class ControladorPrincipal implements ActionListener{
         VistaCampeonato vt = new VistaCampeonato();
         int tipo_torneo = vistaPrincipal.getjC_TipoTorneo();
         Entrenador[] participantes = participantes();
+        List textos = new ArrayList();
+        textos.add("jL_participante1");
+        textos.add("jL_participante2");
+        textos.add("jL_participante3");
+        textos.add("jL_participante4");
+        textos.add("jL_participante5");
+        textos.add("jL_participante6");
+        textos.add("jL_participante7");
+        textos.add("jL_participante8");
+        textos.add("jL_participante9");
+        textos.add("jL_participante10");
+        textos.add("jL_participante11");
+        textos.add("jL_participante12");
+        textos.add("jL_participante13");
+        textos.add("jL_participante14");
+        textos.add("jL_participante15");
+        textos.add("jL_participante16");
+        textos.add("jL_participante17");
+        textos.add("jL_participante18");
+        textos.add("jL_participante19");
+        textos.add("jL_participante20");
+        textos.add("jL_participante21");
+        textos.add("jL_participante22");
+        textos.add("jL_participante23");
+        textos.add("jL_participante24");
+        textos.add("jL_participante25");
+        textos.add("jL_participante26");
+        textos.add("jL_participante27");
+        textos.add("jL_participante28");
+        textos.add("jL_participante29");
+        textos.add("jL_participante30");
+        textos.add("jL_participante31");
+        textos.add("jL_participante32");
         if(tipo_torneo == 0){
-        vt.jL_participante1.setText("hola");
+        Collections.shuffle(textos);
+        int i;
+        String a;
+        for(i=0;i<textos.size();i++){
+            a = textos.get(i).toString();
+            String b = participantes[i].getNombre();
+            
+        }
+        
         vt.setVisible(true);
         ControladorCampeonato ccamp = new ControladorCampeonato(vt);
         }
