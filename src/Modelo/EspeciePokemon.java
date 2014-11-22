@@ -10,19 +10,17 @@ package Modelo;
 public abstract class EspeciePokemon {
     
     private String nombre_especie;
-    private String especie;
     private int naturaleza_primaria;
     private int naturaleza_secundaria;
     private int[] debilidades;
     private int[] fortalezas;
     private int id_pokedex;
     
-    public EspeciePokemon(String nombre_especie, String especie, 
+    public EspeciePokemon(String nombre_especie,  
             int naturaleza_primaria, int naturaleza_secundaria, 
             int[] debilidades, int[] fortalezas, int id_pokedex){
         
         this.debilidades = debilidades;
-        this.especie = especie;
         this.fortalezas = fortalezas;
         this.id_pokedex = id_pokedex;
         this.naturaleza_primaria = naturaleza_primaria;
@@ -30,11 +28,11 @@ public abstract class EspeciePokemon {
         this.nombre_especie = nombre_especie;
         
     }
-    public EspeciePokemon(String nombre_especie, String especie, 
+    public EspeciePokemon(String nombre_especie, 
             int naturaleza_primaria, int naturaleza_secundaria, 
             int id_pokedex){
         
-        this.especie = especie;
+        
         this.id_pokedex = id_pokedex;
         this.naturaleza_primaria = naturaleza_primaria;
         this.naturaleza_secundaria = naturaleza_secundaria;
@@ -50,13 +48,7 @@ public abstract class EspeciePokemon {
         this.nombre_especie = nombre_especie;
     }
 
-    public String getEspecie() {
-        return especie;
-    }
-
-    public void setEspecie(String especie) {
-        this.especie = especie;
-    }
+    
 
     public int getNaturaleza_primaria() {
         return naturaleza_primaria;

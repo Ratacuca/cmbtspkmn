@@ -130,17 +130,17 @@ public class ControladorBD {
         rst5.next();
         rst6.next();
         
-            Pokemon pokemon1 = new Pokemon(rst1.getString("nombre_familiapokemon"), rst1.getString("especie_familiapokemon"), 
+            Pokemon pokemon1 = new Pokemon(rst1.getString("nombre_familiapokemon"),  
             1, 1, rst1.getInt("id_familiapokemon"), 100, 50, 50, 50, 50, 200, 200);
-            Pokemon pokemon2 = new Pokemon(rst2.getString("nombre_familiapokemon"), rst2.getString("especie_familiapokemon"), 
+            Pokemon pokemon2 = new Pokemon(rst2.getString("nombre_familiapokemon"),  
             1, 1, rst2.getInt("id_familiapokemon"), 100, 50, 50, 50, 50, 200, 200);
-            Pokemon pokemon3 = new Pokemon(rst3.getString("nombre_familiapokemon"), rst3.getString("especie_familiapokemon"), 
+            Pokemon pokemon3 = new Pokemon(rst3.getString("nombre_familiapokemon"),  
             1, 1, rst3.getInt("id_familiapokemon"), 100, 50, 50, 50, 50, 200, 200);
-            Pokemon pokemon4 = new Pokemon(rst4.getString("nombre_familiapokemon"), rst4.getString("especie_familiapokemon"), 
+            Pokemon pokemon4 = new Pokemon(rst4.getString("nombre_familiapokemon"),  
             1, 1, rst4.getInt("id_familiapokemon"), 100, 50, 50, 50, 50, 200, 200);
-            Pokemon pokemon5 = new Pokemon(rst5.getString("nombre_familiapokemon"), rst5.getString("especie_familiapokemon"), 
+            Pokemon pokemon5 = new Pokemon(rst5.getString("nombre_familiapokemon"),  
             1, 1, rst5.getInt("id_familiapokemon"), 100, 50, 50, 50, 50, 200, 200);
-            Pokemon pokemon6 = new Pokemon(rst6.getString("nombre_familiapokemon"), rst6.getString("especie_familiapokemon"), 
+            Pokemon pokemon6 = new Pokemon(rst6.getString("nombre_familiapokemon"),  
             1, 1, rst6.getInt("id_familiapokemon"), 100, 50, 50, 50, 50, 200, 200);
             
             equipo[0] = pokemon1;

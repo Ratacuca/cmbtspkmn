@@ -6,6 +6,10 @@
 
 package Vista;
 
+import Modelo.Pokemon;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+
 /**
  *
  * @author Mario Caceres
@@ -28,216 +32,123 @@ public class VistaEquipo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        jL_Pokemon1 = new javax.swing.JLabel();
+        jL_Pokemon2 = new javax.swing.JLabel();
+        jL_Pokemon3 = new javax.swing.JLabel();
+        jL_Pokemon4 = new javax.swing.JLabel();
+        jL_Pokemon5 = new javax.swing.JLabel();
+        jB_Pokemon1 = new javax.swing.JButton();
+        jB_Pokemon2 = new javax.swing.JButton();
+        jB_Pokemon3 = new javax.swing.JButton();
+        jB_Pokemon4 = new javax.swing.JButton();
+        jB_Pokemon5 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
+        jL_Pokemon6 = new javax.swing.JLabel();
+        jB_Pokemon6 = new javax.swing.JButton();
+        jL_vida1 = new javax.swing.JLabel();
+        jL_vida2 = new javax.swing.JLabel();
+        jL_vida3 = new javax.swing.JLabel();
+        jL_vida4 = new javax.swing.JLabel();
+        jL_vida5 = new javax.swing.JLabel();
+        jL_vida6 = new javax.swing.JLabel();
+        jL_estado1 = new javax.swing.JLabel();
+        jL_estado2 = new javax.swing.JLabel();
+        jL_estado3 = new javax.swing.JLabel();
+        jL_estado4 = new javax.swing.JLabel();
+        jL_estado5 = new javax.swing.JLabel();
+        jL_estado6 = new javax.swing.JLabel();
 
-        setPreferredSize(new java.awt.Dimension(406, 310));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setPreferredSize(new java.awt.Dimension(600, 400));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Pokémon 1");
+        jL_Pokemon1.setText("Pokémon 1");
+        getContentPane().add(jL_Pokemon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(76, 52, -1, -1));
 
-        jLabel2.setText("Pokémon 2");
+        jL_Pokemon2.setText("Pokémon 2");
+        getContentPane().add(jL_Pokemon2, new org.netbeans.lib.awtextra.AbsoluteConstraints(76, 94, -1, -1));
 
-        jLabel3.setText("Pokémon 3");
+        jL_Pokemon3.setText("Pokémon 3");
+        getContentPane().add(jL_Pokemon3, new org.netbeans.lib.awtextra.AbsoluteConstraints(76, 132, -1, -1));
 
-        jLabel4.setText("Pokémon 4");
+        jL_Pokemon4.setText("Pokémon 4");
+        getContentPane().add(jL_Pokemon4, new org.netbeans.lib.awtextra.AbsoluteConstraints(76, 176, -1, -1));
 
-        jLabel5.setText("Pokémon 5");
+        jL_Pokemon5.setText("Pokémon 5");
+        getContentPane().add(jL_Pokemon5, new org.netbeans.lib.awtextra.AbsoluteConstraints(76, 218, -1, -1));
 
-        jButton1.setText("Seleccionar");
+        jB_Pokemon1.setText("Seleccionar");
+        getContentPane().add(jB_Pokemon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 48, -1, -1));
 
-        jButton2.setText("Seleccionar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jB_Pokemon2.setText("Seleccionar");
+        jB_Pokemon2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jB_Pokemon2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jB_Pokemon2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, -1, -1));
 
-        jButton3.setText("Seleccionar");
+        jB_Pokemon3.setText("Seleccionar");
+        getContentPane().add(jB_Pokemon3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 131, -1, -1));
 
-        jButton4.setText("Seleccionar");
+        jB_Pokemon4.setText("Seleccionar");
+        getContentPane().add(jB_Pokemon4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 172, -1, -1));
 
-        jButton5.setText("Seleccionar");
+        jB_Pokemon5.setText("Seleccionar");
+        getContentPane().add(jB_Pokemon5, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 214, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setText("Selecionar Pokémon:");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(76, 11, -1, -1));
 
-        jLabel7.setText("Pokémon 6");
+        jL_Pokemon6.setText("Pokémon 6");
+        getContentPane().add(jL_Pokemon6, new org.netbeans.lib.awtextra.AbsoluteConstraints(76, 256, -1, -1));
 
-        jButton6.setText("Seleccionar");
+        jB_Pokemon6.setText("Seleccionar");
+        getContentPane().add(jB_Pokemon6, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 252, -1, -1));
 
-        jLabel8.setText("vida/vida");
+        jL_vida1.setText("vida/vida");
+        getContentPane().add(jL_vida1, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 52, -1, -1));
 
-        jLabel9.setText("vida/vida");
+        jL_vida2.setText("vida/vida");
+        getContentPane().add(jL_vida2, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 94, -1, -1));
 
-        jLabel10.setText("vida/vida");
+        jL_vida3.setText("vida/vida");
+        getContentPane().add(jL_vida3, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 132, -1, -1));
 
-        jLabel11.setText("vida/vida");
+        jL_vida4.setText("vida/vida");
+        getContentPane().add(jL_vida4, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 176, -1, -1));
 
-        jLabel12.setText("vida/vida");
+        jL_vida5.setText("vida/vida");
+        getContentPane().add(jL_vida5, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 218, -1, -1));
 
-        jLabel13.setText("vida/vida");
+        jL_vida6.setText("vida/vida");
+        getContentPane().add(jL_vida6, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 256, -1, -1));
 
-        jLabel14.setText("Estado");
+        jL_estado1.setText("Estado");
+        getContentPane().add(jL_estado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(303, 52, -1, -1));
 
-        jLabel15.setText("Estado");
+        jL_estado2.setText("Estado");
+        getContentPane().add(jL_estado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(303, 94, -1, -1));
 
-        jLabel16.setText("Estado");
+        jL_estado3.setText("Estado");
+        getContentPane().add(jL_estado3, new org.netbeans.lib.awtextra.AbsoluteConstraints(303, 132, -1, -1));
 
-        jLabel17.setText("Estado");
+        jL_estado4.setText("Estado");
+        getContentPane().add(jL_estado4, new org.netbeans.lib.awtextra.AbsoluteConstraints(303, 172, -1, -1));
 
-        jLabel18.setText("Estado");
+        jL_estado5.setText("Estado");
+        getContentPane().add(jL_estado5, new org.netbeans.lib.awtextra.AbsoluteConstraints(303, 218, -1, -1));
 
-        jLabel19.setText("Estado");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(76, 76, 76)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(66, 66, 66)
-                        .addComponent(jLabel8)
-                        .addGap(65, 65, 65)
-                        .addComponent(jLabel14)
-                        .addGap(34, 34, 34)
-                        .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(66, 66, 66)
-                        .addComponent(jLabel9)
-                        .addGap(65, 65, 65)
-                        .addComponent(jLabel15)
-                        .addGap(34, 34, 34)
-                        .addComponent(jButton2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(66, 66, 66)
-                        .addComponent(jLabel10)
-                        .addGap(65, 65, 65)
-                        .addComponent(jLabel16)
-                        .addGap(34, 34, 34)
-                        .addComponent(jButton3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(66, 66, 66)
-                        .addComponent(jLabel11)
-                        .addGap(65, 65, 65)
-                        .addComponent(jLabel17)
-                        .addGap(34, 34, 34)
-                        .addComponent(jButton4))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(66, 66, 66)
-                        .addComponent(jLabel12)
-                        .addGap(65, 65, 65)
-                        .addComponent(jLabel18)
-                        .addGap(34, 34, 34)
-                        .addComponent(jButton5))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addGap(66, 66, 66)
-                        .addComponent(jLabel13)
-                        .addGap(65, 65, 65)
-                        .addComponent(jLabel19)
-                        .addGap(34, 34, 34)
-                        .addComponent(jButton6)))
-                .addContainerGap(55, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(11, 11, 11)
-                .addComponent(jLabel6)
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel14))))
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel15))))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton3)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel16))))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel17)
-                    .addComponent(jButton4)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel11))))
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton5)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel12)
-                            .addComponent(jLabel18))))
-                .addGap(15, 15, 15)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton6)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel13)
-                            .addComponent(jLabel19))))
-                .addContainerGap(41, Short.MAX_VALUE))
-        );
+        jL_estado6.setText("Estado");
+        getContentPane().add(jL_estado6, new org.netbeans.lib.awtextra.AbsoluteConstraints(303, 256, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jB_Pokemon2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_Pokemon2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jB_Pokemon2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -273,32 +184,187 @@ public class VistaEquipo extends javax.swing.JFrame {
             }
         });
     }
+    public void agregarListener(ActionListener al) {
+       this.jB_Pokemon1.addActionListener(al);
+       this.jB_Pokemon2.addActionListener(al);
+       this.jB_Pokemon3.addActionListener(al);
+       this.jB_Pokemon4.addActionListener(al);
+       this.jB_Pokemon5.addActionListener(al);
+       this.jB_Pokemon6.addActionListener(al);
+       
+    }
+    public void setVistaCambio(Pokemon[] equipo, Pokemon activo, int index){
+        this.setjL_Pokemon1(equipo[0].getPseudonimo());
+        this.setjL_Pokemon2(equipo[1].getPseudonimo());
+        this.setjL_Pokemon3(equipo[2].getPseudonimo());
+        this.setjL_Pokemon4(equipo[3].getPseudonimo());
+        this.setjL_Pokemon5(equipo[4].getPseudonimo());
+        this.setjL_Pokemon6(equipo[5].getPseudonimo());
+        if(equipo[0].getDebilitado()== true){
+            this.setjL_estado1("Debilitado");
+            jB_Pokemon1.setEnabled(false);
+        }
+        else{
+            this.setjL_estado1("Disponible");
+        }
+        if(equipo[5].getDebilitado()== true){
+            this.setjL_estado6("Debilitado");
+            jB_Pokemon6.setEnabled(false);
+        }
+        else{
+            this.setjL_estado6("Disponible");
+        }
+        if(equipo[1].getDebilitado()== true){
+            this.setjL_estado2("Debilitado");
+            jB_Pokemon2.setEnabled(false);
+        }
+        else{
+            this.setjL_estado2("Disponible");
+        }
+        if(equipo[2].getDebilitado()== true){
+            this.setjL_estado3("Debilitado");
+            jB_Pokemon3.setEnabled(false);
+        }
+        else{
+            this.setjL_estado3("Disponible");
+        }
+        if(equipo[3].getDebilitado()== true){
+            this.setjL_estado4("Debilitado");
+            jB_Pokemon4.setEnabled(false);
+        }
+        else{
+            this.setjL_estado4("Disponible");
+        }
+        if(equipo[4].getDebilitado()== true){
+            this.setjL_estado5("Debilitado");
+            jB_Pokemon5.setEnabled(false);
+        }
+        else{
+            this.setjL_estado5("Disponible");
+        }
+        if(index == 0){
+            jB_Pokemon1.setEnabled(false);
+        }
+        if(index == 1){
+            jB_Pokemon2.setEnabled(false);
+        }
+        if(index == 2){
+            jB_Pokemon3.setEnabled(false);
+        }
+        if(index == 3){
+            jB_Pokemon4.setEnabled(false);
+        }
+        if(index == 4){
+            jB_Pokemon5.setEnabled(false);
+        }
+        if(index == 5){
+            jB_Pokemon6.setEnabled(false);
+        }
+        this.setjL_vida1(equipo[0].getVida(), equipo[0].getVida_restante());
+        this.setjL_vida2(equipo[1].getVida(), equipo[1].getVida_restante());
+        this.setjL_vida3(equipo[2].getVida(), equipo[2].getVida_restante());
+        this.setjL_vida4(equipo[3].getVida(), equipo[3].getVida_restante());
+        this.setjL_vida5(equipo[4].getVida(), equipo[4].getVida_restante());
+        this.setjL_vida6(equipo[5].getVida(), equipo[5].getVida_restante());
+    }
+    public void setjL_vida1(int vida, int restante){
+        jL_vida1.setText(Integer.toString(restante)+" / "+Integer.toString(vida));
+    }
+    public void setjL_vida2(int vida, int restante){
+        jL_vida2.setText(Integer.toString(restante)+" / "+Integer.toString(vida));
+    }
+    public void setjL_vida3(int vida, int restante){
+        jL_vida3.setText(Integer.toString(restante)+" / "+Integer.toString(vida));
+    }
+    public void setjL_vida4(int vida, int restante){
+        jL_vida4.setText(Integer.toString(restante)+" / "+Integer.toString(vida));
+    }
+    public void setjL_vida5(int vida, int restante){
+        jL_vida5.setText(Integer.toString(restante)+" / "+Integer.toString(vida));
+    }
+    public void setjL_vida6(int vida, int restante){
+        jL_vida6.setText(Integer.toString(restante)+" / "+Integer.toString(vida));
+    }
+    public void setjL_estado1(String estado){
+        jL_estado1.setText(estado);
+    }
+    public void setjL_estado2(String estado){
+        jL_estado2.setText(estado);
+    }
+    public void setjL_estado3(String estado){
+        jL_estado3.setText(estado);
+    }
+    public void setjL_estado4(String estado){
+        jL_estado4.setText(estado);
+    }
+    public void setjL_estado5(String estado){
+        jL_estado5.setText(estado);
+    }
+    public void setjL_estado6(String estado){
+        jL_estado6.setText(estado);
+    }
+    public void setjL_Pokemon1(String nombre){
+        jL_Pokemon1.setText(nombre);
+    }
+    public void setjL_Pokemon2(String nombre){
+        jL_Pokemon2.setText(nombre);
+    }
+    public void setjL_Pokemon3(String nombre){
+        jL_Pokemon3.setText(nombre);
+    }
+    public void setjL_Pokemon4(String nombre){
+        jL_Pokemon4.setText(nombre);
+    }
+    public void setjL_Pokemon5(String nombre){
+        jL_Pokemon5.setText(nombre);
+    }
+    public void setjL_Pokemon6(String nombre){
+        jL_Pokemon6.setText(nombre);
+    }
+    public JButton getBotonPokemon1(){
+        return this.jB_Pokemon1;
+    }
+    public JButton getBotonPokemon2(){
+        return this.jB_Pokemon2;
+    }
+    public JButton getBotonPokemon3(){
+        return this.jB_Pokemon3;
+    }
+    public JButton getBotonPokemon4(){
+        return this.jB_Pokemon4;
+    }
+    public JButton getBotonPokemon5(){
+        return this.jB_Pokemon5;
+    }
+    public JButton getBotonPokemon6(){
+        return this.jB_Pokemon6;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JButton jB_Pokemon1;
+    private javax.swing.JButton jB_Pokemon2;
+    private javax.swing.JButton jB_Pokemon3;
+    private javax.swing.JButton jB_Pokemon4;
+    private javax.swing.JButton jB_Pokemon5;
+    private javax.swing.JButton jB_Pokemon6;
+    private javax.swing.JLabel jL_Pokemon1;
+    private javax.swing.JLabel jL_Pokemon2;
+    private javax.swing.JLabel jL_Pokemon3;
+    private javax.swing.JLabel jL_Pokemon4;
+    private javax.swing.JLabel jL_Pokemon5;
+    private javax.swing.JLabel jL_Pokemon6;
+    private javax.swing.JLabel jL_estado1;
+    private javax.swing.JLabel jL_estado2;
+    private javax.swing.JLabel jL_estado3;
+    private javax.swing.JLabel jL_estado4;
+    private javax.swing.JLabel jL_estado5;
+    private javax.swing.JLabel jL_estado6;
+    private javax.swing.JLabel jL_vida1;
+    private javax.swing.JLabel jL_vida2;
+    private javax.swing.JLabel jL_vida3;
+    private javax.swing.JLabel jL_vida4;
+    private javax.swing.JLabel jL_vida5;
+    private javax.swing.JLabel jL_vida6;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
 }
