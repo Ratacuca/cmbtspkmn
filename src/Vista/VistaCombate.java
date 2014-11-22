@@ -239,10 +239,10 @@ public void setjL_nombrepokemon1(String texto){
 public void setjL_nombrepokemon2(String texto){
     jL_nombrepokemon2.setText(texto);
 }
-public void setjL_vida_actual1(int vida, int restante){
+public void setjL_vida_actual1(int restante, int vida){
    jL_vida_actual1.setText(Integer.toString(restante)+" / "+Integer.toString(vida));
 }
-public void setjL_vida_actual2(int vida, int restante){
+public void setjL_vida_actual2(int restante, int vida){
    jL_vida_actual2.setText(Integer.toString(restante)+" / "+Integer.toString(vida));
 }
 public void turnoJugador1(){

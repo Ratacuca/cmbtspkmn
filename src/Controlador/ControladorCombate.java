@@ -36,6 +36,7 @@ public class ControladorCombate implements ActionListener{
     private Pokemon pokemon_activo2;
     
     
+    
     public ControladorCombate(VistaPreviaCombate vista, int tipo_simulacion,
             Entrenador entrenador1, Entrenador entrenador2){
         this.tipo_simulacion = tipo_simulacion;
@@ -71,7 +72,7 @@ public class ControladorCombate implements ActionListener{
             this.pokemon_activo1 = equipo1[Index_inicial1];
             this.pokemon_activo2 = equipo2[Index_inicial2];
             vc.setVisible(true);
-            JOptionPane.showMessageDialog(this.vc, "Turno"+" "+entrenador1.getNombre(), "Tu turno", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this.vc, "Turno"+" "+entrenador1.getNombre(), "Tu Turno", JOptionPane.INFORMATION_MESSAGE);
             vc.setjL_Turno_actual(entrenador1.getNombre());
             vc.turnoJugador1();
             
@@ -81,7 +82,8 @@ public class ControladorCombate implements ActionListener{
             this.va = new VistaAtaque();
             va.agregarListener(this);
             va.setVistaAtaque(pokemon_activo1);
-            va.setVisible(true);          
+            va.setVisible(true);
+            
         }
         if (vc.getBotonAtacar2() == (JButton) e.getSource()){
             this.va = new VistaAtaque();
@@ -90,23 +92,101 @@ public class ControladorCombate implements ActionListener{
             va.setVisible(true);           
         }
         if(va.getBotonAtaque1() == (JButton) e.getSource()){
-            inflingirDaño(pokemon_activo1.getMovimientos()[0], pokemon_activo2, pokemon_activo1);
-            va.dispose();
-            System.out.println(pokemon_activo2.getVida_restante());
-            System.out.println(pokemon_activo1.getNivel());
+            if(turno ==0){
+                inflingirDaño(pokemon_activo1.getMovimientos()[0], pokemon_activo2, pokemon_activo1);
+                va.setVisible(false);
+                vc.setjL_Turno_actual(entrenador2.getNombre());
+                vc.setjL_vida_actual1(pokemon_activo1.getVida_restante(), pokemon_activo1.getVida());
+                vc.setjL_vida_actual2(pokemon_activo2.getVida_restante(), pokemon_activo2.getVida());
+                JOptionPane.showMessageDialog(this.vc, "Turno"+" "+entrenador2.getNombre(), "Tu Turno", JOptionPane.INFORMATION_MESSAGE);
+                vc.turnoJugador2();
+                this.turno = 1;
+            }
+            else if(turno ==1){
+                inflingirDaño(pokemon_activo2.getMovimientos()[0], pokemon_activo1, pokemon_activo2);
+                va.setVisible(false);
+                vc.setjL_Turno_actual(entrenador1.getNombre());
+                vc.setjL_vida_actual1(pokemon_activo1.getVida_restante(), pokemon_activo1.getVida());
+                vc.setjL_vida_actual2(pokemon_activo2.getVida_restante(), pokemon_activo2.getVida());
+                JOptionPane.showMessageDialog(this.vc, "Turno"+" "+entrenador1.getNombre(), "Tu Turno", JOptionPane.INFORMATION_MESSAGE);
+                vc.turnoJugador1();
+                this.turno = 0;
+            }
         }
         if(va.getBotonAtaque2() == (JButton) e.getSource()){
-                            inflingirDaño(pokemon_activo1.getMovimientos()[1], pokemon_activo2, pokemon_activo1);
-                            va.dispose();
+            if(turno ==0){
+                inflingirDaño(pokemon_activo1.getMovimientos()[1], pokemon_activo2, pokemon_activo1);
+                va.setVisible(false);
+                vc.setjL_Turno_actual(entrenador2.getNombre());
+                vc.setjL_vida_actual1(pokemon_activo1.getVida_restante(), pokemon_activo1.getVida());
+                vc.setjL_vida_actual2(pokemon_activo2.getVida_restante(), pokemon_activo2.getVida());
+                JOptionPane.showMessageDialog(this.vc, "Turno"+" "+entrenador2.getNombre(), "Tu Turno", JOptionPane.INFORMATION_MESSAGE);
+                vc.turnoJugador2();
+                this.turno = 1;
+            }
+            else if(turno ==1){
+                inflingirDaño(pokemon_activo2.getMovimientos()[1], pokemon_activo1, pokemon_activo2);
+                va.setVisible(false);
+                vc.setjL_Turno_actual(entrenador1.getNombre());
+                vc.setjL_vida_actual1(pokemon_activo1.getVida_restante(), pokemon_activo1.getVida());
+                vc.setjL_vida_actual2(pokemon_activo2.getVida_restante(), pokemon_activo2.getVida());
+                JOptionPane.showMessageDialog(this.vc, "Turno"+" "+entrenador1.getNombre(), "Tu Turno", JOptionPane.INFORMATION_MESSAGE);
+                vc.turnoJugador1();
+                this.turno = 0;
+            }
         }
         if(va.getBotonAtaque3() == (JButton) e.getSource()){
-                            inflingirDaño(pokemon_activo1.getMovimientos()[2], pokemon_activo2, pokemon_activo1);
-                            va.dispose();
+            if(turno ==0){
+                inflingirDaño(pokemon_activo1.getMovimientos()[2], pokemon_activo2, pokemon_activo1);
+                va.setVisible(false);
+                vc.setjL_Turno_actual(entrenador2.getNombre());
+                vc.setjL_vida_actual1(pokemon_activo1.getVida_restante(), pokemon_activo1.getVida());
+                vc.setjL_vida_actual2(pokemon_activo2.getVida_restante(), pokemon_activo2.getVida());
+                JOptionPane.showMessageDialog(this.vc, "Turno"+" "+entrenador2.getNombre(), "Tu Turno", JOptionPane.INFORMATION_MESSAGE);
+                vc.turnoJugador2();
+                this.turno = 1;
+            }
+            else if(turno ==1){
+                inflingirDaño(pokemon_activo2.getMovimientos()[2], pokemon_activo1, pokemon_activo2);
+                va.setVisible(false);
+                vc.setjL_Turno_actual(entrenador1.getNombre());
+                vc.setjL_vida_actual1(pokemon_activo1.getVida_restante(), pokemon_activo1.getVida());
+                vc.setjL_vida_actual2(pokemon_activo2.getVida_restante(), pokemon_activo2.getVida());
+                JOptionPane.showMessageDialog(this.vc, "Turno"+" "+entrenador1.getNombre(), "Tu Turno", JOptionPane.INFORMATION_MESSAGE);
+                vc.turnoJugador1();
+                this.turno = 0;
+            }
         }
         if(va.getBotonAtaque4() == (JButton) e.getSource()){
-                            inflingirDaño(pokemon_activo1.getMovimientos()[3], pokemon_activo2, pokemon_activo1);
-                            va.dispose();
+            if(turno ==0){
+                inflingirDaño(pokemon_activo1.getMovimientos()[3], pokemon_activo2, pokemon_activo1);
+                va.setVisible(false);
+                vc.setjL_Turno_actual(entrenador2.getNombre());
+                vc.setjL_vida_actual1(pokemon_activo1.getVida_restante(), pokemon_activo1.getVida());
+                vc.setjL_vida_actual2(pokemon_activo2.getVida_restante(), pokemon_activo2.getVida());
+                JOptionPane.showMessageDialog(this.vc, "Turno"+" "+entrenador2.getNombre(), "Tu Turno", JOptionPane.INFORMATION_MESSAGE);
+                vc.turnoJugador2();
+                this.turno = 1;
+            }
+            else if(turno ==1){
+                inflingirDaño(pokemon_activo2.getMovimientos()[3], pokemon_activo1, pokemon_activo2);
+                va.setVisible(false);
+                vc.setjL_Turno_actual(entrenador1.getNombre());
+                vc.setjL_vida_actual1(pokemon_activo1.getVida_restante(), pokemon_activo1.getVida());
+                vc.setjL_vida_actual2(pokemon_activo2.getVida_restante(), pokemon_activo2.getVida());
+                JOptionPane.showMessageDialog(this.vc, "Turno"+" "+entrenador1.getNombre(), "Tu Turno", JOptionPane.INFORMATION_MESSAGE);
+                vc.turnoJugador1();
+                this.turno = 0;
+            }
         }
+        if(vc.getBotonCambiar1() == (JButton) e.getSource()){
+            this.va = new VistaAtaque();
+            va.agregarListener(this);
+            va.setVistaAtaque(pokemon_activo1);
+            va.setVisible(true);
+        
+        }
+        
                         
                     
                   
@@ -137,24 +217,20 @@ public class ControladorCombate implements ActionListener{
     
     
     
-    public void inflingirDaño(Movimiento movimiento, Pokemon victima, Pokemon atacante){
+    public void inflingirDaño(MovimientoAprendido movimiento, Pokemon victima, Pokemon atacante){
         int vida_actual = victima.getVida_restante();
         double daño=0;
         double multiplicador_daño=1;
         int[] debilidades_victima = victima.getDebilidades();
         int[] fortalezas_victima = victima.getFortalezas();
         int daño_total;
+        int pp_actual = movimiento.getPuntos_poder_restantes();
         
         if(movimiento.getContacto() == true){
             daño = (2*atacante.getNivel() + 10)*movimiento.getPotencia()*atacante.getAtaque()/(victima.getDefensa()*250);
         }
         else if(movimiento.getContacto() == false){
             daño = (2*atacante.getNivel() + 10 )*movimiento.getPotencia()*atacante.getAtaque_especial()/(victima.getDefensa_especial()*250);
-            System.out.println(daño);
-            System.out.println(atacante.getNivel());
-            System.out.println(movimiento.getPotencia());
-            System.out.println(atacante.getAtaque_especial());
-            System.out.println(victima.getDefensa_especial());
         }
         
         for (int i = 0; i < debilidades_victima.length; i++) {
@@ -171,6 +247,7 @@ public class ControladorCombate implements ActionListener{
         daño_total = (int) (daño*multiplicador_daño);
         int vida_neta = vida_actual-daño_total;
         victima.setVida_restante(vida_neta);
+        movimiento.setPuntos_poder_restantes(pp_actual-1);
     }
     
     public String evaluarAccion(Pokemon atacante, Pokemon defensor){
