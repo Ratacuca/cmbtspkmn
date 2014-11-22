@@ -47,6 +47,8 @@ public class VistaCombate extends javax.swing.JFrame {
         jL_Turno_actual = new javax.swing.JLabel();
         jL_especie1 = new javax.swing.JLabel();
         jL_especie2 = new javax.swing.JLabel();
+        jL_Estado1 = new javax.swing.JLabel();
+        jL_Estado2 = new javax.swing.JLabel();
 
         jL_jugador1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jL_jugador1.setText("Jugador 1");
@@ -113,12 +115,16 @@ public class VistaCombate extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jL_nombrepokemon2, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jL_vida_actual2, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(10, 10, 10))))
+                                .addGap(10, 10, 10)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jL_Estado1)
+                            .addComponent(jL_Estado2)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(115, 115, 115)
                         .addComponent(jL_especie2))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(113, 113, 113)
+                        .addGap(121, 121, 121)
                         .addComponent(jL_especie1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,7 +156,9 @@ public class VistaCombate extends javax.swing.JFrame {
                             .addComponent(jB_Atacar1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(35, 35, 35)
-                        .addComponent(jL_nombrepokemon1)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jL_nombrepokemon1)
+                            .addComponent(jL_Estado1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jL_especie1)
                         .addGap(14, 14, 14)
@@ -175,7 +183,9 @@ public class VistaCombate extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jL_jugador2)
                         .addGap(46, 46, 46)
-                        .addComponent(jL_nombrepokemon2, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jL_nombrepokemon2, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jL_Estado2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jL_especie2)))
                 .addGap(11, 11, 11)
@@ -245,6 +255,12 @@ public void agregarListener(ActionListener al) {
 public void setjL_Turno_actual(String texto){
     jL_Turno_actual.setText(texto);
 }
+public void setjL_Estado1(String texto){
+    jL_Estado1.setText(texto);
+}
+public void setjL_Estado2(String texto){
+    jL_Estado2.setText(texto);
+}
 public void setjL_jugador1(String texto){
     jL_jugador1.setText(texto);
 }
@@ -291,6 +307,8 @@ public void turnoJugador2(){
     private javax.swing.JButton jB_Atacar2;
     private javax.swing.JButton jB_Cambiar1;
     private javax.swing.JButton jB_Cambiar2;
+    private javax.swing.JLabel jL_Estado1;
+    private javax.swing.JLabel jL_Estado2;
     private javax.swing.JLabel jL_Turno_actual;
     private javax.swing.JLabel jL_especie1;
     private javax.swing.JLabel jL_especie2;

@@ -47,13 +47,18 @@
                               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jL_Estado1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jL_Estado2" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
                       <Component id="jL_especie2" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
                       <Component id="jL_especie1" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -95,7 +100,10 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                      <Component id="jL_nombrepokemon1" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jL_nombrepokemon1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jL_Estado1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jL_especie1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
@@ -125,7 +133,10 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jL_jugador2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                      <Component id="jL_nombrepokemon2" min="-2" pref="18" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jL_nombrepokemon2" alignment="3" min="-2" pref="18" max="-2" attributes="0"/>
+                          <Component id="jL_Estado2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jL_especie2" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -235,6 +246,10 @@
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jL_Estado1">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jL_Estado2">
     </Component>
   </SubComponents>
 </Form>

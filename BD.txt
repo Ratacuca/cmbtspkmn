@@ -16,3 +16,5 @@ Mario Kalos Entrenador 0 0 Squirtle                                           Sq
 sad Kanto Entrenador 0 0 Charmander                                         Squirtle                                           Squirtle                                           Bulbasaur                                          Bulbasaur                                          Charmander                                        
  Kanto Entrenador 0 0 Squirtle                                           Squirtle                                           Bulbasaur                                          Bulbasaur                                          Bulbasaur                                          Squirtle                                          
 Ash Kanto Entrenador 0 0 Graveler Onix Rhydon Geodude Omanyte Golem
+Fatias Kanto Entrenador 0 0 Geodude Geodude Geodude Geodude Geodude Geodude
+Edita_Bravo Kanto Entrenador 0 0 Geodude Geodude Geodude Geodude Geodude Geodude
