@@ -37,14 +37,7 @@ public class CombatesPokemon {
         VistaPrincipal vista = new VistaPrincipal();
         ControladorPrincipal controladorPrincipal = new ControladorPrincipal(vista);
         controladorPrincipal.leerBD("BD.txt");
-        vista.setVisible(true);
-     int a = 1;   
-        double d = Math.random() * 100;
-    if ((d -= 10) < 0) a=0;
-    if ((d -= 90) < 0) a=1;
-    
-       
-        
+        vista.setVisible(true);   
     }
         
     

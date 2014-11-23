@@ -298,6 +298,12 @@ public void turnoJugador2(){
     jB_Atacar2.setEnabled(true);
     jB_Cambiar2.setEnabled(true);
 }
+public void turnoSimulacion(){
+    jB_Atacar1.setEnabled(false);
+    jB_Cambiar1.setEnabled(false);
+    jB_Atacar2.setEnabled(false);
+    jB_Cambiar2.setEnabled(false);
+}
 
 
 

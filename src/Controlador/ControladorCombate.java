@@ -82,7 +82,13 @@ public class ControladorCombate implements ActionListener{
             JOptionPane.showMessageDialog(this.vc, "Turno"+" "+entrenador1.getNombre(), "Tu Turno", JOptionPane.INFORMATION_MESSAGE);
             System.out.println("Turno"+" "+entrenador1.getNombre());
             vc.setjL_Turno_actual(entrenador1.getNombre());
-            vc.turnoJugador1();
+            if(tipo_simulacion == 0){
+                vc.turnoSimulacion();
+                while (condicionVictoria(equipo1, equipo2)!=true){
+                turnoUsuario(pokemon_activo2, pokemon_activo1);
+                turnoSistema(pokemon_activo2, pokemon_activo1);
+            }}
+            else vc.turnoJugador1();
             
         }
     // ----------ACCIONES BOTONES DE ATAQUE-------------               
@@ -777,22 +783,22 @@ public class ControladorCombate implements ActionListener{
         pokemon2 = this.pokemon_activo2;
         if(evaluarAccion(pokemon2, pokemon1).equals("Cambiar")){
             System.out.println("Sistema eligio Cambiar Pokemon");
-                    if(equipo2[0].getDebilitado() == false){
+                    if(equipo2[0].getDebilitado() == false && equipo2[0]!=pokemon_activo1){
                         pokemon_activo2 = equipo2[0];   
                     }
-                    else if(equipo2[1].getDebilitado() == false){
+                    else if(equipo2[1].getDebilitado() == false && equipo2[1]!=pokemon_activo1){
                         pokemon_activo2 = equipo2[1];   
                     }
-                    else if(equipo2[2].getDebilitado() == false){
+                    else if(equipo2[2].getDebilitado() == false && equipo2[2]!=pokemon_activo1){
                         pokemon_activo2 = equipo2[2];   
                     }
-                    else if(equipo2[3].getDebilitado() == false){
+                    else if(equipo2[3].getDebilitado() == false && equipo2[3]!=pokemon_activo1){
                         pokemon_activo2 = equipo2[3];   
                     }
-                    else if(equipo2[4].getDebilitado() == false){
+                    else if(equipo2[4].getDebilitado() == false && equipo2[4]!=pokemon_activo1){
                         pokemon_activo2 = equipo2[4];   
                     }
-                    else if(equipo2[5].getDebilitado() == false){
+                    else if(equipo2[5].getDebilitado() == false && equipo2[5]!=pokemon_activo1){
                         pokemon_activo2 = equipo2[5];   
                     }
                vc.setjL_especie2(pokemon_activo2.getNombre_especie());
@@ -853,33 +859,33 @@ public class ControladorCombate implements ActionListener{
         pokemon2 = this.pokemon_activo2;
         if(evaluarAccion(pokemon1, pokemon2).equals("Cambiar")){
             System.out.println("Usuario eligio Cambiar Pokemon");
-                    if(equipo1[0].getDebilitado() == false){
+                    if(equipo1[0].getDebilitado() == false && equipo1[0]!=pokemon_activo1){
                         pokemon_activo1 = equipo1[0];   
                     }
-                    else if(equipo1[1].getDebilitado() == false){
+                    else if(equipo1[1].getDebilitado() == false && equipo1[1]!=pokemon_activo1){
                         pokemon_activo1 = equipo1[1];   
                     }
-                    else if(equipo1[2].getDebilitado() == false){
+                    else if(equipo1[2].getDebilitado() == false && equipo1[2]!=pokemon_activo1){
                         pokemon_activo1 = equipo1[2];   
                     }
-                    else if(equipo1[3].getDebilitado() == false){
+                    else if(equipo1[3].getDebilitado() == false && equipo1[3]!=pokemon_activo1){
                         pokemon_activo1 = equipo1[3];   
                     }
-                    else if(equipo1[4].getDebilitado() == false){
+                    else if(equipo1[4].getDebilitado() == false && equipo1[4]!=pokemon_activo1){
                         pokemon_activo1 = equipo1[4];   
                     }
-                    else if(equipo1[5].getDebilitado() == false){
+                    else if(equipo1[5].getDebilitado() == false && equipo1[5]!=pokemon_activo1){
                         pokemon_activo1 = equipo1[5];   
                     }
                vc.setjL_especie1(pokemon_activo1.getNombre_especie());
                vc.setjL_nombrepokemon1(pokemon_activo1.getPseudonimo());
                vc.setjL_vida_actual1(pokemon_activo1.getVida_restante(), pokemon_activo1.getVida());
-               this.turno = 0;
+               this.turno = 1;
                JOptionPane.showMessageDialog(this.vc, "Turno"+" "+entrenador2.getNombre(), "Tu Turno", JOptionPane.INFORMATION_MESSAGE);
                System.out.println("Turno"+" "+entrenador1.getNombre());
         }
         else if(evaluarAccion(pokemon2, pokemon1).equals("Atacar")){
-            System.out.println("Sistema eligio Atacar");
+            System.out.println("Usuario eligio Atacar");
             inflingirDaño(pokemon_activo2.getMovimientos()[0], pokemon_activo1, pokemon_activo2);
             if(pokemon_activo1.getVida_restante() <= 0){
                     pokemon_activo1.setVida_restante(0);
@@ -918,9 +924,9 @@ public class ControladorCombate implements ActionListener{
             vc.setjL_especie1(pokemon_activo1.getNombre_especie());
             vc.setjL_nombrepokemon1(pokemon_activo1.getPseudonimo());
             vc.setjL_vida_actual1(pokemon_activo1.getVida_restante(), pokemon_activo1.getVida());
-            this.turno = 0;
-            JOptionPane.showMessageDialog(this.vc, "Turno"+" "+entrenador1.getNombre(), "Tu Turno", JOptionPane.INFORMATION_MESSAGE);
-            System.out.println("Turno"+" "+entrenador1.getNombre());
+            this.turno = 1;
+            JOptionPane.showMessageDialog(this.vc, "Turno"+" "+entrenador2.getNombre(), "Tu Turno", JOptionPane.INFORMATION_MESSAGE);
+            System.out.println("Turno"+" "+entrenador2.getNombre());
         }
         
     }

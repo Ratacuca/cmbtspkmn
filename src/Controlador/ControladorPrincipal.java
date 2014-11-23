@@ -32,11 +32,17 @@ import javax.swing.JLabel;
 public class ControladorPrincipal implements ActionListener{
     
     private VistaPrincipal vistaPrincipal;
+    private Entrenador entrenador1;
+    private Entrenador entrenador2;
+    private Pokemon[] equipo1;
+    private Pokemon[] equipo2;
+    private int tipo_equipo;
     
     
     public ControladorPrincipal(VistaPrincipal vp){
         vistaPrincipal = vp;
         this.vistaPrincipal.agregarListener(this);
+        this.tipo_equipo = 0;
               
     }
     
@@ -44,6 +50,22 @@ public class ControladorPrincipal implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if (vistaPrincipal.getBotonSimularCombate() == (JButton) e.getSource()) {
             generarCombate();
+            
+        }
+        if (vistaPrincipal.getBotonCambiarEquipo1() == (JButton) e.getSource()) {
+            try {
+                generarCambioEquipo(1);
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+        }
+        if (vistaPrincipal.getBotonCambiarEquipo2() == (JButton) e.getSource()) {
+            try {
+                generarCambioEquipo(2);
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
             
         }
         if (vistaPrincipal.getBotonCrearEntrenador() == (JButton) e.getSource()){
@@ -131,10 +153,12 @@ public class ControladorPrincipal implements ActionListener{
         String nombre2 = vistaPrincipal.getjC_Nombre2();
         VistaPreviaCombate vpc = new VistaPreviaCombate(vistaPrincipal.getjC_TipoSimulacion(), nombre1, nombre2);
         int tipo_combate = vistaPrincipal.getjC_TipoSimulacion();
-        Pokemon[] equipo1 = equipoPrueba1();
-        Pokemon[] equipo2 = equipoPrueba2();
-        Entrenador entrenador1 = new Entrenador(nombre1, equipo1); 
-        Entrenador entrenador2 = new Entrenador(nombre2, equipo2);
+        if(tipo_equipo == 0){
+        this.equipo1 = equipoPrueba1();
+        this.equipo2 = equipoPrueba2();
+        }
+        this.entrenador1 = new Entrenador(nombre1, equipo1); 
+        this.entrenador2 = new Entrenador(nombre2, equipo2);
         String[] nombres1 = new String[6];
         String[] nombres2 = new String[6];
         for (int i = 0; i < 6; i++) {
@@ -146,6 +170,30 @@ public class ControladorPrincipal implements ActionListener{
         vpc.setVisible(true);
         ControladorCombate cc = new ControladorCombate(vpc, tipo_combate, entrenador1, entrenador2);
         System.out.println("Se selecciono simular combate");
+    }
+    public void generarCambioEquipo(int equipo) throws SQLException{
+        ControladorBD cBD = new ControladorBD();
+        ArrayList<String> nombres_pokemon = new ArrayList();
+        nombres_pokemon = cBD.obtenerNombresPokemones();
+        VistaNuevoEquipo vnew = new VistaNuevoEquipo();
+        vnew.setJL_Pokemon1(nombres_pokemon);
+        vnew.setJL_Pokemon2(nombres_pokemon);
+        vnew.setJL_Pokemon3(nombres_pokemon);
+        vnew.setJL_Pokemon4(nombres_pokemon);
+        vnew.setJL_Pokemon5(nombres_pokemon);
+        vnew.setJL_Pokemon6(nombres_pokemon);
+        vnew.setVisible(true);
+        ControladorEquipo ceq = new ControladorEquipo(vnew, cBD, equipoPrueba1());
+        if(equipo == 1){
+           this.equipo1 = ceq.getEquipo();
+            System.out.println(equipo1[0].getPseudonimo());
+           this.tipo_equipo = 1;
+        }
+        else{
+           this.equipo2 = ceq.getEquipo();
+           this.tipo_equipo = 1;
+        }
+    
     }
     
     public void generarEntrenador() throws SQLException{
@@ -173,14 +221,14 @@ public class ControladorPrincipal implements ActionListener{
         }
      public Pokemon[] equipoPrueba1(){
          Pokemon[] equipo = new Pokemon[6];
-         int[] debilidades_Charmander = new int[2];
-         int[] fortalezas_Charmander= new int[2];
-         debilidades_Charmander[0] = 1;
-         fortalezas_Charmander[0] = 2;
-         int[] debilidades_Squirtle= new int[2];
-         int[] fortalezas_Squirtle= new int[2];
-         debilidades_Squirtle[0] = 1;
-         fortalezas_Squirtle[0] = 2;
+         int[] debilidades_Charmander = new int[1];
+         int[] fortalezas_Charmander= new int[1];
+         debilidades_Charmander[0] = 2;
+         fortalezas_Charmander[0] = 7;
+         int[] debilidades_Squirtle= new int[1];
+         int[] fortalezas_Squirtle= new int[1];
+         debilidades_Squirtle[0] = 9;
+         fortalezas_Squirtle[0] = 7;
          Pokemon pokemon1 = new Pokemon("Charmander", 7, 7, debilidades_Charmander, fortalezas_Charmander, 1, "Bellaco", 100, 150, 140, 170, 120, 250, 250);
          Pokemon pokemon2 = new Pokemon("Charmander", 7, 7, debilidades_Charmander, fortalezas_Charmander, 1, "Ratacuca", 100, 150, 140, 170, 120, 220, 220);
          Pokemon pokemon3 = new Pokemon("Squirtle", 2, 2, debilidades_Squirtle, fortalezas_Squirtle, 2, "Jesus", 100, 160, 120, 150, 130, 210, 210);
@@ -203,14 +251,14 @@ public class ControladorPrincipal implements ActionListener{
      }   
      public Pokemon[] equipoPrueba2(){
          Pokemon[] equipo = new Pokemon[6];
-         int[] debilidades_Charmander = new int[2];
-         int[] fortalezas_Charmander= new int[2];
-         debilidades_Charmander[0] = 1;
-         fortalezas_Charmander[0] = 2;
-         int[] debilidades_Squirtle= new int[2];
-         int[] fortalezas_Squirtle= new int[2];
-         debilidades_Squirtle[0] = 1;
-         fortalezas_Squirtle[0] = 2;
+         int[] debilidades_Charmander = new int[1];
+         int[] fortalezas_Charmander= new int[1];
+         debilidades_Charmander[0] = 2;
+         fortalezas_Charmander[0] = 7;
+         int[] debilidades_Squirtle= new int[1];
+         int[] fortalezas_Squirtle= new int[1];
+         debilidades_Squirtle[0] = 9;
+         fortalezas_Squirtle[0] = 7;
          Pokemon pokemon1 = new Pokemon("Squirtle", 2, 2, debilidades_Squirtle, fortalezas_Squirtle, 2, "Rata", 100, 160, 120, 150, 130, 250, 250);
          Pokemon pokemon2 = new Pokemon("Charmander", 7, 7, debilidades_Charmander, fortalezas_Charmander, 1, "Hulk", 100, 150, 140, 170, 120, 260, 260);
          Pokemon pokemon3 = new Pokemon("Squirtle", 2, 2, debilidades_Squirtle, fortalezas_Squirtle, 2, "Simba", 100, 160, 120, 150, 130, 220, 220);

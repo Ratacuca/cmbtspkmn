@@ -18,3 +18,4 @@ sad Kanto Entrenador 0 0 Charmander                                         Squi
 Ash Kanto Entrenador 0 0 Graveler Onix Rhydon Geodude Omanyte Golem
 Fatias Kanto Entrenador 0 0 Geodude Geodude Geodude Geodude Geodude Geodude
 Edita_Bravo Kanto Entrenador 0 0 Geodude Geodude Geodude Geodude Geodude Geodude
+Javier Sinnoh Entrenador 0 0 Golem Golem Golem Onix Rhyhorn Onix
