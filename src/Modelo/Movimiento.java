@@ -23,12 +23,13 @@ public abstract class Movimiento{
     private String tipo_ataque;
     private Boolean contacto;
     private int blanco;
+    private int id_movimiento;
     
    
 
     public Movimiento(int cantidad_pp, int precision, int potencia, String nombre, 
             int tipo, Boolean envenena, Boolean confunde, Boolean paraliza, 
-            Boolean congela, Boolean quema, Boolean duerme, Boolean contacto){
+            Boolean congela, Boolean quema, Boolean duerme, Boolean contacto, int id_movimiento){
         
     this.cantidad_pp = cantidad_pp;
     this.precision = precision;
@@ -41,7 +42,8 @@ public abstract class Movimiento{
     this.congela = congela;
     this.quema = quema;
     this.duerme = duerme;
-    this.contacto = contacto;   
+    this.contacto = contacto;
+    this.id_movimiento = id_movimiento;
     }
     /**
      * @return the cantidad_pp
@@ -150,6 +152,14 @@ public abstract class Movimiento{
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public int getId_movimiento() {
+        return id_movimiento;
+    }
+
+    public void setId_movimiento(int id_movimiento) {
+        this.id_movimiento = id_movimiento;
     }
     
     

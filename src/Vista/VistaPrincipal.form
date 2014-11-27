@@ -72,23 +72,14 @@
                                   <Component id="jC_TipoTorneo" max="32767" attributes="0"/>
                                   <Component id="jC_TipoSimulacion" max="32767" attributes="0"/>
                               </Group>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="56" pref="56" max="-2" attributes="0"/>
-                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jB_CambiarEquipo2" max="32767" attributes="0"/>
-                                          <Component id="jB_CambiarEquipo1" max="32767" attributes="0"/>
-                                          <Component id="jB_CargarEntrenador1" max="32767" attributes="0"/>
-                                          <Component id="jLabel5" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jC_Entrenador2" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jC_Entrenador1" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jB_crear_entrenador" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jB_CargarEntrenador1" max="32767" attributes="0"/>
+                                  <Component id="jLabel5" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jC_Entrenador2" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jC_Entrenador1" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jB_crear_entrenador" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jLabel2" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" attributes="0">
@@ -96,7 +87,7 @@
                               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="78" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="55" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -135,23 +126,17 @@
                           <Component id="jC_TipoTorneo" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jC_Entrenador1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jB_CambiarEquipo1" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="jC_Entrenador1" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
               <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jC_Entrenador2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jB_CambiarEquipo2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="81" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
               <Component id="jB_CargarEntrenador1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jB_crear_entrenador" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+              <EmptySpace pref="60" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -247,16 +232,6 @@
             <StringItem index="3" value="Simular ganador por region"/>
           </StringArray>
         </Property>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="jB_CambiarEquipo1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Cambiar Equipo"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="jB_CambiarEquipo2">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Cambiar Equipo"/>
       </Properties>
     </Component>
   </SubComponents>

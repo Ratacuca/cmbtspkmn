@@ -11,13 +11,13 @@ public class Pokemon extends EspeciePokemon {
     
     private String pseudonimo;
     private int nivel;
-    private int ranking;
     private int ataque;
     private int defensa;
     private int ataque_especial;
     private int defensa_especial;
     private int vida;
     private int vida_restante;
+    private int velocidad;
     private Habilidad habilidad;
     private Boolean confuso;
     private Boolean paralizado;
@@ -27,12 +27,12 @@ public class Pokemon extends EspeciePokemon {
     private Boolean quemado;
     private MovimientoAprendido[] movimientos = new MovimientoAprendido[4];
     private Boolean debilitado;
+    private int id_pokemon;
     
     
-    public Pokemon (String nombre_especie,  
-            int naturaleza_primaria, int naturaleza_secundaria, 
-            int[] debilidades, int[] fortalezas, int id_pokedex, 
-            String pseudonimo, int nivel, int ataque, int defensa, int ataque_especial, int defensa_especial, int vida, int vida_restante){
+    public Pokemon (String nombre_especie, int naturaleza_primaria, int naturaleza_secundaria, 
+            int[] debilidades, int[] fortalezas, int id_pokedex, String pseudonimo, int nivel, 
+            int ataque, int defensa, int ataque_especial, int defensa_especial, int vida, int vida_restante){
         
        super(nombre_especie, naturaleza_primaria, naturaleza_secundaria, debilidades, fortalezas, id_pokedex);
        this.pseudonimo = pseudonimo;
@@ -46,10 +46,9 @@ public class Pokemon extends EspeciePokemon {
        this.debilitado = false;
        
     }
-    public Pokemon (String nombre_especie,  
-            int naturaleza_primaria, int naturaleza_secundaria, 
-             int id_pokedex, 
-            String pseudonimo, int nivel, int ataque, int defensa, int ataque_especial, int defensa_especial, int vida, int vida_restante){
+    public Pokemon (String nombre_especie, int naturaleza_primaria, int naturaleza_secundaria, 
+             int id_pokedex, String pseudonimo, int nivel, int ataque, int defensa, int ataque_especial, 
+             int defensa_especial, int vida, int vida_restante){
         
        super(nombre_especie, naturaleza_primaria, naturaleza_secundaria, id_pokedex);
        this.pseudonimo = pseudonimo;
@@ -79,6 +78,39 @@ public class Pokemon extends EspeciePokemon {
        this.debilitado = false;
        
     }
+//constructor funcional
+    public Pokemon(String pseudonimo, int nivel, int ataque, int defensa, int ataque_especial, 
+            int defensa_especial, int vida, int vida_restante, int velocidad, String nombre_especie, int id_pokedex) {
+        super(nombre_especie, id_pokedex);
+        this.pseudonimo = pseudonimo;
+        this.nivel = nivel;
+        this.ataque = ataque;
+        this.defensa = defensa;
+        this.ataque_especial = ataque_especial;
+        this.defensa_especial = defensa_especial;
+        this.vida = vida;
+        this.vida_restante = vida_restante;
+        this.velocidad = velocidad;
+        this.debilitado = false;
+    }
+    
+    // constructor con id para bd
+    public Pokemon(String pseudonimo, int nivel, int ataque, int defensa, int ataque_especial, 
+            int defensa_especial, int vida, int vida_restante, int velocidad, String nombre_especie, int id_pokedex, int id_pokemon) {
+        super(nombre_especie, id_pokedex);
+        this.pseudonimo = pseudonimo;
+        this.nivel = nivel;
+        this.ataque = ataque;
+        this.defensa = defensa;
+        this.ataque_especial = ataque_especial;
+        this.defensa_especial = defensa_especial;
+        this.vida = vida;
+        this.vida_restante = vida_restante;
+        this.velocidad = velocidad;
+        this.id_pokemon = id_pokemon;
+        this.debilitado = false;
+    }
+    
     
 
     public String getPseudonimo() {
@@ -95,14 +127,6 @@ public class Pokemon extends EspeciePokemon {
 
     public void setNivel(int nivel) {
         this.nivel = nivel;
-    }
-
-    public int getRanking() {
-        return ranking;
-    }
-
-    public void setRanking(int ranking) {
-        this.ranking = ranking;
     }
 
     public int getAtaque() {
@@ -223,6 +247,22 @@ public class Pokemon extends EspeciePokemon {
 
     public void setDebilitado(Boolean debilitado) {
         this.debilitado = debilitado;
+    }
+
+    public int getVelocidad() {
+        return velocidad;
+    }
+
+    public void setVelocidad(int velocidad) {
+        this.velocidad = velocidad;
+    }
+
+    public int getId_pokemon() {
+        return id_pokemon;
+    }
+
+    public void setId_pokemon(int id_pokemon) {
+        this.id_pokemon = id_pokemon;
     }
 
     

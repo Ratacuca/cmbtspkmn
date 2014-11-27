@@ -36,97 +36,9 @@ public class VistaCrearEntrenador extends javax.swing.JFrame {
         return jC_Region.getSelectedIndex();
     }
    
-   public String getJL_Pokemon1(){
-       if (jL_Pokemon1.getSelectedIndex() == -1){
-          return jL_Pokemon1.getModel().getElementAt(0).toString();
-       }
-       else{
-         return jL_Pokemon1.getSelectedValue().toString();  
-       }
-    }
-   public String getJL_Pokemon2(){
-       if (jL_Pokemon2.getSelectedIndex() == -1){
-          return jL_Pokemon2.getModel().getElementAt(0).toString();
-       }
-       else{
-         return jL_Pokemon2.getSelectedValue().toString();  
-       }
-    }
-   public String getJL_Pokemon3(){
-       if (jL_Pokemon3.getSelectedIndex() == -1){
-          return jL_Pokemon3.getModel().getElementAt(0).toString();
-       }
-       else{
-         return jL_Pokemon3.getSelectedValue().toString();  
-       }
-    }
-   public String getJL_Pokemon4(){
-       if (jL_Pokemon4.getSelectedIndex() == -1){
-          return jL_Pokemon4.getModel().getElementAt(0).toString();
-       }
-       else{
-         return jL_Pokemon4.getSelectedValue().toString();  
-       }
-    }
-   public String getJL_Pokemon5(){
-       if (jL_Pokemon5.getSelectedIndex() == -1){
-          return jL_Pokemon5.getModel().getElementAt(0).toString();
-       }
-       else{
-         return jL_Pokemon5.getSelectedValue().toString();  
-       }
-    }
-   public String getJL_Pokemon6(){
-       if (jL_Pokemon6.getSelectedIndex() == -1){
-          return jL_Pokemon6.getModel().getElementAt(0).toString();
-       }
-       else{
-         return jL_Pokemon6.getSelectedValue().toString();  
-       }
-    }
    
-   public void setJL_Pokemon1(ArrayList<String> valor){
-       DefaultListModel modelo = new DefaultListModel();
-       for (int i = 0; i < valor.size(); i++) {
-          modelo.addElement(valor.get(i)); 
-       }
-       this.jL_Pokemon1.setModel(modelo);   
-   }
-   public void setJL_Pokemon2(ArrayList<String> valor){
-       DefaultListModel modelo = new DefaultListModel();
-       for (int i = 0; i < valor.size(); i++) {
-          modelo.addElement(valor.get(i)); 
-       }
-       this.jL_Pokemon2.setModel(modelo);   
-   }
-   public void setJL_Pokemon3(ArrayList<String> valor){
-       DefaultListModel modelo = new DefaultListModel();
-       for (int i = 0; i < valor.size(); i++) {
-          modelo.addElement(valor.get(i)); 
-       }
-       this.jL_Pokemon3.setModel(modelo);   
-   }
-   public void setJL_Pokemon4(ArrayList<String> valor){
-       DefaultListModel modelo = new DefaultListModel();
-       for (int i = 0; i < valor.size(); i++) {
-          modelo.addElement(valor.get(i)); 
-       }
-       this.jL_Pokemon4.setModel(modelo);   
-   }
-   public void setJL_Pokemon5(ArrayList<String> valor){
-       DefaultListModel modelo = new DefaultListModel();
-       for (int i = 0; i < valor.size(); i++) {
-          modelo.addElement(valor.get(i)); 
-       }
-       this.jL_Pokemon5.setModel(modelo);   
-   }
-   public void setJL_Pokemon6(ArrayList<String> valor){
-       DefaultListModel modelo = new DefaultListModel();
-       for (int i = 0; i < valor.size(); i++) {
-          modelo.addElement(valor.get(i)); 
-       }
-       this.jL_Pokemon6.setModel(modelo);   
-   }
+   
+  
    
    
     /**
@@ -144,19 +56,6 @@ public class VistaCrearEntrenador extends javax.swing.JFrame {
         jText_Nombre = new javax.swing.JTextField();
         jC_Region = new javax.swing.JComboBox();
         jB_Crear = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jL_Pokemon1 = new javax.swing.JList();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jL_Pokemon2 = new javax.swing.JList();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jL_Pokemon3 = new javax.swing.JList();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jL_Pokemon5 = new javax.swing.JList();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jL_Pokemon4 = new javax.swing.JList();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        jL_Pokemon6 = new javax.swing.JList();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -182,66 +81,28 @@ public class VistaCrearEntrenador extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("Equipo Pokemon:");
-
-        jL_Pokemon1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane1.setViewportView(jL_Pokemon1);
-
-        jL_Pokemon2.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane2.setViewportView(jL_Pokemon2);
-
-        jL_Pokemon3.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane3.setViewportView(jL_Pokemon3);
-
-        jL_Pokemon5.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane4.setViewportView(jL_Pokemon5);
-
-        jL_Pokemon4.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane5.setViewportView(jL_Pokemon4);
-
-        jL_Pokemon6.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane6.setViewportView(jL_Pokemon6);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jB_Crear)
-                .addGap(25, 25, 25))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(18, 18, 18)
-                                .addComponent(jC_Region, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel4)
+                            .addComponent(jLabel1)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(10, 10, 10)
-                                .addComponent(jText_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(39, Short.MAX_VALUE))
+                                .addComponent(jText_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(18, 18, 18)
+                                .addComponent(jC_Region, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(94, 94, 94)
+                        .addComponent(jB_Crear)))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -260,20 +121,9 @@ public class VistaCrearEntrenador extends javax.swing.JFrame {
                         .addGap(3, 3, 3)
                         .addComponent(jLabel3))
                     .addComponent(jC_Region, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addComponent(jLabel4)
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
                 .addComponent(jB_Crear)
-                .addGap(20, 20, 20))
+                .addGap(43, 43, 43))
         );
 
         pack();
@@ -325,22 +175,9 @@ public class VistaCrearEntrenador extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jB_Crear;
     private javax.swing.JComboBox jC_Region;
-    private javax.swing.JList jL_Pokemon1;
-    private javax.swing.JList jL_Pokemon2;
-    private javax.swing.JList jL_Pokemon3;
-    private javax.swing.JList jL_Pokemon4;
-    private javax.swing.JList jL_Pokemon5;
-    private javax.swing.JList jL_Pokemon6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTextField jText_Nombre;
     // End of variables declaration//GEN-END:variables
 

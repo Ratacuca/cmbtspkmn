@@ -12,9 +12,6 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
@@ -36,8 +33,8 @@ public class CombatesPokemon {
         UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         VistaPrincipal vista = new VistaPrincipal();
         ControladorPrincipal controladorPrincipal = new ControladorPrincipal(vista);
-        controladorPrincipal.leerBD("BD.txt");
-        vista.setVisible(true);   
+        controladorPrincipal.cargarEntrenadores();
+        vista.setVisible(true);
     }
         
     

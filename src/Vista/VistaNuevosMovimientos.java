@@ -210,7 +210,7 @@ public class VistaNuevosMovimientos extends javax.swing.JFrame {
     }
    public String getJL_Movimiento2(){
        if (jL_Movimiento2.getSelectedIndex() == -1){
-          return jL_Movimiento2.getModel().getElementAt(0).toString();
+          return jL_Movimiento2.getModel().getElementAt(1).toString();
        }
        else{
          return jL_Movimiento2.getSelectedValue().toString();  
@@ -218,7 +218,7 @@ public class VistaNuevosMovimientos extends javax.swing.JFrame {
     }
    public String getJL_Movimiento3(){
        if (jL_Movimiento3.getSelectedIndex() == -1){
-          return jL_Movimiento3.getModel().getElementAt(0).toString();
+          return jL_Movimiento3.getModel().getElementAt(2).toString();
        }
        else{
          return jL_Movimiento3.getSelectedValue().toString();  
@@ -226,7 +226,7 @@ public class VistaNuevosMovimientos extends javax.swing.JFrame {
     }
    public String getJL_Movimiento4(){
        if (jL_Movimiento4.getSelectedIndex() == -1){
-          return jL_Movimiento4.getModel().getElementAt(0).toString();
+          return jL_Movimiento4.getModel().getElementAt(3).toString();
        }
        else{
          return jL_Movimiento4.getSelectedValue().toString();  
@@ -235,6 +235,12 @@ public class VistaNuevosMovimientos extends javax.swing.JFrame {
    public JButton getjB_Listo(){
         return this.jB_listo;
     }
+   public void limpiarListas(){
+       this.jL_Movimiento1.clearSelection();
+       this.jL_Movimiento2.clearSelection();
+       this.jL_Movimiento3.clearSelection();
+       this.jL_Movimiento4.clearSelection();
+   }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jB_listo;

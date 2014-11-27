@@ -32,35 +32,31 @@
               <EmptySpace min="-2" pref="262" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="jL_jugador1" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
-                          <Component id="jL_nombrepokemon1" min="-2" pref="153" max="-2" attributes="0"/>
                           <Component id="jL_vida_actual1" min="-2" pref="153" max="-2" attributes="0"/>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jL_nombrepokemon2" min="-2" pref="144" max="-2" attributes="0"/>
-                                  <Component id="jL_vida_actual2" min="-2" pref="144" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="jL_nombrepokemon1" alignment="1" min="-2" pref="153" max="-2" attributes="0"/>
+                          <Component id="jL_especie1" alignment="1" min="-2" pref="135" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jL_Estado1" min="-2" max="-2" attributes="0"/>
-                          <Component id="jL_Estado2" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jL_nombrepokemon2" min="-2" pref="144" max="-2" attributes="0"/>
+                          <Component id="jL_vida_actual2" min="-2" pref="144" max="-2" attributes="0"/>
+                          <Component id="jL_especie2" alignment="1" min="-2" pref="126" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
-                      <Component id="jL_especie2" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
-                      <Component id="jL_especie1" min="-2" max="-2" attributes="0"/>
-                  </Group>
+              </Group>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jL_Nivel2" min="-2" pref="37" max="-2" attributes="0"/>
+                  <Component id="jL_Estado1" min="-2" max="-2" attributes="0"/>
+                  <Component id="jL_Estado2" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jL_Nivel1" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -105,7 +101,10 @@
                           <Component id="jL_Estado1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jL_especie1" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jL_especie1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jL_Nivel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                       <Component id="jL_vida_actual1" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -138,7 +137,10 @@
                           <Component id="jL_Estado2" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jL_especie2" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jL_especie2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jL_Nivel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
@@ -250,6 +252,18 @@
     <Component class="javax.swing.JLabel" name="jL_Estado1">
     </Component>
     <Component class="javax.swing.JLabel" name="jL_Estado2">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jL_Nivel1">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="100"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jL_Nivel2">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="100"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

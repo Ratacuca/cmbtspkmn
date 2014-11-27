@@ -13,8 +13,8 @@ public class PosibleMovimiento extends Movimiento{
     
     public PosibleMovimiento(int cantidad_pp, int precision, int potencia, String nombre, 
             int tipo, Boolean envenena, Boolean confunde, Boolean paraliza, 
-            Boolean congela, Boolean quema, Boolean duerme, Boolean contacto, int nivel_necesario){
-       super(cantidad_pp, precision, potencia, nombre, tipo, envenena, confunde, paraliza, congela, quema, duerme, contacto);
+            Boolean congela, Boolean quema, Boolean duerme, Boolean contacto, int nivel_necesario, int id_movimiento){
+       super(cantidad_pp, precision, potencia, nombre, tipo, envenena, confunde, paraliza, congela, quema, duerme, contacto, id_movimiento);
        this.nivel_necesario = nivel_necesario;
     }
 

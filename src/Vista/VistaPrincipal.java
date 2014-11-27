@@ -49,8 +49,6 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jC_TipoTorneo = new javax.swing.JComboBox();
-        jB_CambiarEquipo1 = new javax.swing.JButton();
-        jB_CambiarEquipo2 = new javax.swing.JButton();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -88,10 +86,6 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         jC_TipoTorneo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Participantes al azar", "Enfrentar mas fuertes", "Enfrentar mas debiles", "Simular ganador por region" }));
 
-        jB_CambiarEquipo1.setText("Cambiar Equipo");
-
-        jB_CambiarEquipo2.setText("Cambiar Equipo");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -114,24 +108,18 @@ public class VistaPrincipal extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jC_TipoTorneo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jC_TipoSimulacion, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(56, 56, 56)
-                                        .addComponent(jLabel2))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(43, 43, 43)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jB_CambiarEquipo2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jB_CambiarEquipo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jB_CargarEntrenador1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jC_Entrenador2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jC_Entrenador1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jB_crear_entrenador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                .addGap(43, 43, 43)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jB_CargarEntrenador1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jC_Entrenador2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jC_Entrenador1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jB_crear_entrenador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(172, 172, 172)
                                 .addComponent(jLabel1)))
-                        .addGap(0, 78, Short.MAX_VALUE)))
+                        .addGap(0, 55, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -160,21 +148,16 @@ public class VistaPrincipal extends javax.swing.JFrame {
                             .addComponent(jB_SimularTorneo)
                             .addComponent(jLabel6)
                             .addComponent(jC_TipoTorneo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jC_Entrenador1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jB_CambiarEquipo1)))
-                .addGap(19, 19, 19)
+                    .addComponent(jC_Entrenador1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(13, 13, 13)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jC_Entrenador2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jB_CambiarEquipo2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                .addGap(59, 59, 59)
                 .addComponent(jB_CargarEntrenador1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jB_crear_entrenador)
-                .addGap(29, 29, 29))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         pack();
@@ -189,19 +172,11 @@ public class VistaPrincipal extends javax.swing.JFrame {
        this.jB_crear_entrenador.addActionListener(al);
        this.jB_CargarEntrenador1.addActionListener(al);
        this.jB_SimularTorneo.addActionListener(al);
-       this.jB_CambiarEquipo1.addActionListener(al);
-       this.jB_CambiarEquipo2.addActionListener(al);
        
    }
    
    public JButton getBotonSimularCombate() { 
         return this.jB_SimularCombate;
-    }
-   public JButton getBotonCambiarEquipo1() { 
-        return this.jB_CambiarEquipo1;
-    }
-   public JButton getBotonCambiarEquipo2() { 
-        return this.jB_CambiarEquipo2;
     }
    
    public JButton getBotonCrearEntrenador() { 
@@ -223,8 +198,6 @@ public class VistaPrincipal extends javax.swing.JFrame {
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jB_CambiarEquipo1;
-    private javax.swing.JButton jB_CambiarEquipo2;
     private javax.swing.JButton jB_CargarEntrenador1;
     private javax.swing.JButton jB_SimularCombate;
     private javax.swing.JButton jB_SimularTorneo;
@@ -251,6 +224,12 @@ public class VistaPrincipal extends javax.swing.JFrame {
     }
     public javax.swing.JComboBox getjC_Entrenador2() {
         return jC_Entrenador2;
+    }
+    public int getIndexjC_Entrenador1() {
+        return jC_Entrenador1.getSelectedIndex();
+    }
+    public int getIndexjC_Entrenador2() {
+        return jC_Entrenador2.getSelectedIndex();
     }
 
     public void setjC_Entrenador1(String entrenador) {

@@ -25,49 +25,51 @@ import javax.swing.JButton;
 public class ControladorEntrenador implements ActionListener{
     
     private VistaCrearEntrenador vista;
+    private VistaNuevoEquipo vnew;
+    private ControladorPrincipal controlador_principal;
     
-    public ControladorEntrenador(VistaCrearEntrenador vce)throws SQLException{
+    public ControladorEntrenador(VistaCrearEntrenador vce, ControladorPrincipal cp)throws SQLException{
+        this.controlador_principal = cp;
         vista = vce;
         this.vista.agregarListener(this);
         ControladorBD cBD = new ControladorBD();
-        ArrayList<String> JLpokemones = cBD.obtenerNombresPokemones();
-        vista.setJL_Pokemon1(JLpokemones);
-        vista.setJL_Pokemon2(JLpokemones);
-        vista.setJL_Pokemon3(JLpokemones);
-        vista.setJL_Pokemon4(JLpokemones);
-        vista.setJL_Pokemon5(JLpokemones);
-        vista.setJL_Pokemon6(JLpokemones);
- 
-        
+        this.vnew = new VistaNuevoEquipo();
     }
     
     @Override
     public void actionPerformed(ActionEvent e) {
         
         if (vista.getjB_Crear() == (JButton) e.getSource()){
+            
             String nombre = vista.getNombre();
+            int regionBD = vista.getjC_Region() +1;
             String region = getRegion();
-            int medallas_adquiridas = 0;
-            int victorias_torre_batalla = 0;
             String distincion = "Entrenador";
-            String[] pokemones = new String[6];
-            pokemones[0]= getPokemon1();
-            pokemones[1]= getPokemon2();
-            pokemones[2]= getPokemon3();
-            pokemones[3]= getPokemon4();
-            pokemones[4]= getPokemon5();
-            pokemones[5]= getPokemon6();
             try {
-                guardarEntrenador(nombre, region, distincion, medallas_adquiridas,
-                        victorias_torre_batalla, pokemones);
+                guardarEntrenador(nombre, region, distincion);
             } catch (IOException ex) {
                 Logger.getLogger(ControladorEntrenador.class.getName()).log(Level.SEVERE, null, ex);
             }
-//            Entrenador entrenador = new Entrenador(nombre,pokemones,region,
-//            medallas_adquiridas,victorias_torre_batalla,distincion);
+            try {
+                ControladorBD cBD = new ControladorBD();
+                ArrayList<String> nombres_pokemon = new ArrayList();
+                nombres_pokemon = cBD.obtenerNombresPokemones();
+                    vnew.setJL_Pokemon1(nombres_pokemon);
+                    vnew.setJL_Pokemon2(nombres_pokemon);
+                    vnew.setJL_Pokemon3(nombres_pokemon);
+                    vnew.setJL_Pokemon4(nombres_pokemon);
+                    vnew.setJL_Pokemon5(nombres_pokemon);
+                    vnew.setJL_Pokemon6(nombres_pokemon);
+                int id_entrenador = cBD.guardarEntrenador(nombre, distincion, regionBD);
+                int nuevo = 1;
+                ControladorEquipo ce = new ControladorEquipo(vnew, nuevo, id_entrenador, controlador_principal);
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorEntrenador.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
             vista.dispose();
             
-//            System.out.println(entrenador.getNombre()+ entrenador.getRegion()+entrenador.getDistincion()+entrenador.getPokemones()[0].getNombre());
+
         }
     }
  
@@ -97,42 +99,12 @@ public class ControladorEntrenador implements ActionListener{
        return region;
     }
     
-    public String getPokemon1(){
-        String nombre = vista.getJL_Pokemon1();
-        return nombre;
-    }
-    public String getPokemon2(){
-        String nombre = vista.getJL_Pokemon2();
-        return nombre;
-    }
-    public String getPokemon3(){
-        String nombre = vista.getJL_Pokemon3();
-        return nombre;
-    }
-    public String getPokemon4(){
-        String nombre = vista.getJL_Pokemon4();
-        return nombre;
-    }
-    public String getPokemon5(){
-        String nombre = vista.getJL_Pokemon5();
-        return nombre;
-    }
-    public String getPokemon6(){
-        String nombre = vista.getJL_Pokemon6();
-        return nombre;
-    }
-   
-    
-    
-    private void guardarEntrenador(String nombre, String region, String distincion, 
-            int victorias, int torre, String[] pokemones) throws IOException {
+    private void guardarEntrenador(String nombre, String region, String distincion) throws IOException {
         String nombreArchivo = "BD.txt";
         FileWriter adquirir = new FileWriter(nombreArchivo, true);
         PrintWriter procesador = new PrintWriter(adquirir);
 
-        procesador.println(nombre+" "+region+" "+distincion+" "+victorias+" "+torre+
-                " "+pokemones[0]+" "+pokemones[1]+" "+pokemones[2]+" "+pokemones[3]+
-                " "+pokemones[4]+" "+pokemones[5]);
+        procesador.println(nombre+" "+region+" "+distincion);
 
         procesador.close();
     }

@@ -245,19 +245,19 @@ public class VistaEquipo extends javax.swing.JFrame {
         if(index == 0){
             jB_Pokemon1.setEnabled(false);
         }
-        if(index == 1){
+        else if(index == 1){
             jB_Pokemon2.setEnabled(false);
         }
-        if(index == 2){
+        else if(index == 2){
             jB_Pokemon3.setEnabled(false);
         }
-        if(index == 3){
+        else if(index == 3){
             jB_Pokemon4.setEnabled(false);
         }
-        if(index == 4){
+        else if(index == 4){
             jB_Pokemon5.setEnabled(false);
         }
-        if(index == 5){
+        else if(index == 5){
             jB_Pokemon6.setEnabled(false);
         }
         this.setjL_vida1(equipo[0].getVida(), equipo[0].getVida_restante());
@@ -338,6 +338,14 @@ public class VistaEquipo extends javax.swing.JFrame {
     }
     public JButton getBotonPokemon6(){
         return this.jB_Pokemon6;
+    }
+    public void activarBotones(){
+        this.jB_Pokemon1.setEnabled(true);
+        this.jB_Pokemon2.setEnabled(true);
+        this.jB_Pokemon3.setEnabled(true);
+        this.jB_Pokemon4.setEnabled(true);
+        this.jB_Pokemon5.setEnabled(true);
+        this.jB_Pokemon6.setEnabled(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

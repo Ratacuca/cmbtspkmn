@@ -49,6 +49,8 @@ public class VistaCombate extends javax.swing.JFrame {
         jL_especie2 = new javax.swing.JLabel();
         jL_Estado1 = new javax.swing.JLabel();
         jL_Estado2 = new javax.swing.JLabel();
+        jL_Nivel1 = new javax.swing.JLabel();
+        jL_Nivel2 = new javax.swing.JLabel();
 
         jL_jugador1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jL_jugador1.setText("Jugador 1");
@@ -90,6 +92,12 @@ public class VistaCombate extends javax.swing.JFrame {
         jL_especie2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jL_especie2.setText("jLabel2");
 
+        jL_Nivel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jL_Nivel1.setText("100");
+
+        jL_Nivel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jL_Nivel2.setText("100");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -104,28 +112,26 @@ public class VistaCombate extends javax.swing.JFrame {
                 .addComponent(jL_Turno_actual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(262, 262, 262))
             .addGroup(layout.createSequentialGroup()
+                .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jL_jugador1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jL_nombrepokemon1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jL_vida_actual1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jL_nombrepokemon2, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jL_vida_actual2, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(10, 10, 10)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jL_Estado1)
-                            .addComponent(jL_Estado2)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(115, 115, 115)
-                        .addComponent(jL_especie2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(121, 121, 121)
-                        .addComponent(jL_especie1)))
+                            .addComponent(jL_nombrepokemon1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jL_especie1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jL_nombrepokemon2, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jL_vida_actual2, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jL_especie2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(20, 20, 20)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jL_Nivel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jL_Estado1)
+                    .addComponent(jL_Estado2)
+                    .addComponent(jL_Nivel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -160,7 +166,9 @@ public class VistaCombate extends javax.swing.JFrame {
                             .addComponent(jL_nombrepokemon1)
                             .addComponent(jL_Estado1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jL_especie1)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jL_especie1)
+                            .addComponent(jL_Nivel1))
                         .addGap(14, 14, 14)
                         .addComponent(jL_vida_actual1)))
                 .addGap(39, 39, 39)
@@ -187,7 +195,9 @@ public class VistaCombate extends javax.swing.JFrame {
                             .addComponent(jL_nombrepokemon2, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jL_Estado2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jL_especie2)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jL_especie2)
+                            .addComponent(jL_Nivel2))))
                 .addGap(11, 11, 11)
                 .addComponent(jL_vida_actual2)
                 .addContainerGap(53, Short.MAX_VALUE))
@@ -276,6 +286,13 @@ public void setjL_especie1(String texto){
 public void setjL_especie2(String texto){
     jL_especie2.setText(texto);
 }
+public void setjL_Nivel1(int nivel){
+    jL_Nivel1.setText(Integer.toString(nivel));
+}
+public void setjL_Nivel2(int nivel){
+    jL_Nivel2.setText(Integer.toString(nivel));
+}
+
 
 public void setjL_nombrepokemon2(String texto){
     jL_nombrepokemon2.setText(texto);
@@ -315,6 +332,8 @@ public void turnoSimulacion(){
     private javax.swing.JButton jB_Cambiar2;
     private javax.swing.JLabel jL_Estado1;
     private javax.swing.JLabel jL_Estado2;
+    private javax.swing.JLabel jL_Nivel1;
+    private javax.swing.JLabel jL_Nivel2;
     private javax.swing.JLabel jL_Turno_actual;
     private javax.swing.JLabel jL_especie1;
     private javax.swing.JLabel jL_especie2;

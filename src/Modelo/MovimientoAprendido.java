@@ -13,8 +13,8 @@ public class MovimientoAprendido extends Movimiento{
    
    public MovimientoAprendido(int cantidad_pp, int precision, int potencia, String nombre, 
             int tipo, Boolean envenena, Boolean confunde, Boolean paraliza, 
-            Boolean congela, Boolean quema, Boolean duerme, Boolean contacto, int puntos_poder_restantes){
-       super(cantidad_pp, precision, potencia, nombre, tipo, envenena, confunde, paraliza, congela, quema, duerme, contacto);
+            Boolean congela, Boolean quema, Boolean duerme, Boolean contacto, int puntos_poder_restantes, int id_movimiento){
+       super(cantidad_pp, precision, potencia, nombre, tipo, envenena, confunde, paraliza, congela, quema, duerme, contacto, id_movimiento);
        this.puntos_poder_restantes = puntos_poder_restantes;
    }
 

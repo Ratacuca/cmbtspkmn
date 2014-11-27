@@ -32,37 +32,23 @@ import javax.swing.JLabel;
 public class ControladorPrincipal implements ActionListener{
     
     private VistaPrincipal vistaPrincipal;
-    private Entrenador entrenador1;
-    private Entrenador entrenador2;
+    private Entrenador entrenador_activo1;
+    private Entrenador entrenador_activo2;
     private Pokemon[] equipo1;
     private Pokemon[] equipo2;
-    private int tipo_equipo;
     
     
     public ControladorPrincipal(VistaPrincipal vp){
         vistaPrincipal = vp;
         this.vistaPrincipal.agregarListener(this);
-        this.tipo_equipo = 0;
               
     }
     
     @Override
     public void actionPerformed(ActionEvent e) {
         if (vistaPrincipal.getBotonSimularCombate() == (JButton) e.getSource()) {
-            generarCombate();
-            
-        }
-        if (vistaPrincipal.getBotonCambiarEquipo1() == (JButton) e.getSource()) {
             try {
-                generarCambioEquipo(1);
-            } catch (SQLException ex) {
-                Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
-        }
-        if (vistaPrincipal.getBotonCambiarEquipo2() == (JButton) e.getSource()) {
-            try {
-                generarCambioEquipo(2);
+                generarCombate();
             } catch (SQLException ex) {
                 Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -77,12 +63,11 @@ public class ControladorPrincipal implements ActionListener{
         }
         if (vistaPrincipal.getBotonCargarEntrenador1() == (JButton) e.getSource()){
             try {
-                vistaPrincipal.removerJc_Entrenador1();
-                vistaPrincipal.removerJc_Entrenador2();
-                leerBD("BD.txt");
-            } catch (IOException ex) {
+                cargarEntrenadores();
+            } catch (SQLException ex) {
                 Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
             }
+            
         }
         if (vistaPrincipal.getBotonSimularTorneo() == (JButton) e.getSource()){
             try {
@@ -148,17 +133,21 @@ public class ControladorPrincipal implements ActionListener{
         ControladorCampeonato ccamp = new ControladorCampeonato(vt);
         }
     }
-    public void generarCombate(){
+    public void generarCombate() throws SQLException{
         String nombre1 = vistaPrincipal.getjC_Nombre1();
         String nombre2 = vistaPrincipal.getjC_Nombre2();
+        int id_nombre1 = vistaPrincipal.getIndexjC_Entrenador1()+56;
+        int id_nombre2 = vistaPrincipal.getIndexjC_Entrenador2()+56;
         VistaPreviaCombate vpc = new VistaPreviaCombate(vistaPrincipal.getjC_TipoSimulacion(), nombre1, nombre2);
         int tipo_combate = vistaPrincipal.getjC_TipoSimulacion();
-        if(tipo_equipo == 0){
-        this.equipo1 = equipoPrueba1();
-        this.equipo2 = equipoPrueba2();
-        }
-        this.entrenador1 = new Entrenador(nombre1, equipo1); 
-        this.entrenador2 = new Entrenador(nombre2, equipo2);
+//        this.equipo1 = equipoPrueba1();
+//        this.equipo2 = equipoPrueba2();
+//        this.entrenador_activo1 = new Entrenador(nombre1, equipo1); 
+//        this.entrenador_activo2 = new Entrenador(nombre2, equipo2);
+        this.entrenador_activo1 = obtenerEntrenadorBD(id_nombre1);
+        this.entrenador_activo2 = obtenerEntrenadorBD(id_nombre2);
+        this.equipo1 = entrenador_activo1.getPokemones();
+        this.equipo2 = entrenador_activo2.getPokemones();
         String[] nombres1 = new String[6];
         String[] nombres2 = new String[6];
         for (int i = 0; i < 6; i++) {
@@ -168,41 +157,17 @@ public class ControladorPrincipal implements ActionListener{
         vpc.setjC_Equipo1(nombres1);
         vpc.setjC_Equipo2(nombres2);
         vpc.setVisible(true);
-        ControladorCombate cc = new ControladorCombate(vpc, tipo_combate, entrenador1, entrenador2);
+        ControladorCombate cc = new ControladorCombate(vpc, tipo_combate, entrenador_activo1, entrenador_activo2, this);
         System.out.println("Se selecciono simular combate");
-    }
-    public void generarCambioEquipo(int equipo) throws SQLException{
-        ControladorBD cBD = new ControladorBD();
-        ArrayList<String> nombres_pokemon = new ArrayList();
-        nombres_pokemon = cBD.obtenerNombresPokemones();
-        VistaNuevoEquipo vnew = new VistaNuevoEquipo();
-        vnew.setJL_Pokemon1(nombres_pokemon);
-        vnew.setJL_Pokemon2(nombres_pokemon);
-        vnew.setJL_Pokemon3(nombres_pokemon);
-        vnew.setJL_Pokemon4(nombres_pokemon);
-        vnew.setJL_Pokemon5(nombres_pokemon);
-        vnew.setJL_Pokemon6(nombres_pokemon);
-        vnew.setVisible(true);
-        ControladorEquipo ceq = new ControladorEquipo(vnew, cBD, equipoPrueba1());
-        if(equipo == 1){
-           this.equipo1 = ceq.getEquipo();
-            System.out.println(equipo1[0].getPseudonimo());
-           this.tipo_equipo = 1;
-        }
-        else{
-           this.equipo2 = ceq.getEquipo();
-           this.tipo_equipo = 1;
-        }
-    
     }
     
     public void generarEntrenador() throws SQLException{
         VistaCrearEntrenador vce = new VistaCrearEntrenador();
         vce.setVisible(true);
-        ControladorEntrenador ce = new ControladorEntrenador(vce);
+        ControladorEntrenador ce = new ControladorEntrenador(vce, this);
         
     }
-    public void leerBD(String ruta) throws FileNotFoundException, IOException{
+    public void leerBDTexto(String ruta) throws FileNotFoundException, IOException{
         File adquisicion = new File(ruta);
         FileReader carga = new FileReader(adquisicion);
         BufferedReader procesador = new BufferedReader(carga);
@@ -219,91 +184,32 @@ public class ControladorPrincipal implements ActionListener{
         procesador.close();
         
         }
-     public Pokemon[] equipoPrueba1(){
-         Pokemon[] equipo = new Pokemon[6];
-         int[] debilidades_Charmander = new int[1];
-         int[] fortalezas_Charmander= new int[1];
-         debilidades_Charmander[0] = 2;
-         fortalezas_Charmander[0] = 7;
-         int[] debilidades_Squirtle= new int[1];
-         int[] fortalezas_Squirtle= new int[1];
-         debilidades_Squirtle[0] = 9;
-         fortalezas_Squirtle[0] = 7;
-         Pokemon pokemon1 = new Pokemon("Charmander", 7, 7, debilidades_Charmander, fortalezas_Charmander, 1, "Bellaco", 100, 150, 140, 170, 120, 250, 250);
-         Pokemon pokemon2 = new Pokemon("Charmander", 7, 7, debilidades_Charmander, fortalezas_Charmander, 1, "Ratacuca", 100, 150, 140, 170, 120, 220, 220);
-         Pokemon pokemon3 = new Pokemon("Squirtle", 2, 2, debilidades_Squirtle, fortalezas_Squirtle, 2, "Jesus", 100, 160, 120, 150, 130, 210, 210);
-         Pokemon pokemon4 = new Pokemon("Charmander", 7, 7, debilidades_Charmander, fortalezas_Charmander, 1, "Superman", 100, 150, 140, 170, 120, 210, 210);
-         Pokemon pokemon5 = new Pokemon("Squirtle", 2, 2, debilidades_Squirtle, fortalezas_Squirtle, 2, "Batman", 100, 160, 210, 150, 130, 220, 220);
-         Pokemon pokemon6 = new Pokemon("Charmander", 7, 7, debilidades_Charmander, fortalezas_Charmander, 1, "CJ", 100, 150, 140, 170, 120, 220, 220);
-         pokemon1.setMovimientos(movimientosPruebaCharmander());
-         pokemon2.setMovimientos(movimientosPruebaCharmander());
-         pokemon3.setMovimientos(movimientosPruebaSquirtle());
-         pokemon4.setMovimientos(movimientosPruebaCharmander());
-         pokemon5.setMovimientos(movimientosPruebaSquirtle());
-         pokemon6.setMovimientos(movimientosPruebaCharmander());
-         equipo[0]=pokemon1;
-         equipo[1]=pokemon2;
-         equipo[2]=pokemon3;
-         equipo[3]=pokemon4;
-         equipo[4]=pokemon5;
-         equipo[5]=pokemon6;
-         return equipo;
-     }   
-     public Pokemon[] equipoPrueba2(){
-         Pokemon[] equipo = new Pokemon[6];
-         int[] debilidades_Charmander = new int[1];
-         int[] fortalezas_Charmander= new int[1];
-         debilidades_Charmander[0] = 2;
-         fortalezas_Charmander[0] = 7;
-         int[] debilidades_Squirtle= new int[1];
-         int[] fortalezas_Squirtle= new int[1];
-         debilidades_Squirtle[0] = 9;
-         fortalezas_Squirtle[0] = 7;
-         Pokemon pokemon1 = new Pokemon("Squirtle", 2, 2, debilidades_Squirtle, fortalezas_Squirtle, 2, "Rata", 100, 160, 120, 150, 130, 250, 250);
-         Pokemon pokemon2 = new Pokemon("Charmander", 7, 7, debilidades_Charmander, fortalezas_Charmander, 1, "Hulk", 100, 150, 140, 170, 120, 260, 260);
-         Pokemon pokemon3 = new Pokemon("Squirtle", 2, 2, debilidades_Squirtle, fortalezas_Squirtle, 2, "Simba", 100, 160, 120, 150, 130, 220, 220);
-         Pokemon pokemon4 = new Pokemon("Charmander", 7, 7, debilidades_Charmander, fortalezas_Charmander, 1, "Piñera", 100, 150, 140, 170, 120, 210, 210);
-         Pokemon pokemon5 = new Pokemon("Squirtle", 2, 2, debilidades_Squirtle, fortalezas_Squirtle, 2, "Bachelet", 100, 160, 120, 150, 130, 230, 230);
-         Pokemon pokemon6 = new Pokemon("Squirtle", 2, 2, debilidades_Squirtle, fortalezas_Squirtle, 2, "Obama", 100, 160, 120, 150, 150, 210, 210);
-         pokemon1.setMovimientos(movimientosPruebaSquirtle());
-         pokemon2.setMovimientos(movimientosPruebaCharmander());
-         pokemon3.setMovimientos(movimientosPruebaSquirtle());
-         pokemon4.setMovimientos(movimientosPruebaCharmander());
-         pokemon5.setMovimientos(movimientosPruebaSquirtle());
-         pokemon6.setMovimientos(movimientosPruebaSquirtle());
-         equipo[0]=pokemon1;
-         equipo[1]=pokemon2;
-         equipo[2]=pokemon3;
-         equipo[3]=pokemon4;
-         equipo[4]=pokemon5;
-         equipo[5]=pokemon6;
-         return equipo;
-     }  
-     public MovimientoAprendido[] movimientosPruebaCharmander(){
-         MovimientoAprendido[] movimientos = new MovimientoAprendido[4];
-         MovimientoAprendido movimiento1 = new MovimientoAprendido(10, 60, 100, "Lanzallamas", 7, false, false, false, false, true, false, false, 10);
-         MovimientoAprendido movimiento2 = new MovimientoAprendido(30, 100, 60, "Arañazo", 11, false, false, false, false, false, false, true, 30);
-         MovimientoAprendido movimiento3 = new MovimientoAprendido(20, 90, 80, "Ascuas", 7, false, false, false, false, true, false, false, 20);
-         MovimientoAprendido movimiento4 = new MovimientoAprendido(20, 100, 50, "Placaje", 11, false, false, false, false, false, false, true, 20);
-         movimientos[0] = movimiento1;
-         movimientos[1] = movimiento2;
-         movimientos[2] = movimiento3;
-         movimientos[3] = movimiento4;
-         return movimientos;
-     }
-     public MovimientoAprendido[] movimientosPruebaSquirtle(){
-         MovimientoAprendido[] movimientos = new MovimientoAprendido[4];
-         MovimientoAprendido movimiento1 = new MovimientoAprendido(10, 60, 100, "Hidrobomba", 2, false, true, false, false, false, false, false, 10);
-         MovimientoAprendido movimiento2 = new MovimientoAprendido(30, 100, 60, "Arañazo", 11, false, false, false, false, false, false, true, 30);
-         MovimientoAprendido movimiento3 = new MovimientoAprendido(20, 100, 75, "Embestida", 11, false, false, false, false, false, false, true, 20);
-         MovimientoAprendido movimiento4 = new MovimientoAprendido(20, 90, 50, "Burbujas", 2, false, false, false, false, false, false, false, 20);
-         movimientos[0] = movimiento1;
-         movimientos[1] = movimiento2;
-         movimientos[2] = movimiento3;
-         movimientos[3] = movimiento4;
-         return movimientos;
-     }
-     public Entrenador[] participantes(){
+    public void cargarEntrenadores() throws SQLException{
+        ControladorBD cBD = new ControladorBD();
+        ArrayList<String> entrenadores = cBD.obtenerNombresEntrenadores();
+        vistaPrincipal.removerJc_Entrenador1();
+        vistaPrincipal.removerJc_Entrenador2();
+        for (int i = 0; i < entrenadores.size(); i++) {
+            vistaPrincipal.setjC_Entrenador1(entrenadores.get(i));
+            vistaPrincipal.setjC_Entrenador2(entrenadores.get(i));
+        }
+    }
+    public Entrenador obtenerEntrenadorBD(int id) throws SQLException{
+        ControladorBD cBD = new ControladorBD();
+        Pokemon[] equipo = cBD.obtenerEquipo(id);
+            equipo[0].setMovimientos(cBD.obtenerMovesetPokemon(equipo[0].getId_pokemon()));
+            equipo[1].setMovimientos(cBD.obtenerMovesetPokemon(equipo[1].getId_pokemon()));
+            equipo[2].setMovimientos(cBD.obtenerMovesetPokemon(equipo[2].getId_pokemon()));
+            equipo[3].setMovimientos(cBD.obtenerMovesetPokemon(equipo[3].getId_pokemon()));
+            equipo[4].setMovimientos(cBD.obtenerMovesetPokemon(equipo[4].getId_pokemon()));
+            equipo[5].setMovimientos(cBD.obtenerMovesetPokemon(equipo[5].getId_pokemon()));
+        String nombre = cBD.obtenerNombreEntrenador(id);
+        Entrenador entrenador = new Entrenador(nombre, equipo, id);
+        return entrenador;
+    }
+    
+     
+    public Entrenador[] participantes(){
          Entrenador[] participantesPrueba = new Entrenador[32];
          Entrenador entrenador1 = new Entrenador("1",1);
          Entrenador entrenador2 = new Entrenador("2",2);
