@@ -53,6 +53,9 @@ public class ControladorCombate implements ActionListener{
         this.equipo2 = entrenador2.getPokemones();
         this.entrenador1 = entrenador1;
         this.entrenador2 = entrenador2;
+        this.vc = new VistaCombate();
+        this.va = new VistaAtaque();
+        this.ve = new VistaEquipo();
         
     }
     
@@ -60,9 +63,6 @@ public class ControladorCombate implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         //-------------------- ASIGNACIONES INICIALES PARA EL COMBATE-------------------
         if (vpc.getBotonIniciar() == (JButton) e.getSource()){
-            this.vc = new VistaCombate();
-            this.va = new VistaAtaque();
-            this.ve = new VistaEquipo();
             va.agregarListener(this);
             ve.agregarListener(this);
             System.out.println("Se inicio el Combate");
