@@ -16,6 +16,7 @@ import java.sql.SQLException;
 public class ControladorCampeonato implements ActionListener {
     
     private VistaCampeonato vista;
+    private int tipo_campeonato; //Simulacion medallas = 0, Simulacion segunda fase = 1, Simulacion Completa = 2
     
     public ControladorCampeonato(VistaCampeonato vt)throws SQLException{
         
