@@ -6,11 +6,13 @@
 
 package Controlador;
 
+import Modelo.ConexionBD;
 import Modelo.MovimientoAprendido;
 import Modelo.Pokemon;
 import Vista.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -26,7 +28,7 @@ public class ControladorEquipo implements ActionListener{
     private VistaNuevoEquipo vista;
     private VistaNuevosMovimientos vista_mov;
     private Pokemon[] equipo;
-    private ControladorBD cBD;
+    private ConexionBD cBD;
     private MovimientoAprendido[] movimientos1;
     private MovimientoAprendido[] movimientos2;
     private MovimientoAprendido[] movimientos3;
@@ -46,13 +48,14 @@ public class ControladorEquipo implements ActionListener{
     private ControladorCombate controlador_combate;
     private VistaPreviaCombate vpc;
     private int equipo_modificado;
+    private ControladorRegistros creg;
     
     
     
     public ControladorEquipo(VistaNuevoEquipo vnew,   
             int cambio_o_nuevo, int id_entrenador, ControladorPrincipal cp) throws SQLException{
         this.controlador_principal = cp;
-        this.cBD = new ControladorBD();
+        this.cBD = new ConexionBD();
         this.vista_mov = new VistaNuevosMovimientos();
             vista_mov.agregarListener(this);
         this.vista = vnew;
@@ -78,6 +81,7 @@ public class ControladorEquipo implements ActionListener{
         this.movimientos4_activados = false;
         this.movimientos5_activados = false;
         this.movimientos6_activados = false;
+        this.creg = new ControladorRegistros();
         
     }
     public ControladorEquipo(VistaNuevoEquipo vnew,   
@@ -87,7 +91,7 @@ public class ControladorEquipo implements ActionListener{
         this.controlador_combate = cc;
         this.vpc = vpc;
         this.controlador_principal = cp;
-        this.cBD = new ControladorBD();
+        this.cBD = new ConexionBD();
         this.vista_mov = new VistaNuevosMovimientos();
             vista_mov.agregarListener(this);
         this.vista = vnew;
@@ -113,11 +117,17 @@ public class ControladorEquipo implements ActionListener{
         this.movimientos4_activados = false;
         this.movimientos5_activados = false;
         this.movimientos6_activados = false;
+        this.creg = new ControladorRegistros();
         
     }
     @Override
     public void actionPerformed(ActionEvent e) {
         if (vista.getjB_Listo()== (JButton) e.getSource()){
+            try {
+                creg.guardarAccionUsuario("Usuario eligio sus pokemon, movimientos, nombres y niveles");
+            } catch (IOException ex) {
+                Logger.getLogger(ControladorCombate.class.getName()).log(Level.SEVERE, null, ex);
+            }
             int nivel1 = vista.getjS_Nivel1();
             int nivel2 = vista.getjS_Nivel2();
             int nivel3 = vista.getjS_Nivel3();
@@ -222,30 +232,65 @@ public class ControladorEquipo implements ActionListener{
             vista_mov.dispose();
         }
         if (vista.getjB_movimientos1() == (JButton) e.getSource()){
+            try {
+                creg.guardarAccionUsuario("Usuario eligio cambiar los movimientos de su primer pokemon");
+            } catch (IOException ex) {
+                Logger.getLogger(ControladorCombate.class.getName()).log(Level.SEVERE, null, ex);
+            }
            vista_mov.setVisible(true);
            this.seleccion = 1;
         }
         if (vista.getjB_movimientos2() == (JButton) e.getSource()){
+            try {
+                creg.guardarAccionUsuario("Usuario eligio cambiar los movimientos de su segundo pokemon");
+            } catch (IOException ex) {
+                Logger.getLogger(ControladorCombate.class.getName()).log(Level.SEVERE, null, ex);
+            }
            vista_mov.setVisible(true);
            this.seleccion = 2;
         }
         if (vista.getjB_movimientos3() == (JButton) e.getSource()){
+            try {
+                creg.guardarAccionUsuario("Usuario eligio cambiar los movimientos de su tercer pokemon");
+            } catch (IOException ex) {
+                Logger.getLogger(ControladorCombate.class.getName()).log(Level.SEVERE, null, ex);
+            }
            vista_mov.setVisible(true); 
            this.seleccion = 3;
         }
         if (vista.getjB_movimientos4() == (JButton) e.getSource()){
+            try {
+                creg.guardarAccionUsuario("Usuario eligio cambiar los movimientos de su cuarto pokemon");
+            } catch (IOException ex) {
+                Logger.getLogger(ControladorCombate.class.getName()).log(Level.SEVERE, null, ex);
+            }
            vista_mov.setVisible(true); 
            this.seleccion = 4;
         }
         if (vista.getjB_movimientos5() == (JButton) e.getSource()){
+            try {
+                creg.guardarAccionUsuario("Usuario eligio cambiar los movimientos de su quinto pokemon");
+            } catch (IOException ex) {
+                Logger.getLogger(ControladorCombate.class.getName()).log(Level.SEVERE, null, ex);
+            }
            vista_mov.setVisible(true); 
            this.seleccion = 5;
         }
         if (vista.getjB_movimientos6() == (JButton) e.getSource()){
+            try {
+                creg.guardarAccionUsuario("Usuario eligio cambiar los movimientos de su sexto pokemon");
+            } catch (IOException ex) {
+                Logger.getLogger(ControladorCombate.class.getName()).log(Level.SEVERE, null, ex);
+            }
            vista_mov.setVisible(true);  
            this.seleccion = 6;
         }
         if(vista_mov.getjB_Listo() == (JButton) e.getSource()){
+            try {
+                creg.guardarAccionUsuario("Usuario eligio los movimientos de su pokemon");
+            } catch (IOException ex) {
+                Logger.getLogger(ControladorCombate.class.getName()).log(Level.SEVERE, null, ex);
+            }
             if(vista_mov.getJL_Movimiento1().equals(vista_mov.getJL_Movimiento2()) || 
                     vista_mov.getJL_Movimiento1().equals(vista_mov.getJL_Movimiento3()) || 
                     vista_mov.getJL_Movimiento1().equals(vista_mov.getJL_Movimiento4()) || 

@@ -4,9 +4,7 @@
  * and open the template in the editor.
  */
 
-package Controlador;
-import Modelo.*;
-import Modelo.*;
+package Modelo;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,11 +12,11 @@ import java.util.Collections;
  *
  * @author Mario Caceres
  */
-public class ControladorBD {
+public class ConexionBD {
    
     private Connection conexion;
     
-    public ControladorBD()throws SQLException{
+    public ConexionBD()throws SQLException{
         String ruta = "jdbc:derby://localhost:1527/Combates_Pokemon ;user=mario ;password=1234";
         conexion = java.sql.DriverManager.getConnection(ruta);
     }
@@ -464,6 +462,20 @@ public class ControladorBD {
         rst.close();
         
         return nombre;
+    }
+    public String obtenerDistincionEntrenador(int id)throws SQLException{
+        
+        ResultSet rst;
+        Statement stmt;
+        stmt = conexion.createStatement();
+        String consulta = "SELECT categoria_entrenador FROM entrenador WHERE id_entrenador = "+id+"";
+        rst = stmt.executeQuery(consulta);
+        rst.next();
+        String categoria = rst.getString("categoria_entrenador").trim();
+       
+        rst.close();
+        
+        return categoria;
     }
     public ArrayList<String> obtenerNombresEntrenadoresNPC()throws SQLException{
         

@@ -6,6 +6,7 @@
 
 package Controlador;
 
+import Modelo.ConexionBD;
 import Modelo.*;
 import Vista.*;
 import java.awt.event.ActionEvent;
@@ -36,17 +37,24 @@ public class ControladorPrincipal implements ActionListener{
     private Entrenador entrenador_activo2;
     private Pokemon[] equipo1;
     private Pokemon[] equipo2;
+    private ControladorRegistros creg;
     
     
     public ControladorPrincipal(VistaPrincipal vp){
         vistaPrincipal = vp;
         this.vistaPrincipal.agregarListener(this);
+        this.creg = new ControladorRegistros();
               
     }
     
     @Override
     public void actionPerformed(ActionEvent e) {
         if (vistaPrincipal.getBotonSimularCombate() == (JButton) e.getSource()) {
+            try {
+                creg.guardarAccionUsuario("Usuario eligio simular un combate individual");
+            } catch (IOException ex) {
+                Logger.getLogger(ControladorCombate.class.getName()).log(Level.SEVERE, null, ex);
+            }
             try {
                 generarCombate();
             } catch (SQLException ex) {
@@ -56,12 +64,22 @@ public class ControladorPrincipal implements ActionListener{
         }
         if (vistaPrincipal.getBotonCrearEntrenador() == (JButton) e.getSource()){
             try {
+                creg.guardarAccionUsuario("Usuario eligio crear un nuevo entrenador");
+            } catch (IOException ex) {
+                Logger.getLogger(ControladorCombate.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            try {
                 generarEntrenador();
             } catch (SQLException ex) {
                 Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         if (vistaPrincipal.getBotonCargarEntrenador1() == (JButton) e.getSource()){
+            try {
+                creg.guardarAccionUsuario("Usuario eligio cargar los entrenadores desde la base de datos");
+            } catch (IOException ex) {
+                Logger.getLogger(ControladorCombate.class.getName()).log(Level.SEVERE, null, ex);
+            }
             try {
                 cargarEntrenadores();
             } catch (SQLException ex) {
@@ -71,10 +89,37 @@ public class ControladorPrincipal implements ActionListener{
         }
         if (vistaPrincipal.getBotonSimularTorneo() == (JButton) e.getSource()){
             try {
+                creg.guardarAccionUsuario("Usuario eligio simular un torneo");
+            } catch (IOException ex) {
+                Logger.getLogger(ControladorCombate.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            try {
                 generarTorneo();
             } catch (SQLException ex) {
                 Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
             }
+        }
+        
+        if(vistaPrincipal.getBotonInfo1() == (JButton) e.getSource()){
+           VistaEntrenador ven = new VistaEntrenador();
+           int id_nombre = vistaPrincipal.getIndexjC_Entrenador1()+56;
+            try {
+                this.entrenador_activo1 = obtenerEntrenadorBD(id_nombre);
+                ControladorInfoEntrenador cen = new ControladorInfoEntrenador(ven, this.entrenador_activo1);
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            } 
+        }
+        
+        if(vistaPrincipal.getBotonInfo2() == (JButton) e.getSource()){
+            VistaEntrenador ven = new VistaEntrenador();
+           int id_nombre = vistaPrincipal.getIndexjC_Entrenador2()+56;
+            try {
+                this.entrenador_activo2 = obtenerEntrenadorBD(id_nombre);
+                ControladorInfoEntrenador cen = new ControladorInfoEntrenador(ven, this.entrenador_activo2);
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }  
         }
         
         
@@ -140,10 +185,6 @@ public class ControladorPrincipal implements ActionListener{
         int id_nombre2 = vistaPrincipal.getIndexjC_Entrenador2()+56;
         VistaPreviaCombate vpc = new VistaPreviaCombate(vistaPrincipal.getjC_TipoSimulacion(), nombre1, nombre2);
         int tipo_combate = vistaPrincipal.getjC_TipoSimulacion();
-//        this.equipo1 = equipoPrueba1();
-//        this.equipo2 = equipoPrueba2();
-//        this.entrenador_activo1 = new Entrenador(nombre1, equipo1); 
-//        this.entrenador_activo2 = new Entrenador(nombre2, equipo2);
         this.entrenador_activo1 = obtenerEntrenadorBD(id_nombre1);
         this.entrenador_activo2 = obtenerEntrenadorBD(id_nombre2);
         this.equipo1 = entrenador_activo1.getPokemones();
@@ -185,7 +226,7 @@ public class ControladorPrincipal implements ActionListener{
         
         }
     public void cargarEntrenadores() throws SQLException{
-        ControladorBD cBD = new ControladorBD();
+        ConexionBD cBD = new ConexionBD();
         ArrayList<String> entrenadores = cBD.obtenerNombresEntrenadores();
         vistaPrincipal.removerJc_Entrenador1();
         vistaPrincipal.removerJc_Entrenador2();
@@ -195,7 +236,7 @@ public class ControladorPrincipal implements ActionListener{
         }
     }
     public Entrenador obtenerEntrenadorBD(int id) throws SQLException{
-        ControladorBD cBD = new ControladorBD();
+        ConexionBD cBD = new ConexionBD();
         Pokemon[] equipo = cBD.obtenerEquipo(id);
             equipo[0].setMovimientos(cBD.obtenerMovesetPokemon(equipo[0].getId_pokemon()));
             equipo[1].setMovimientos(cBD.obtenerMovesetPokemon(equipo[1].getId_pokemon()));
@@ -204,7 +245,9 @@ public class ControladorPrincipal implements ActionListener{
             equipo[4].setMovimientos(cBD.obtenerMovesetPokemon(equipo[4].getId_pokemon()));
             equipo[5].setMovimientos(cBD.obtenerMovesetPokemon(equipo[5].getId_pokemon()));
         String nombre = cBD.obtenerNombreEntrenador(id);
+        String distincion = cBD.obtenerDistincionEntrenador(id);
         Entrenador entrenador = new Entrenador(nombre, equipo, id);
+        entrenador.setDistincion(distincion);
         return entrenador;
     }
     

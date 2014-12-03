@@ -35,6 +35,7 @@ public class CombatesPokemon {
         ControladorPrincipal controladorPrincipal = new ControladorPrincipal(vista);
         controladorPrincipal.cargarEntrenadores();
         vista.setVisible(true);
+        
     }
         
     

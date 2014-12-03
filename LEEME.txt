@@ -1,0 +1,12 @@
+Primero, crear base de datos con el script CreacionTablasSR. Son las tablas sin relaciones, ya que las tablas con relaciones generaban
+conflictos con valores sin poblacion (Recomendacion: nombre: Combates_Pokemon user: mario, pass: 1234).
+
+Segundo, poblar la BD con el script poblacion.
+
+Tercero, al iniciar el programa si se uso un user y password diferente al sugerido en la bd se debe modificar en ControladorBD en el 
+paquete Controlador, si no se desea modificar se debe crear la BD con el user: "mario" y la password: "1234" y el nombre: "Combates_Pokemon".
+
+Cuarto, al iniciar la aplicacion se debe crear un usuario para usarlo en las simulaciones.
+
+Los registros de las acciones del usuario y los de simulacion se encuentran en la carpeta base del proyecto.
+

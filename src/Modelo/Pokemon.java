@@ -19,12 +19,12 @@ public class Pokemon extends EspeciePokemon {
     private int vida_restante;
     private int velocidad;
     private Habilidad habilidad;
-    private Boolean confuso;
-    private Boolean paralizado;
-    private Boolean envenenado;
-    private Boolean congelado;
-    private Boolean dormido;
-    private Boolean quemado;
+    private Boolean confuso = false;
+    private Boolean paralizado = false;
+    private Boolean envenenado = false;
+    private Boolean congelado = false;
+    private Boolean dormido = false;
+    private Boolean quemado = false;
     private MovimientoAprendido[] movimientos = new MovimientoAprendido[4];
     private Boolean debilitado;
     private int id_pokemon;

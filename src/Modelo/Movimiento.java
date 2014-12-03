@@ -161,6 +161,54 @@ public abstract class Movimiento{
     public void setId_movimiento(int id_movimiento) {
         this.id_movimiento = id_movimiento;
     }
+
+    public Boolean getEnvenena() {
+        return envenena;
+    }
+
+    public void setEnvenena(Boolean envenena) {
+        this.envenena = envenena;
+    }
+
+    public Boolean getConfunde() {
+        return confunde;
+    }
+
+    public void setConfunde(Boolean confunde) {
+        this.confunde = confunde;
+    }
+
+    public Boolean getParaliza() {
+        return paraliza;
+    }
+
+    public void setParaliza(Boolean paraliza) {
+        this.paraliza = paraliza;
+    }
+
+    public Boolean getCongela() {
+        return congela;
+    }
+
+    public void setCongela(Boolean congela) {
+        this.congela = congela;
+    }
+
+    public Boolean getQuema() {
+        return quema;
+    }
+
+    public void setQuema(Boolean quema) {
+        this.quema = quema;
+    }
+
+    public Boolean getDuerme() {
+        return duerme;
+    }
+
+    public void setDuerme(Boolean duerme) {
+        this.duerme = duerme;
+    }
     
     
 }

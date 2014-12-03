@@ -5,6 +5,7 @@
  */
 
 package Controlador;
+import Modelo.ConexionBD;
 import Modelo.*;
 import Vista.*;
 import java.awt.event.ActionEvent;
@@ -27,20 +28,26 @@ public class ControladorEntrenador implements ActionListener{
     private VistaCrearEntrenador vista;
     private VistaNuevoEquipo vnew;
     private ControladorPrincipal controlador_principal;
+    private ControladorRegistros creg;
     
     public ControladorEntrenador(VistaCrearEntrenador vce, ControladorPrincipal cp)throws SQLException{
         this.controlador_principal = cp;
         vista = vce;
         this.vista.agregarListener(this);
-        ControladorBD cBD = new ControladorBD();
+        ConexionBD cBD = new ConexionBD();
         this.vnew = new VistaNuevoEquipo();
+        this.creg = new ControladorRegistros();
     }
     
     @Override
     public void actionPerformed(ActionEvent e) {
         
         if (vista.getjB_Crear() == (JButton) e.getSource()){
-            
+            try {
+                creg.guardarAccionUsuario("Usuario eligio su nombre y region para el nuevo entrenador");
+            } catch (IOException ex) {
+                Logger.getLogger(ControladorCombate.class.getName()).log(Level.SEVERE, null, ex);
+            }
             String nombre = vista.getNombre();
             int regionBD = vista.getjC_Region() +1;
             String region = getRegion();
@@ -51,7 +58,7 @@ public class ControladorEntrenador implements ActionListener{
                 Logger.getLogger(ControladorEntrenador.class.getName()).log(Level.SEVERE, null, ex);
             }
             try {
-                ControladorBD cBD = new ControladorBD();
+                ConexionBD cBD = new ConexionBD();
                 ArrayList<String> nombres_pokemon = new ArrayList();
                 nombres_pokemon = cBD.obtenerNombresPokemones();
                     vnew.setJL_Pokemon1(nombres_pokemon);
