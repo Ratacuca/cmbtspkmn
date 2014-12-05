@@ -104,11 +104,6 @@ public class ConexionBD {
     }
     
     
-    public void actualizarPokemon(int id_pokemon){
-        
-    }
-    
-    
     public void guardarEquipo(int id_pokemon, int id_familia, int id_entrenador) throws SQLException{
         
         ResultSet rst;
@@ -348,7 +343,7 @@ public class ConexionBD {
         
     }
     
-    
+    //Para entrenadores normales
     public Pokemon crearPokemon(String nombre, int nivel, String pseudonimo) throws SQLException{
         
         ResultSet rst;
@@ -383,8 +378,67 @@ public class ConexionBD {
         return pokemon;
         
     }
+    //Para lideres
+    public Pokemon crearPokemon(int nivel, int id_familia) throws SQLException{
+        
+        ResultSet rst;
+        
+        Statement stmt;
+        stmt = conexion.createStatement();
+        String consulta = "SELECT * FROM Familia_pokemon WHERE id_familiapokemon="+id_familia+"";
+        
+        rst = stmt.executeQuery(consulta);
+        rst.next();
+            double ataque = ((rst.getInt("Ataquemax_familiapokemon")-rst.getInt("Ataquebase_familiapokemon"))*nivel)/99 + 
+                    rst.getInt("Ataquebase_familiapokemon");
+            
+            double ataquesp = ((rst.getInt("Ataqueespecialmax_familiapokemon")-rst.getInt("Ataqueespecialbase_familiapokemon"))*nivel)/99 + 
+                    rst.getInt("Ataqueespecialbase_familiapokemon");
+            
+            double defensa = ((rst.getInt("Defensamax_familiapokemon")-rst.getInt("Defensabase_familiapokemon")*nivel))/99 + 
+                    rst.getInt("Defensabase_familiapokemon");
+            
+            double defensasp = ((rst.getInt("Defensaespecialmax_familiapokemon")-rst.getInt("Defensaespecialbase_familiapokemon"))*nivel)/99 + 
+                    rst.getInt("Defensaespecialbase_familiapokemon");
+            
+            double vida = ((rst.getInt("hpmax_familiapokemon")-rst.getInt("hpbase_familiapokemon"))*nivel)/99 + 
+                    rst.getInt("hpbase_familiapokemon");
+            
+            double velocidad = ((rst.getInt("velocidadmax_familiapokemon")-rst.getInt("velocidadbase_familiapokemon"))*nivel)/99 + 
+                    rst.getInt("velocidadbase_familiapokemon");
+            
+            String nombre = rst.getString("nombre_familiapokemon");
+            Pokemon pokemon = new Pokemon(nombre, nivel,(int)ataque, (int)defensa, (int)ataquesp, (int)defensasp, 
+                    (int)vida, (int)vida, (int)velocidad, nombre, rst.getInt("id_familiapokemon"));
+        rst.close();
+        return pokemon;
+        
+    }
     
-    
+    public ArrayList<Integer> obtenerIdsPokedex() throws SQLException{
+        ResultSet rst;
+        Statement stmt;
+        ArrayList<Integer> ids = new ArrayList<Integer>();
+        stmt = conexion.createStatement();
+        String consulta = "SELECT id_familiapokemon FROM familia_pokemon";
+        rst = stmt.executeQuery(consulta);
+        while(rst.next()){
+            ids.add(rst.getInt("id_familiapokemon"));
+        }
+        return ids;
+    }
+    public ArrayList<Integer> obtenerIdsMovimientos() throws SQLException{
+        ResultSet rst;
+        Statement stmt;
+        ArrayList<Integer> ids = new ArrayList<Integer>();
+        stmt = conexion.createStatement();
+        String consulta = "SELECT id_movimiento FROM movimiento";
+        rst = stmt.executeQuery(consulta);
+        while(rst.next()){
+            ids.add(rst.getInt("id_movimiento"));
+        }
+        return ids;
+    }
     public ArrayList<String> obtenerNombresEntrenadores() throws SQLException{
         ResultSet rst;
         Statement stmt;
@@ -462,6 +516,31 @@ public class ConexionBD {
         rst.close();
         
         return nombre;
+    }
+    
+    public Entrenador[] obtenerLideresGimnasio(int id_region) throws SQLException{
+        Entrenador[] lideres = new Entrenador[8];
+        ResultSet rst;
+        Statement stmt;
+        stmt = conexion.createStatement();
+        String consulta = "SELECT * FROM entrenador WHERE id_region = "+id_region+" AND id_entrenador<56";
+        rst = stmt.executeQuery(consulta);
+        String region = null;
+        if(id_region == 1) region = "Kanto";
+        if(id_region == 2) region = "Johto";
+        if(id_region == 3) region = "Hoenn";
+        if(id_region == 4) region = "Sinnoh";
+        if(id_region == 5) region = "Teselia";
+        if(id_region == 6) region = "Kalos";
+        int i = 0;
+        while(rst.next()){
+           lideres[i] = new Entrenador(rst.getString("nombre_entrenador").trim(), region, rst.getString("categoria_entrenador").trim(), 
+                   rst.getInt("id_entrenador"), rst.getInt("id_medalla"));
+           i=i+1;
+        }
+        rst.close();
+        return lideres;
+        
     }
     public String obtenerDistincionEntrenador(int id)throws SQLException{
         

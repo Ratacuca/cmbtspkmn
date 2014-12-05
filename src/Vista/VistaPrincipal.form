@@ -62,18 +62,23 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="29" pref="29" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jB_SimularCombate" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jB_SimularTorneo" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jB_SimularCombate" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jB_SimularSegundaFase" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jB_medallas" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jLabel6" max="32767" attributes="0"/>
-                                  <Component id="jLabel4" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jLabel6" max="32767" attributes="0"/>
+                                      <Component id="jLabel4" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jC_TipoTorneo" max="32767" attributes="0"/>
+                                  <Component id="jC_tipoMedallas" max="32767" attributes="0"/>
+                                  <Component id="jC_TipoSFase" max="32767" attributes="0"/>
                                   <Component id="jC_TipoSimulacion" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
@@ -92,7 +97,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="20" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="2" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -121,33 +126,38 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="13" pref="13" max="-2" attributes="0"/>
+                      <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jB_SimularTorneo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jC_Entrenador1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jB_info1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jB_SimularSegundaFase" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jC_TipoTorneo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jC_TipoSFase" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jC_Entrenador2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jB_info2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jB_medallas" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jC_tipoMedallas" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                      <Component id="jC_Entrenador1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jB_info1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
               </Group>
-              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jC_Entrenador2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jB_info2" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
               <Component id="jB_CargarEntrenador1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jB_crear_entrenador" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="60" max="32767" attributes="0"/>
+              <EmptySpace pref="59" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -169,9 +179,9 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jB_SimularCombateActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jB_SimularTorneo">
+    <Component class="javax.swing.JButton" name="jB_SimularSegundaFase">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Simular Torneo"/>
+        <Property name="text" type="java.lang.String" value="Simular Segunda Fase"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jB_crear_entrenador">
@@ -233,7 +243,7 @@
         <Property name="text" type="java.lang.String" value="Tipo:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jC_TipoTorneo">
+    <Component class="javax.swing.JComboBox" name="jC_TipoSFase">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
@@ -260,6 +270,31 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jB_info2ActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jB_medallas">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Obtener Medallas"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="jC_tipoMedallas">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="7">
+            <StringItem index="0" value="Region al Azar"/>
+            <StringItem index="1" value="Kanto"/>
+            <StringItem index="2" value="Johto"/>
+            <StringItem index="3" value="Hoenn"/>
+            <StringItem index="4" value="Sinnoh"/>
+            <StringItem index="5" value="Teselia"/>
+            <StringItem index="6" value="Kalos"/>
+          </StringArray>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel7">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tipo:"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

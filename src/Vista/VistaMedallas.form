@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="392" max="-2" attributes="0"/>
+                      <Component id="jB_combate" min="-2" pref="104" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace pref="384" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jL_posicion1" pref="89" max="32767" attributes="0"/>
+                          <Component id="jL_tipo1" max="32767" attributes="0"/>
+                          <Component id="jL_Lider1" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jL_Lider2" pref="89" max="32767" attributes="0"/>
+                          <Component id="jL_tipo2" max="32767" attributes="0"/>
+                          <Component id="jL_posicion2" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jL_Lider3" pref="89" max="32767" attributes="0"/>
+                          <Component id="jL_tipo3" max="32767" attributes="0"/>
+                          <Component id="jL_posicion3" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jL_Lider4" pref="89" max="32767" attributes="0"/>
+                          <Component id="jL_tipo4" max="32767" attributes="0"/>
+                          <Component id="jL_posicion4" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jL_Lider5" pref="89" max="32767" attributes="0"/>
+                          <Component id="jL_tipo5" max="32767" attributes="0"/>
+                          <Component id="jL_posicion5" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jL_Lider6" pref="89" max="32767" attributes="0"/>
+                          <Component id="jL_tipo6" max="32767" attributes="0"/>
+                          <Component id="jL_posicion6" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jL_Lider7" pref="89" max="32767" attributes="0"/>
+                          <Component id="jL_tipo7" max="32767" attributes="0"/>
+                          <Component id="jL_posicion7" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jL_Lider8" pref="89" max="32767" attributes="0"/>
+                          <Component id="jL_tipo8" max="32767" attributes="0"/>
+                          <Component id="jL_posicion8" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jL_region" min="-2" pref="178" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jL_region" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jL_Lider1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jL_Lider2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jL_Lider3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jL_Lider4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jL_Lider5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jL_Lider6" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jL_Lider7" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jL_Lider8" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jL_tipo1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jL_tipo2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jL_tipo3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jL_tipo4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jL_tipo5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jL_tipo6" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jL_tipo7" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jL_tipo8" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jL_posicion1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jL_posicion2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jL_posicion3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jL_posicion4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jL_posicion5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jL_posicion6" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jL_posicion7" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jL_posicion8" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+              <Component id="jB_combate" min="-2" pref="50" max="-2" attributes="0"/>
+              <EmptySpace pref="53" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="18" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Obtencion de Medallas"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jL_Lider1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Lider 1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jL_Lider2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Lider 2"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jL_Lider7">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Lider 7"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jL_Lider4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Lider 4"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jL_Lider8">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Lider 8"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jL_Lider6">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Lider 6"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jL_Lider3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Lider 3"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jL_Lider5">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Lider 5"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jL_tipo1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel10"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jL_tipo2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel11"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jL_tipo3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel12"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jL_tipo4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel13"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jL_tipo5">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel14"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jL_tipo6">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel15"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jL_tipo7">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel16"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jL_tipo8">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel17"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jL_posicion1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel18"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jL_posicion2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel19"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jL_posicion3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel20"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jL_posicion4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel21"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jL_posicion5">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel22"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jL_posicion6">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel23"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jL_posicion7">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel24"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jL_posicion8">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel25"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jB_combate">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Combatir!"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jL_region">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="Region"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>
