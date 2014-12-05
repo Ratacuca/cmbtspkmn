@@ -39,16 +39,17 @@ public class ControladorPrincipal implements ActionListener{
     private Pokemon[] equipo2;
     private ControladorRegistros creg;
     
-    
+    //Constructor
     public ControladorPrincipal(VistaPrincipal vp){
         vistaPrincipal = vp;
         this.vistaPrincipal.agregarListener(this);
         this.creg = new ControladorRegistros();
               
     }
-    
+    //Botones de la vista principal, aqui el controlador escucha a la vista principal
     @Override
     public void actionPerformed(ActionEvent e) {
+        //Boton para simular el combate simple
         if (vistaPrincipal.getBotonSimularCombate() == (JButton) e.getSource()) {
             try {
                 creg.guardarAccionUsuario("Usuario eligio simular un combate individual");
@@ -62,6 +63,7 @@ public class ControladorPrincipal implements ActionListener{
             }
             
         }
+        //Boton para crear un nuevo entrenador
         if (vistaPrincipal.getBotonCrearEntrenador() == (JButton) e.getSource()){
             try {
                 creg.guardarAccionUsuario("Usuario eligio crear un nuevo entrenador");
@@ -74,6 +76,7 @@ public class ControladorPrincipal implements ActionListener{
                 Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        //Boton para cargar los entrenadores en el combobox
         if (vistaPrincipal.getBotonCargarEntrenador1() == (JButton) e.getSource()){
             try {
                 creg.guardarAccionUsuario("Usuario eligio cargar los entrenadores desde la base de datos");
@@ -87,6 +90,7 @@ public class ControladorPrincipal implements ActionListener{
             }
             
         }
+        //Boton para simular el torneo
         if (vistaPrincipal.getBotonSimularTorneo() == (JButton) e.getSource()){
             try {
                 creg.guardarAccionUsuario("Usuario eligio simular un torneo");
@@ -99,7 +103,7 @@ public class ControladorPrincipal implements ActionListener{
                 Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        
+        //Boton para la informacion del primer entrenador
         if(vistaPrincipal.getBotonInfo1() == (JButton) e.getSource()){
            VistaEntrenador ven = new VistaEntrenador();
            int id_nombre = vistaPrincipal.getIndexjC_Entrenador1()+56;
@@ -110,7 +114,7 @@ public class ControladorPrincipal implements ActionListener{
                 Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
             } 
         }
-        
+        //Boton para la informacion del segundo entrenador
         if(vistaPrincipal.getBotonInfo2() == (JButton) e.getSource()){
             VistaEntrenador ven = new VistaEntrenador();
            int id_nombre = vistaPrincipal.getIndexjC_Entrenador2()+56;
@@ -178,6 +182,9 @@ public class ControladorPrincipal implements ActionListener{
         ControladorCampeonato ccamp = new ControladorCampeonato(vt);
         }
     }
+    //Metodo para generar un combate luego que se llama en el boton iniciar combate
+    //Obtiene los nombres de los entrenadores, crea los objetos y llama al controlador combate para
+    //que se haga cargo
     public void generarCombate() throws SQLException{
         String nombre1 = vistaPrincipal.getjC_Nombre1();
         String nombre2 = vistaPrincipal.getjC_Nombre2();
@@ -201,13 +208,14 @@ public class ControladorPrincipal implements ActionListener{
         ControladorCombate cc = new ControladorCombate(vpc, tipo_combate, entrenador_activo1, entrenador_activo2, this);
         System.out.println("Se selecciono simular combate");
     }
-    
+    //Aqui se genera un nuevo entrenador
     public void generarEntrenador() throws SQLException{
         VistaCrearEntrenador vce = new VistaCrearEntrenador();
         vce.setVisible(true);
         ControladorEntrenador ce = new ControladorEntrenador(vce, this);
         
     }
+    //Para el antiguo bd que obtenia los entrenadores de un texto, ya no es necesario
     public void leerBDTexto(String ruta) throws FileNotFoundException, IOException{
         File adquisicion = new File(ruta);
         FileReader carga = new FileReader(adquisicion);
@@ -225,6 +233,7 @@ public class ControladorPrincipal implements ActionListener{
         procesador.close();
         
         }
+    //Carga los entrenadores desde la bd
     public void cargarEntrenadores() throws SQLException{
         ConexionBD cBD = new ConexionBD();
         ArrayList<String> entrenadores = cBD.obtenerNombresEntrenadores();
@@ -235,6 +244,7 @@ public class ControladorPrincipal implements ActionListener{
             vistaPrincipal.setjC_Entrenador2(entrenadores.get(i));
         }
     }
+    //Crea al entrenador como objeto, con sus pokemon y movimientos
     public Entrenador obtenerEntrenadorBD(int id) throws SQLException{
         ConexionBD cBD = new ConexionBD();
         Pokemon[] equipo = cBD.obtenerEquipo(id);

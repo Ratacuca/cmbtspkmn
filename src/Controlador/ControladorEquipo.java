@@ -51,7 +51,7 @@ public class ControladorEquipo implements ActionListener{
     private ControladorRegistros creg;
     
     
-    
+    //Constructor para el nuevo equipo
     public ControladorEquipo(VistaNuevoEquipo vnew,   
             int cambio_o_nuevo, int id_entrenador, ControladorPrincipal cp) throws SQLException{
         this.controlador_principal = cp;
@@ -84,6 +84,8 @@ public class ControladorEquipo implements ActionListener{
         this.creg = new ControladorRegistros();
         
     }
+    
+    //Constructor para el equipo temporal
     public ControladorEquipo(VistaNuevoEquipo vnew,   
             int cambio_o_nuevo, int id_entrenador, ControladorPrincipal cp, ControladorCombate cc, VistaPreviaCombate vpc, 
             int equipo) throws SQLException{
@@ -122,6 +124,8 @@ public class ControladorEquipo implements ActionListener{
     }
     @Override
     public void actionPerformed(ActionEvent e) {
+        //Boton final de la creacion del equipo, aqui se subdivide y guarda en la bd o en el controlador
+        //dependiendo del caso de nuevo o cambio
         if (vista.getjB_Listo()== (JButton) e.getSource()){
             try {
                 creg.guardarAccionUsuario("Usuario eligio sus pokemon, movimientos, nombres y niveles");
@@ -154,6 +158,7 @@ public class ControladorEquipo implements ActionListener{
             } catch (SQLException ex) {
                 Logger.getLogger(ControladorEquipo.class.getName()).log(Level.SEVERE, null, ex);
             }
+            //Aqui se cambia el equipo activo para el combate
             if(this.nuevo_o_temporal == 0){
                 this.equipo[0].setMovimientos(movimientos1);
                 this.equipo[1].setMovimientos(movimientos2);
@@ -183,6 +188,7 @@ public class ControladorEquipo implements ActionListener{
                 }
                 
             }
+            //Aqui se guarda en la bd
             else{
                 try {
                     int id1 = cBD.guardarPokemon(equipo[0].getId_pokedex(), equipo[0].getPseudonimo(), equipo[0].getNivel(),
@@ -231,6 +237,7 @@ public class ControladorEquipo implements ActionListener{
             vista.dispose();
             vista_mov.dispose();
         }
+        //Botones para cada set de movimientos de cada pokemon
         if (vista.getjB_movimientos1() == (JButton) e.getSource()){
             try {
                 creg.guardarAccionUsuario("Usuario eligio cambiar los movimientos de su primer pokemon");
@@ -285,6 +292,8 @@ public class ControladorEquipo implements ActionListener{
            vista_mov.setVisible(true);  
            this.seleccion = 6;
         }
+        //Boton para elegir los 4 movimientos y se guarden localmente en este controlador
+        //Pueden ser los finales o no, se pueden cambiar las veces que se quiera
         if(vista_mov.getjB_Listo() == (JButton) e.getSource()){
             try {
                 creg.guardarAccionUsuario("Usuario eligio los movimientos de su pokemon");

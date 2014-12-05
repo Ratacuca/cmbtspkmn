@@ -29,7 +29,7 @@ public class ControladorCombate implements ActionListener{
     private VistaCombate vc;
     private VistaAtaque va;
     private VistaEquipo ve;
-    private int tipo_simulacion;
+    private int tipo_simulacion; //Us vs Us (1), Us vs Sist (2), Us vs Sist simulado(0)
     private Combate combate;
     private int turno;
     private Pokemon[] equipo1;
@@ -44,7 +44,7 @@ public class ControladorCombate implements ActionListener{
     
     
     
-    
+    //Acciones que se ejecutan al instanciar el controlador, crea las vistas necesarias y asigna entrenadores y equipos
     public ControladorCombate(VistaPreviaCombate vista, int tipo_simulacion,
             Entrenador entrenador1, Entrenador entrenador2, ControladorPrincipal cp){
         this.controlador_principal = cp;
@@ -63,9 +63,12 @@ public class ControladorCombate implements ActionListener{
         
     }
     
+    //El controlador escucha a la vista correspondiente
     @Override
     public void actionPerformed(ActionEvent e) {
         //-------------------- ASIGNACIONES INICIALES PARA EL COMBATE-------------------
+        //Aqui se cargan todas las vistas y parametros iniciales, se llenan los label, etc
+        //Este boton es el de iniciar combate en la vista previa combate
         if (vpc.getBotonIniciar() == (JButton) e.getSource()){
             try {
                 creg.guardarAccionUsuario("Usuario inicio el combate");
@@ -121,7 +124,7 @@ public class ControladorCombate implements ActionListener{
             }
             
         }
-        
+        // Para cambiar a un equipo personalizado distinto al que se posee para el primer entrenador
         if(vpc.getBotonEquipo1()== (JButton) e.getSource()){
             try {
                 creg.guardarAccionUsuario("Jugador1 eligió cambiar su equipo por uno personalizado");
@@ -146,6 +149,8 @@ public class ControladorCombate implements ActionListener{
                 Logger.getLogger(ControladorCombate.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        
+        // Lo mismo pero para el segundo
         if(vpc.getBotonEquipo2()== (JButton) e.getSource()){
             try {
                 creg.guardarAccionUsuario("Jugador2 eligió cambiar su equipo por uno personalizado");
@@ -171,7 +176,9 @@ public class ControladorCombate implements ActionListener{
             }
         }
         
-    // ----------ACCIONES BOTONES DE ATAQUE-------------               
+    // ----------ACCIONES BOTONES DE ATAQUE-------------   
+        //Boton ataque jugador 1
+        //Setea la vista para los movimientos del pokemon activo del jugador 1
         if (vc.getBotonAtacar1() == (JButton) e.getSource()){
             try {
                 creg.guardarAccionUsuario("Jugador1 eligio atacar");
@@ -182,6 +189,8 @@ public class ControladorCombate implements ActionListener{
             va.setVisible(true);
            
         }
+        //Boton ataque jugador 2
+        //Setea la vista para los movimientos del pokemon activo del jugador 2
         if (vc.getBotonAtacar2() == (JButton) e.getSource()){
             try {
                 creg.guardarAccionUsuario("Jugador2 eligió atacar");
@@ -194,6 +203,7 @@ public class ControladorCombate implements ActionListener{
         }
     //-------------ACCIONES DE LOS ATAQUES SELECCIONADOS DESDE EL PRIMERO HASTA EL CUARTO----------
     //-------------ACCION ATAQUE 1--------------------    
+    // Boton para el primer ataque de la lista de movimientos del pokemon seleccionado    
         if(va.getBotonAtaque1() == (JButton) e.getSource()){
             try {
                 creg.guardarAccionUsuario("Usuario eligió atacar con el primer ataque");
@@ -204,6 +214,7 @@ public class ControladorCombate implements ActionListener{
         }
         
     //---------------------ACCION ATAQUE 2 ------------------
+    // Boton para el segundo ataque de la lista de movimientos del pokemon seleccionado 
         if(va.getBotonAtaque2() == (JButton) e.getSource()){
             try {
                 creg.guardarAccionUsuario("Usuario eligió atacar con el segundo ataque");
@@ -213,7 +224,8 @@ public class ControladorCombate implements ActionListener{
             accionAtaques(1);
         }
         
-        //-----------------ACCION ATAQUE 3------------------
+    //-----------------ACCION ATAQUE 3------------------
+    // Boton para el tercer ataque de la lista de movimientos del pokemon seleccionado 
         if(va.getBotonAtaque3() == (JButton) e.getSource()){
             try {
                 creg.guardarAccionUsuario("Usuario eligió atacar con el tercer ataque");
@@ -223,7 +235,8 @@ public class ControladorCombate implements ActionListener{
             accionAtaques(2);
         }
         
-        //-----------------ACCION ATAQUE 4-------------------
+    //-----------------ACCION ATAQUE 4-------------------
+    // Boton para el cuarto ataque de la lista de movimientos del pokemon seleccionado 
         if(va.getBotonAtaque4() == (JButton) e.getSource()){
             try {
                 creg.guardarAccionUsuario("Usuario eligió atacar con el cuarto ataque");
@@ -233,7 +246,8 @@ public class ControladorCombate implements ActionListener{
             accionAtaques(3);
         }
         
-        //-----------------ACCIONES BOTONES CAMBIAR---------
+    //-----------------ACCIONES BOTONES CAMBIAR---------
+    //Boton cambiar del primer jugador
         if(vc.getBotonCambiar1() == (JButton) e.getSource()){
             try {
                 creg.guardarAccionUsuario("Jugador1 eligió cambiar de pokemon");
@@ -249,7 +263,7 @@ public class ControladorCombate implements ActionListener{
             ve.setVistaCambio(getEquipo1(), pokemon_activo1, index);
             ve.setVisible(true);
         }
-        
+    //Boton cambiar del segundo jugador    
         if(vc.getBotonCambiar2() == (JButton) e.getSource()){
             try {
                 creg.guardarAccionUsuario("Jugador2 eligió cambiar de pokemon");
@@ -265,8 +279,9 @@ public class ControladorCombate implements ActionListener{
             ve.setVistaCambio(getEquipo2(), pokemon_activo2, index);
             ve.setVisible(true);
         }
-        //----------------SELECCION DE CADA POKEMON A CAMBIAR-------------
-        //----------------CAMBIO POKEMON 1 -------------------------------
+    //----------------SELECCION DE CADA POKEMON A CAMBIAR-------------
+    //----------------CAMBIO POKEMON 1 -------------------------------
+        //Boton que ejecuta las acciones cuando se selecciona al primer pokemon del equipo para el cambio
         if(ve.getBotonPokemon1() == (JButton) e.getSource()){
             try {
                 creg.guardarAccionUsuario("Usuario eligio cambiar el pokemon activo por el primero de su lista");
@@ -277,6 +292,7 @@ public class ControladorCombate implements ActionListener{
         }
         
         //----------------CAMBIO POKEMON 2 -------------------------------
+        //Boton que ejecuta las acciones cuando se selecciona al segundo pokemon del equipo para el cambio
         if(ve.getBotonPokemon2() == (JButton) e.getSource()){
             try {
                 creg.guardarAccionUsuario("Usuario eligio cambiar el pokemon activo por el segundo de su lista");
@@ -288,6 +304,7 @@ public class ControladorCombate implements ActionListener{
         }
         
         //----------------CAMBIO POKEMON 3 -------------------------------
+        //Boton que ejecuta las acciones cuando se selecciona al tercer pokemon del equipo para el cambio
         if(ve.getBotonPokemon3() == (JButton) e.getSource()){
             try {
                 creg.guardarAccionUsuario("Usuario eligio cambiar el pokemon activo por el tercero de su lista");
@@ -299,6 +316,7 @@ public class ControladorCombate implements ActionListener{
         }
         
         //----------------CAMBIO POKEMON 4 -------------------------------
+        //Boton que ejecuta las acciones cuando se selecciona al cuarto pokemon del equipo para el cambio
         if(ve.getBotonPokemon4() == (JButton) e.getSource()){
             try {
                 creg.guardarAccionUsuario("Usuario eligio cambiar el pokemon activo por el cuarto de su lista");
@@ -310,6 +328,7 @@ public class ControladorCombate implements ActionListener{
         }
         
         //----------------CAMBIO POKEMON 5 -------------------------------
+        //Boton que ejecuta las acciones cuando se selecciona al quinto pokemon del equipo para el cambio
         if(ve.getBotonPokemon5() == (JButton) e.getSource()){
             try {
                 creg.guardarAccionUsuario("Usuario eligio cambiar el pokemon activo por el quinto de su lista");
@@ -320,6 +339,7 @@ public class ControladorCombate implements ActionListener{
         
         }
         //----------------CAMBIO POKEMON 6 -------------------------------
+        //Boton que ejecuta las acciones cuando se selecciona al sexto pokemon del equipo para el cambio
         if(ve.getBotonPokemon6() == (JButton) e.getSource()){
             try {
                 creg.guardarAccionUsuario("Usuario eligio cambiar el pokemon activo por el sexto de su lista");
@@ -359,6 +379,7 @@ public class ControladorCombate implements ActionListener{
     }
     
     //Metodo para cada ataque seleccionado por el usuario, la entrada corresponde a la posicion del ataque en el arreglo, de 0 a 3
+    //Dependiendo del numero con el cual se llamo se ejecutaran las respectivas acciones para el respectivo movimiento
     public void accionAtaques(int i){
         if(turno ==0){
           if(pokemon_activo1.getCongelado() == false || pokemon_activo1.getDormido() == false){
@@ -545,6 +566,7 @@ public class ControladorCombate implements ActionListener{
     }
     
     //Metodo para cada pokemon seleccionado para el cambio, la entrada corresponde a la posicion del pokemon en el arreglo, de 0 a 5
+    //Lo mismo que los ataques pero para el cambio
     public void accionCambios(int i){
         
         if(turno == 0){
@@ -908,7 +930,7 @@ public class ControladorCombate implements ActionListener{
         }
         
     }
-    
+    //Setea el estado que posee el pokemon activo
     public void setLabelEstados(int pokemon){
         if(pokemon ==0){
             if(pokemon_activo1.getConfuso() == true) vc.setjL_Estado1("Confuso");

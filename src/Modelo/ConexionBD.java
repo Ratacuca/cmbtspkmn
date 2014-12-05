@@ -21,7 +21,7 @@ public class ConexionBD {
         conexion = java.sql.DriverManager.getConnection(ruta);
     }
     
-    
+    //Obtiene todos los nombres de los pokemon disponibles en la bd
     public ArrayList<String> obtenerNombresPokemones()throws SQLException{
         
         ResultSet rst;
@@ -41,7 +41,7 @@ public class ConexionBD {
         return pokemones;
     }
     
-    
+    //Guarda a un entrenador en la bd
     public int guardarEntrenador(String nombre, String categoria, int region) throws SQLException{
         
         
@@ -64,7 +64,7 @@ public class ConexionBD {
         
     }
     
-    
+   //Guarda un pokemon de un entrenador en la bd 
     public int guardarPokemon(int id, String pseudonimo, int nivel, int hp, 
             int atk, int spatk, int def, int spdef, int vel) throws SQLException{
         
@@ -93,7 +93,7 @@ public class ConexionBD {
         return id_pokemon;
     }
     
-    
+    //Guarda un movimiento de un pokemon en la bd
     public void guardarMovimiento(int id_familia, int id_pokemon, int pprestantes, int id_movimiento) throws SQLException{
         
         ResultSet rst;
@@ -103,7 +103,7 @@ public class ConexionBD {
         int resultado = stmt.executeUpdate(consulta);
     }
     
-    
+    //Guarda al equipo con sus ids de un entrenador en la bd
     public void guardarEquipo(int id_pokemon, int id_familia, int id_entrenador) throws SQLException{
         
         ResultSet rst;
@@ -115,6 +115,7 @@ public class ConexionBD {
     
     
     //FALTA PARALIZA EN LA TABLA
+    //Obtiene un movimiento (objeto) mediante su nombre
     public MovimientoAprendido obtenerMovimiento(String nombre) throws SQLException{
         
         ResultSet rst;
@@ -135,7 +136,7 @@ public class ConexionBD {
         return movimiento;
     }
     
-    
+    //No utilizada, pensada para crear un movimiento default desde la bd
     public MovimientoAprendido obtenerMovimientoDefault() throws SQLException{
         
         ResultSet rst;
@@ -156,7 +157,7 @@ public class ConexionBD {
         return movimiento;
     }
     
-    
+    //Obtiene todos los nombres de movimientos disponibles segun un tipo
     public ArrayList<String> obtenerNombresMovimientos(int tipo)throws SQLException{
         
         ResultSet rst;
@@ -176,7 +177,7 @@ public class ConexionBD {
         return movimientos;
     }
     
-    
+    //Lo mismo pero para cualquiera
     public ArrayList<String> obtenerTodosNombresMovimientos()throws SQLException{
         
         ResultSet rst;
@@ -198,6 +199,7 @@ public class ConexionBD {
     
     
     //MODIFICAR DESPUES
+    //Crea un equipo pokemon con todos los pseudonimos, especies y niveles
     public Pokemon[] crearEquipoPokemon(String nombre1, String nombre2, String nombre3, 
             String nombre4, String nombre5, String nombre6, int nivel1, int nivel2, int nivel3, int nivel4, 
             int nivel5, int nivel6, String pseudonimo1, String pseudonimo2, String pseudonimo3, String pseudonimo4, 
@@ -378,7 +380,7 @@ public class ConexionBD {
         return pokemon;
         
     }
-    //Para lideres
+    //Para lideres (default)
     public Pokemon crearPokemon(int nivel, int id_familia) throws SQLException{
         
         ResultSet rst;
@@ -414,7 +416,8 @@ public class ConexionBD {
         return pokemon;
         
     }
-    
+    //Obtiene todos los ids de la famila pokemon desde la bd
+    //utilizada para crear un pokemon al azar
     public ArrayList<Integer> obtenerIdsPokedex() throws SQLException{
         ResultSet rst;
         Statement stmt;
@@ -427,6 +430,8 @@ public class ConexionBD {
         }
         return ids;
     }
+    //Obtiene todos los ids de los movimientos desde la bd
+    //utilizada para crear un movimiento al azar
     public ArrayList<Integer> obtenerIdsMovimientos() throws SQLException{
         ResultSet rst;
         Statement stmt;
@@ -439,6 +444,7 @@ public class ConexionBD {
         }
         return ids;
     }
+    //Obtiene todos los nombres de los entrenadores desde la bd que no sean lideres
     public ArrayList<String> obtenerNombresEntrenadores() throws SQLException{
         ResultSet rst;
         Statement stmt;
@@ -456,7 +462,7 @@ public class ConexionBD {
         return entrenadores;
     }
     
-    
+    //Obtiene el equipo de un entrenador en especifico
     public Pokemon[] obtenerEquipo(int id_entrenador) throws SQLException{
         ResultSet rst;
         Statement stmt;
@@ -472,7 +478,7 @@ public class ConexionBD {
         }
         return equipo;
     }
-    
+    //Obtiene un pokemon segun su id (perteneciente a algun entrenador)
     public Pokemon obtenerPokemon(int id_pokemon) throws SQLException{
         ResultSet rst;
         Statement stmt;
@@ -488,7 +494,7 @@ public class ConexionBD {
         
         return pokemon;
     }
-    
+    //Obtiene el nombre de un pokemon segun su id
     public String obtenerNombrePokemon(int id)throws SQLException{
         
         ResultSet rst;
@@ -503,6 +509,7 @@ public class ConexionBD {
         
         return nombre;
     }
+    //Lo mismo pero para entrenador
     public String obtenerNombreEntrenador(int id)throws SQLException{
         
         ResultSet rst;
@@ -517,7 +524,7 @@ public class ConexionBD {
         
         return nombre;
     }
-    
+    //Obtiene los lideres de gimnasio en un arreglo de entrenadores
     public Entrenador[] obtenerLideresGimnasio(int id_region) throws SQLException{
         Entrenador[] lideres = new Entrenador[8];
         ResultSet rst;
@@ -542,6 +549,7 @@ public class ConexionBD {
         return lideres;
         
     }
+    //Obtiene la distincion de un entrenador segun su id
     public String obtenerDistincionEntrenador(int id)throws SQLException{
         
         ResultSet rst;
@@ -556,6 +564,7 @@ public class ConexionBD {
         
         return categoria;
     }
+    //Obtiene los nombres de los lideres qu no sean entrenadores reales
     public ArrayList<String> obtenerNombresEntrenadoresNPC()throws SQLException{
         
         ResultSet rst;
@@ -572,7 +581,7 @@ public class ConexionBD {
         rst.close();
         return npc;
     }
-    
+    //Obtiene los movimientos aprendidos de un pokemon segun su id (perteneciente a algun entrenador)
     public MovimientoAprendido[] obtenerMovesetPokemon(int id_pokemon) throws SQLException{
         MovimientoAprendido[] moveset = new MovimientoAprendido[4];
         ResultSet rst;
@@ -590,7 +599,7 @@ public class ConexionBD {
         rst.close();
         return moveset;
     }
-    
+    //Obtiene un movimiento segun su id (no aprendido)
     public MovimientoAprendido obtenerMovimientoPorID(int id) throws SQLException{
         
         ResultSet rst;

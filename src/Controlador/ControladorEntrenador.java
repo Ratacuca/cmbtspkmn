@@ -30,6 +30,7 @@ public class ControladorEntrenador implements ActionListener{
     private ControladorPrincipal controlador_principal;
     private ControladorRegistros creg;
     
+    //Constructor Principal, instancia las vistas respectivas 
     public ControladorEntrenador(VistaCrearEntrenador vce, ControladorPrincipal cp)throws SQLException{
         this.controlador_principal = cp;
         vista = vce;
@@ -41,7 +42,8 @@ public class ControladorEntrenador implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        
+        //Primer boton en donde se guarda al entrenador y su region en la base de datos
+        //Tambien instancia la vista y el controlador para los nuevos pokemones de éste
         if (vista.getjB_Crear() == (JButton) e.getSource()){
             try {
                 creg.guardarAccionUsuario("Usuario eligio su nombre y region para el nuevo entrenador");
@@ -105,7 +107,7 @@ public class ControladorEntrenador implements ActionListener{
        
        return region;
     }
-    
+    //Guarda al entrenador en un archivo de texto
     private void guardarEntrenador(String nombre, String region, String distincion) throws IOException {
         String nombreArchivo = "BD.txt";
         FileWriter adquirir = new FileWriter(nombreArchivo, true);
