@@ -549,6 +549,21 @@ public class ConexionBD {
         return lideres;
         
     }
+    //Obtiene los nombres de los lideres de gimnasio
+    public ArrayList<String> obtenerNombresLideresGimnasio(int id_region) throws SQLException{
+        ArrayList<String> nombres = new ArrayList<String>();
+        ResultSet rst;
+        Statement stmt;
+        stmt = conexion.createStatement();
+        String consulta = "SELECT * FROM entrenador WHERE id_region = "+id_region+" AND id_entrenador<56";
+        rst = stmt.executeQuery(consulta);
+        while(rst.next()){
+           nombres.add(rst.getString("nombre_entrenador").trim());
+        }
+        rst.close();
+        return nombres;
+        
+    }
     //Obtiene la distincion de un entrenador segun su id
     public String obtenerDistincionEntrenador(int id)throws SQLException{
         
@@ -618,6 +633,70 @@ public class ConexionBD {
         
         
         return movimiento;
+    }
+    
+    public int obtenerIdLider(String nombre)throws SQLException{
+        
+        ResultSet rst;
+        Statement stmt;
+        stmt = conexion.createStatement();
+        String consulta = "SELECT id_entrenador FROM entrenador WHERE nombre_entrenador = '"+nombre+"'";
+        rst = stmt.executeQuery(consulta);
+        rst.next();
+        int id = rst.getInt("id_entrenador");
+       
+        rst.close();
+        
+        return id;
+    }
+    
+    public String obtenerRegionLider(String nombre)throws SQLException{
+        
+        ResultSet rst;
+        Statement stmt;
+        stmt = conexion.createStatement();
+        String consulta = "SELECT id_region FROM entrenador WHERE nombre_entrenador = '"+nombre+"'";
+        rst = stmt.executeQuery(consulta);
+        rst.next();
+        String region = null;
+        int id_region = rst.getInt("id_region");
+        if(id_region == 1) region = "Kanto";
+        if(id_region == 2) region = "Johto";
+        if(id_region == 3) region = "Hoenn";
+        if(id_region == 4) region = "Sinnoh";
+        if(id_region == 5) region = "Teselia";
+        if(id_region == 6) region = "Kalos";
+       
+        rst.close();
+        
+        return region;
+    }
+    public int obtenerIdMedalla(String nombre)throws SQLException{
+        
+        ResultSet rst;
+        Statement stmt;
+        stmt = conexion.createStatement();
+        String consulta = "SELECT id_medalla FROM entrenador WHERE nombre_entrenador = '"+nombre+"'";
+        rst = stmt.executeQuery(consulta);
+        rst.next();
+        int id = rst.getInt("id_medalla");
+        
+        rst.close();
+        
+        return id;
+    }
+    public String obtenerNombreMedalla(int id_medalla) throws SQLException{
+        ResultSet rst;
+        Statement stmt;
+        stmt = conexion.createStatement();
+        String consulta = "SELECT nombre_medalla FROM medallas WHERE id_medalla = "+id_medalla+"";
+        rst = stmt.executeQuery(consulta);
+        rst.next();
+        String nombre = rst.getString("nombre_medalla");
+        
+        rst.close();
+        
+        return nombre;
     }
     
     

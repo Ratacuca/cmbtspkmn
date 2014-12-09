@@ -344,8 +344,6 @@ INSERT INTO Entrenador (id_entrenador,id_medalla,nombre_entrenador,categoria_ent
 INSERT INTO Entrenador (id_entrenador,id_medalla,nombre_entrenador,categoria_entrenador,id_region)values (42,38,'Gerania','Lider de Gimnasio',5);
 INSERT INTO Entrenador (id_entrenador,id_medalla,nombre_entrenador,categoria_entrenador,id_region)values (43,39,'Junco','Lider de Gimnasio',5);
 INSERT INTO Entrenador (id_entrenador,id_medalla,nombre_entrenador,categoria_entrenador,id_region)values (45,40,'Iris','Lider de Gimnasio',5);
-INSERT INTO Entrenador (id_entrenador,id_medalla,nombre_entrenador,categoria_entrenador,id_region)values (46,41,'Hiedra','Lider de Gimnasio',5);
-INSERT INTO Entrenador (id_entrenador,id_medalla,nombre_entrenador,categoria_entrenador,id_region)values (47,42,'Ciprian','Lider de Gimnasio',5);
 INSERT INTO Entrenador (id_entrenador,id_medalla,nombre_entrenador,categoria_entrenador,id_region)values (48,43,'Violeta','Lider de Gimnasio',6);
 INSERT INTO Entrenador (id_entrenador,id_medalla,nombre_entrenador,categoria_entrenador,id_region)values (49,44,'Lino','Lider de Gimnasio',6);
 INSERT INTO Entrenador (id_entrenador,id_medalla,nombre_entrenador,categoria_entrenador,id_region)values (50,45,'Corelia','Lider de Gimnasio',6);

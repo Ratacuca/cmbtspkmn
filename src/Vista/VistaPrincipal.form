@@ -68,16 +68,12 @@
                                   <Component id="jB_medallas" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jLabel6" max="32767" attributes="0"/>
-                                      <Component id="jLabel4" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jLabel6" max="32767" attributes="0"/>
+                                  <Component id="jLabel4" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jC_tipoMedallas" max="32767" attributes="0"/>
                                   <Component id="jC_TipoSFase" max="32767" attributes="0"/>
                                   <Component id="jC_TipoSimulacion" max="32767" attributes="0"/>
                               </Group>
@@ -148,8 +144,6 @@
                           <Component id="jC_Entrenador2" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jB_info2" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jB_medallas" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jC_tipoMedallas" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -274,26 +268,6 @@
     <Component class="javax.swing.JButton" name="jB_medallas">
       <Properties>
         <Property name="text" type="java.lang.String" value="Obtener Medallas"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="jC_tipoMedallas">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="7">
-            <StringItem index="0" value="Region al Azar"/>
-            <StringItem index="1" value="Kanto"/>
-            <StringItem index="2" value="Johto"/>
-            <StringItem index="3" value="Hoenn"/>
-            <StringItem index="4" value="Sinnoh"/>
-            <StringItem index="5" value="Teselia"/>
-            <StringItem index="6" value="Kalos"/>
-          </StringArray>
-        </Property>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel7">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Tipo:"/>
       </Properties>
     </Component>
   </SubComponents>

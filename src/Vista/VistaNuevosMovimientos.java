@@ -241,6 +241,19 @@ public class VistaNuevosMovimientos extends javax.swing.JFrame {
        this.jL_Movimiento3.clearSelection();
        this.jL_Movimiento4.clearSelection();
    }
+   
+   public int getJL_indexMovimiento1(){
+       return this.jL_Movimiento1.getSelectedIndex();
+   }
+   public int getJL_indexMovimiento2(){
+       return this.jL_Movimiento2.getSelectedIndex();
+   }
+   public int getJL_indexMovimiento3(){
+       return this.jL_Movimiento3.getSelectedIndex();
+   }
+   public int getJL_indexMovimiento4(){
+       return this.jL_Movimiento4.getSelectedIndex();
+   }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jB_listo;

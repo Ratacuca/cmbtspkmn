@@ -309,6 +309,10 @@ public class ControladorEquipo implements ActionListener{
                 
                 JOptionPane.showMessageDialog(this.vista_mov, " Uno o mas Movimientos estan repetidos, por favor seleccione denuevo.", "Intentelo denuevo", JOptionPane.INFORMATION_MESSAGE);
             }
+            else if (vista_mov.getJL_indexMovimiento1() == -1 || vista_mov.getJL_indexMovimiento2() == -1 || 
+                    vista_mov.getJL_indexMovimiento3() == -1 || vista_mov.getJL_indexMovimiento4() == -1){
+                JOptionPane.showMessageDialog(this.vista_mov, " Uno o mas Movimientos no presentan seleccion, por favor complete la seleccion.", "Intentelo denuevo", JOptionPane.INFORMATION_MESSAGE);
+            }
             else{
            if(seleccion == 1){
                try {

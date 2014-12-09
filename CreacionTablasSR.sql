@@ -255,3 +255,13 @@ create table TORRE_BATALLA
    primary key (ID_TORREBATALLA)
 );
 
+/*==============================================================*/
+/* Table: MEDALLAS_ENTRENADOR                                   */
+/*==============================================================*/
+create table MEDALLAS_ENTRENADOR
+(
+   ID_ENTRENADOR        int not null,
+   ID_MEDALLA           int not null,
+   primary key (ID_ENTRENADOR)
+);
+

@@ -45,12 +45,12 @@ public class ControladorCombate implements ActionListener{
     
     
     //Acciones que se ejecutan al instanciar el controlador, crea las vistas necesarias y asigna entrenadores y equipos
-    public ControladorCombate(VistaPreviaCombate vista, int tipo_simulacion,
+    public ControladorCombate(int tipo_simulacion,
             Entrenador entrenador1, Entrenador entrenador2, ControladorPrincipal cp){
+        
         this.controlador_principal = cp;
         this.tipo_simulacion = tipo_simulacion;
-        this.vpc = vista;
-        this.vpc.agregarListener(this);
+        
         this.combate = new Combate();
         this.equipo1 = entrenador1.getPokemones();
         this.equipo2 = entrenador2.getPokemones();
@@ -60,6 +60,17 @@ public class ControladorCombate implements ActionListener{
         this.va = new VistaAtaque();
         this.ve = new VistaEquipo();
         this.creg = new ControladorRegistros();
+        String[] nombres1 = new String[6];
+        String[] nombres2 = new String[6];
+        for (int i = 0; i < 6; i++) {
+            nombres1[i]=equipo1[i].getPseudonimo();
+            nombres2[i]=equipo2[i].getPseudonimo();    
+        }
+        this.vpc = new VistaPreviaCombate(tipo_simulacion, entrenador1.getNombre(), entrenador2.getNombre());
+        this.vpc.agregarListener(this);
+        this.vpc.setjC_Equipo1(nombres1);
+        this.vpc.setjC_Equipo2(nombres2);
+        this.vpc.setVisible(true);
         
     }
     

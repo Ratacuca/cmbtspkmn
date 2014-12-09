@@ -126,6 +126,21 @@ public class ControladorPrincipal implements ActionListener{
             }  
         }
         
+        //Boton para la obtencion de medallas de gimnasio
+        if(vistaPrincipal.getBotonMedallas() == (JButton) e.getSource()){
+            int id_nombre1 = vistaPrincipal.getIndexjC_Entrenador1()+56;
+            try {
+                this.entrenador_activo1 = obtenerEntrenadorBD(id_nombre1);
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            try {
+                ControladorMedallas cmed = new ControladorMedallas(entrenador_activo1, this);
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
         
                 
         
@@ -190,22 +205,12 @@ public class ControladorPrincipal implements ActionListener{
         String nombre2 = vistaPrincipal.getjC_Nombre2();
         int id_nombre1 = vistaPrincipal.getIndexjC_Entrenador1()+56;
         int id_nombre2 = vistaPrincipal.getIndexjC_Entrenador2()+56;
-        VistaPreviaCombate vpc = new VistaPreviaCombate(vistaPrincipal.getjC_TipoSimulacion(), nombre1, nombre2);
         int tipo_combate = vistaPrincipal.getjC_TipoSimulacion();
         this.entrenador_activo1 = obtenerEntrenadorBD(id_nombre1);
         this.entrenador_activo2 = obtenerEntrenadorBD(id_nombre2);
         this.equipo1 = entrenador_activo1.getPokemones();
         this.equipo2 = entrenador_activo2.getPokemones();
-        String[] nombres1 = new String[6];
-        String[] nombres2 = new String[6];
-        for (int i = 0; i < 6; i++) {
-            nombres1[i]=equipo1[i].getPseudonimo();
-            nombres2[i]=equipo2[i].getPseudonimo();    
-        }
-        vpc.setjC_Equipo1(nombres1);
-        vpc.setjC_Equipo2(nombres2);
-        vpc.setVisible(true);
-        ControladorCombate cc = new ControladorCombate(vpc, tipo_combate, entrenador_activo1, entrenador_activo2, this);
+        ControladorCombate cc = new ControladorCombate(tipo_combate, entrenador_activo1, entrenador_activo2, this);
         System.out.println("Se selecciono simular combate");
     }
     //Aqui se genera un nuevo entrenador

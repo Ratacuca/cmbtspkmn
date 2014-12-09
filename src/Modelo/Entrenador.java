@@ -37,6 +37,15 @@ public class Entrenador {
         
     }
     //Constructor Lideres
+    public Entrenador(String nombre, String region, String distincion, int id_entrenador, int id_medalla, Pokemon[] equipo) {
+        this.nombre = nombre;
+        this.region = region;
+        this.distincion = distincion;
+        this.id_entrenador = id_entrenador;
+        this.id_medalla = id_medalla;
+        this.pokemones = equipo;
+    }
+    //Constructor lider por region
     public Entrenador(String nombre, String region, String distincion, int id_entrenador, int id_medalla) {
         this.nombre = nombre;
         this.region = region;
@@ -142,6 +151,14 @@ public class Entrenador {
      */
     public void setDistincion(String distincion) {
         this.distincion = distincion;
+    }
+
+    public int getId_medalla() {
+        return id_medalla;
+    }
+
+    public void setId_medalla(int id_medalla) {
+        this.id_medalla = id_medalla;
     }
            
 }
