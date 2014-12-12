@@ -6,6 +6,9 @@
 
 package Vista;
 
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
+
 /**
  *
  * @author Mario Caceres
@@ -35,7 +38,7 @@ public class VistaEntrenador extends javax.swing.JFrame {
         jL_nombre = new javax.swing.JLabel();
         jL_categoria = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList();
+        jL_Medallas = new javax.swing.JList();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
@@ -54,7 +57,7 @@ public class VistaEntrenador extends javax.swing.JFrame {
 
         jL_categoria.setText("jLabel6");
 
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(jL_Medallas);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -229,15 +232,23 @@ public class VistaEntrenador extends javax.swing.JFrame {
         jTable1.setValueAt(movimientos4[4], 6, 5);
         jTable1.setValueAt(movimientos4[5], 6, 6);
     }
+    
+    public void setJL_Medallas(ArrayList<String> valor){
+       DefaultListModel modelo = new DefaultListModel();
+       for (int i = 0; i < valor.size(); i++) {
+          modelo.addElement(valor.get(i)); 
+       }
+       this.jL_Medallas.setModel(modelo);   
+   }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JList jL_Medallas;
     private javax.swing.JLabel jL_categoria;
     private javax.swing.JLabel jL_nombre;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JList jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;

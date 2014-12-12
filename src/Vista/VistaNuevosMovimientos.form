@@ -53,6 +53,10 @@
                       <EmptySpace min="-2" pref="232" max="-2" attributes="0"/>
                       <Component id="jB_listo" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="223" max="-2" attributes="0"/>
+                      <Component id="jB_movimientosAzar" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace pref="50" max="32767" attributes="0"/>
           </Group>
@@ -86,7 +90,9 @@
                       <Component id="jScrollPane4" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="27" max="32767" attributes="0"/>
+              <EmptySpace pref="29" max="32767" attributes="0"/>
+              <Component id="jB_movimientosAzar" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="jB_listo" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
           </Group>
@@ -193,6 +199,11 @@
     <Component class="javax.swing.JButton" name="jB_listo">
       <Properties>
         <Property name="text" type="java.lang.String" value="Listo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jB_movimientosAzar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Al Azar"/>
       </Properties>
     </Component>
   </SubComponents>

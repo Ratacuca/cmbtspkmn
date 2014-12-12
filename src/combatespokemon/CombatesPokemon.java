@@ -12,6 +12,7 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
@@ -33,9 +34,8 @@ public class CombatesPokemon {
         UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         VistaPrincipal vista = new VistaPrincipal();
         ControladorPrincipal controladorPrincipal = new ControladorPrincipal(vista);
-        controladorPrincipal.cargarEntrenadores();
         vista.setVisible(true);
-        
+        ControladorLogin clogin = new ControladorLogin(vista, controladorPrincipal, 1);
     }
         
     

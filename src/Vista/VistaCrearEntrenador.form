@@ -23,27 +23,35 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                              <Component id="jText_Nombre" min="-2" pref="138" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
-                              <Component id="jC_Region" min="-2" max="-2" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jText_pass" min="-2" pref="134" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                                  <Component id="jText_Nombre" min="-2" pref="138" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                                  <Component id="jC_Region" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
-                      <Component id="jB_Crear" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
+                          <Component id="jB_Crear" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace pref="47" max="32767" attributes="0"/>
@@ -71,7 +79,12 @@
                   </Group>
                   <Component id="jC_Region" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="76" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jText_pass" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="38" max="32767" attributes="0"/>
               <Component id="jB_Crear" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
           </Group>
@@ -123,6 +136,13 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jB_CrearActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jText_pass">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Pass:"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

@@ -15,6 +15,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
@@ -230,12 +231,116 @@ public class ControladorEquipo implements ActionListener{
                         cBD.guardarMovimiento(equipo[5].getId_pokedex(), id6, movimientos6[i].getPuntos_poder_restantes(), 
                                 movimientos6[i].getId_movimiento());
                     }
+                    JOptionPane.showMessageDialog(this.vista, "Entrenador creado exitosamente!", "Entrenador creado", JOptionPane.INFORMATION_MESSAGE);
                 } catch (SQLException ex) {
                     Logger.getLogger(ControladorEquipo.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
             vista.dispose();
             vista_mov.dispose();
+        }
+        
+        //Boton para equipo aleatorio
+        if(vista.getjB_Aleatorio() == (JButton) e.getSource()){
+            try {
+                this.equipo = equipoAleatorio();
+                this.movimientos1 = equipo[0].getMovimientos();
+                this.movimientos2 = equipo[1].getMovimientos();
+                this.movimientos3 = equipo[2].getMovimientos();
+                this.movimientos4 = equipo[3].getMovimientos();
+                this.movimientos5 = equipo[4].getMovimientos();
+                this.movimientos6 = equipo[5].getMovimientos();
+                if(this.nuevo_o_temporal == 0){
+                    if(equipo_modificado == 1){
+                        controlador_combate.setEquipo1(equipo);
+                        String[] nombres = new String[6];
+                        for (int i = 0; i < 6; i++) {   
+                            nombres[i]=equipo[i].getPseudonimo();
+                        }
+                        vpc.removerJc_Pokemons1();
+                        vpc.setjC_Equipo1(nombres);
+                        JOptionPane.showMessageDialog(this.vpc, "El Equpo temporal esta Listo!", "Equipo Agregado", JOptionPane.INFORMATION_MESSAGE);
+                    }
+                    else if(equipo_modificado == 2){
+                        controlador_combate.setEquipo2(equipo);
+                        String[] nombres = new String[6];
+                        for (int i = 0; i < 6; i++) {
+                            nombres[i]=equipo[i].getPseudonimo();
+                        }
+                        vpc.removerJc_Pokemons2();
+                        vpc.setjC_Equipo2(nombres);
+                        JOptionPane.showMessageDialog(this.vpc, "El Equpo temporal esta Listo!", "Equipo Agregado", JOptionPane.INFORMATION_MESSAGE);   
+                    }
+
+                }
+                //Aqui se guarda en la bd
+                else{
+                    try {
+                        int id1 = cBD.guardarPokemon(equipo[0].getId_pokedex(), equipo[0].getPseudonimo(), equipo[0].getNivel(),
+                                equipo[0].getVida(), equipo[0].getAtaque(), equipo[0].getAtaque_especial(), equipo[0].getDefensa(),
+                                equipo[0].getDefensa_especial(), equipo[0].getVelocidad());
+                        int id2 = cBD.guardarPokemon(equipo[1].getId_pokedex(), equipo[1].getPseudonimo(), equipo[1].getNivel(),
+                                equipo[1].getVida(), equipo[1].getAtaque(), equipo[1].getAtaque_especial(), equipo[1].getDefensa(),
+                                equipo[1].getDefensa_especial(), equipo[1].getVelocidad());
+                        int id3 = cBD.guardarPokemon(equipo[2].getId_pokedex(), equipo[2].getPseudonimo(), equipo[2].getNivel(),
+                                equipo[2].getVida(), equipo[2].getAtaque(), equipo[2].getAtaque_especial(), equipo[2].getDefensa(),
+                                equipo[2].getDefensa_especial(), equipo[2].getVelocidad());
+                        int id4 = cBD.guardarPokemon(equipo[3].getId_pokedex(), equipo[3].getPseudonimo(), equipo[3].getNivel(),
+                                equipo[3].getVida(), equipo[3].getAtaque(), equipo[3].getAtaque_especial(), equipo[3].getDefensa(),
+                                equipo[3].getDefensa_especial(), equipo[3].getVelocidad());
+                        int id5 = cBD.guardarPokemon(equipo[4].getId_pokedex(), equipo[4].getPseudonimo(), equipo[4].getNivel(),
+                                equipo[4].getVida(), equipo[4].getAtaque(), equipo[4].getAtaque_especial(), equipo[4].getDefensa(),
+                                equipo[4].getDefensa_especial(), equipo[4].getVelocidad());
+                        int id6 = cBD.guardarPokemon(equipo[5].getId_pokedex(), equipo[5].getPseudonimo(), equipo[5].getNivel(),
+                                equipo[5].getVida(), equipo[5].getAtaque(), equipo[5].getAtaque_especial(), equipo[5].getDefensa(),
+                                equipo[5].getDefensa_especial(), equipo[5].getVelocidad());
+                        System.out.println(id1+ " "+id2+ " "+id3+ " "+id4+ " "+id5+ " "+id6);
+                        cBD.guardarEquipo(id1, equipo[0].getId_pokedex(), id_entrenador);
+                        cBD.guardarEquipo(id2, equipo[1].getId_pokedex(), id_entrenador);
+                        cBD.guardarEquipo(id3, equipo[2].getId_pokedex(), id_entrenador);
+                        cBD.guardarEquipo(id4, equipo[3].getId_pokedex(), id_entrenador);
+                        cBD.guardarEquipo(id5, equipo[4].getId_pokedex(), id_entrenador);
+                        cBD.guardarEquipo(id6, equipo[5].getId_pokedex(), id_entrenador);
+                        for (int i = 0; i < 4; i++) {
+                            cBD.guardarMovimiento(equipo[0].getId_pokedex(), id1, movimientos1[i].getPuntos_poder_restantes(),
+                                    movimientos1[i].getId_movimiento());
+                            cBD.guardarMovimiento(equipo[1].getId_pokedex(), id2, movimientos2[i].getPuntos_poder_restantes(),
+                                    movimientos2[i].getId_movimiento());
+                            cBD.guardarMovimiento(equipo[2].getId_pokedex(), id3, movimientos3[i].getPuntos_poder_restantes(),
+                                    movimientos3[i].getId_movimiento());
+                            cBD.guardarMovimiento(equipo[3].getId_pokedex(), id4, movimientos4[i].getPuntos_poder_restantes(),
+                                    movimientos4[i].getId_movimiento());
+                            cBD.guardarMovimiento(equipo[4].getId_pokedex(), id5, movimientos5[i].getPuntos_poder_restantes(),
+                                    movimientos5[i].getId_movimiento());
+                            cBD.guardarMovimiento(equipo[5].getId_pokedex(), id6, movimientos6[i].getPuntos_poder_restantes(),
+                                    movimientos6[i].getId_movimiento());
+                        }
+                    } catch (SQLException ex) {
+                        Logger.getLogger(ControladorEquipo.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    JOptionPane.showMessageDialog(this.vista, "Entrenador creado exitosamente!", "Entrenador creado", JOptionPane.INFORMATION_MESSAGE);
+                }
+                vista.dispose();
+                vista_mov.dispose();
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorEquipo.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        //Boton para movimientos aleatorios
+        if(vista_mov.getjB_movazar() == (JButton) e.getSource()){
+            try {
+                movimientosAleatorios();
+                JOptionPane.showMessageDialog(this.vista_mov, " Los movimientos han sido elegidos al azar", "Movimientos escogidos", JOptionPane.INFORMATION_MESSAGE);
+                vista_mov.setVisible(false);
+                vista_mov.limpiarListas();
+                if(movimientos1_activados == true && movimientos2_activados == true && movimientos3_activados == true && 
+                            movimientos4_activados == true && movimientos5_activados == true && movimientos6_activados == true){
+                        vista.activarBotonListo();
+                    }
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorEquipo.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         //Botones para cada set de movimientos de cada pokemon
         if (vista.getjB_movimientos1() == (JButton) e.getSource()){
@@ -445,8 +550,91 @@ public class ControladorEquipo implements ActionListener{
     public Pokemon[] obtenerEquipo(){
         return this.equipo;
     }
-
     
+    public Pokemon[] equipoAleatorio() throws SQLException{
+        ConexionBD cBD = new ConexionBD();
+        ArrayList<Integer> ids_pokemon = cBD.obtenerIdsPokedex();
+        ArrayList<Integer> ids_movimientos = cBD.obtenerIdsMovimientos();
+        Collections.shuffle(ids_pokemon);
+        Collections.shuffle(ids_movimientos);
+        Pokemon[] equipo = new Pokemon[6];
+        Pokemon pokemon1 = cBD.crearPokemon(50, ids_pokemon.get(0));
+        Pokemon pokemon2 = cBD.crearPokemon(50, ids_pokemon.get(1));
+        Pokemon pokemon3 = cBD.crearPokemon(50, ids_pokemon.get(2));
+        Pokemon pokemon4 = cBD.crearPokemon(50, ids_pokemon.get(3));
+        Pokemon pokemon5 = cBD.crearPokemon(50, ids_pokemon.get(4));
+        Pokemon pokemon6 = cBD.crearPokemon(50, ids_pokemon.get(5));
+        MovimientoAprendido[] amovimientos1 = new MovimientoAprendido[4];
+        MovimientoAprendido[] amovimientos2 = new MovimientoAprendido[4];
+        MovimientoAprendido[] amovimientos3 = new MovimientoAprendido[4];
+        MovimientoAprendido[] amovimientos4 = new MovimientoAprendido[4];
+        MovimientoAprendido[] amovimientos5 = new MovimientoAprendido[4];
+        MovimientoAprendido[] amovimientos6 = new MovimientoAprendido[4];
+        for (int i = 0; i < 4; i++) {
+            amovimientos1[i] = cBD.obtenerMovimientoPorID(ids_movimientos.get(i));
+            amovimientos2[i] = cBD.obtenerMovimientoPorID(ids_movimientos.get(i+1));
+            amovimientos3[i] = cBD.obtenerMovimientoPorID(ids_movimientos.get(i+2));
+            amovimientos4[i] = cBD.obtenerMovimientoPorID(ids_movimientos.get(i+3));
+            amovimientos5[i] = cBD.obtenerMovimientoPorID(ids_movimientos.get(i+4));
+            amovimientos6[i] = cBD.obtenerMovimientoPorID(ids_movimientos.get(i+5));
+        }
+        pokemon1.setMovimientos(amovimientos1);
+        pokemon2.setMovimientos(amovimientos2);
+        pokemon3.setMovimientos(amovimientos3);
+        pokemon4.setMovimientos(amovimientos4);
+        pokemon5.setMovimientos(amovimientos5);
+        pokemon6.setMovimientos(amovimientos6);
+        equipo[0] = pokemon1;
+        equipo[1] = pokemon2;
+        equipo[2] = pokemon3;
+        equipo[3] = pokemon4;
+        equipo[4] = pokemon5;
+        equipo[5] = pokemon6;
+        return equipo;
+    }
+
+    public void movimientosAleatorios() throws SQLException{
+        ArrayList<Integer> ids_movimientos = cBD.obtenerIdsMovimientos();
+        Collections.shuffle(ids_movimientos);
+        MovimientoAprendido[] movimientos = new MovimientoAprendido[4];
+        if(this.seleccion == 1){
+            for (int j = 0; j < 4; j++) {
+                this.movimientos1[j] = cBD.obtenerMovimientoPorID(ids_movimientos.get(j));
+                movimientos1_activados = true;
+            }
+        }  
+        else if(this.seleccion == 2){
+            for (int j = 0; j < 4; j++) {
+                this.movimientos2[j] = cBD.obtenerMovimientoPorID(ids_movimientos.get(j)); 
+                movimientos2_activados = true;
+            }
+        }  
+        else if(this.seleccion == 3){
+            for (int j = 0; j < 4; j++) {
+                this.movimientos3[j] = cBD.obtenerMovimientoPorID(ids_movimientos.get(j)); 
+                movimientos3_activados = true;
+            }
+        }  
+        else if(this.seleccion == 4){
+            for (int j = 0; j < 4; j++) {
+                this.movimientos4[j] = cBD.obtenerMovimientoPorID(ids_movimientos.get(j)); 
+                movimientos4_activados = true;
+            }
+        }  
+        else if(this.seleccion == 5){
+            for (int j = 0; j < 4; j++) {
+                this.movimientos5[j] = cBD.obtenerMovimientoPorID(ids_movimientos.get(j)); 
+                movimientos5_activados = true;
+            }
+        }  
+        else if(this.seleccion == 6){
+            for (int j = 0; j < 4; j++) {
+                this.movimientos6[j] = cBD.obtenerMovimientoPorID(ids_movimientos.get(j)); 
+                movimientos6_activados = true;
+            }
+        }  
+        
+    }
     
     
 }

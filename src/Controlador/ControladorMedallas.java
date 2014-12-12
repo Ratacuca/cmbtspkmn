@@ -175,7 +175,7 @@ public class ControladorMedallas implements ActionListener{
         }
         
         if(vmed.getjB_combate() == (JButton) e.getSource()){
-            ControladorCombate cc = new ControladorCombate(2, retador, lideres[posicion_entrenador], cp);
+            ControladorCombate cc = new ControladorCombate(2, retador, lideres[posicion_entrenador], cp, this);
             vmed.setVisible(false);
         }
         
@@ -236,7 +236,32 @@ public class ControladorMedallas implements ActionListener{
             vlobby.setVisible(false);
             vmed.setVisible(true);
     }
+    public void avanzarPosicion(){
+        this.posicion_entrenador +=1;
+    }
     
-    
+    public void ganoCombate() throws SQLException{
+        ArrayList<Integer> medallas = cBD.revisarMedallasEntrenador(retador.getId_entrenador());
+        vmed.setVisible(true);
+        JOptionPane.showMessageDialog(this.vmed, "Has ganado el combate contra el lider!", "Ganador", JOptionPane.INFORMATION_MESSAGE);
+        if(medallas.contains(lideres[posicion_entrenador].getId_medalla())){
+          JOptionPane.showMessageDialog(this.vmed, "Ya posees esta medalla", "Ya tienes la medalla", JOptionPane.INFORMATION_MESSAGE);  
+        }
+        else{
+        JOptionPane.showMessageDialog(this.vmed, "Se te ha otorgado la  "+cBD.obtenerNombreMedalla(lideres[posicion_entrenador].getId_medalla()), "Nueva Medalla!", JOptionPane.INFORMATION_MESSAGE);
+        cBD.guardarMedalla(retador.getId_entrenador(),lideres[posicion_entrenador].getId_medalla() );
+        }
+        
+        avanzarPosicion();
+        if(posicion_entrenador >7){
+            JOptionPane.showMessageDialog(this.vmed, "Has vencido a los 8 lideres de gimnasio!" , "Vencedor", JOptionPane.INFORMATION_MESSAGE); 
+            vmed.dispose();
+        }
+        else{
+            vmed.setJL_lider(lideres[posicion_entrenador].getNombre());
+            vmed.setJL_region(lideres[posicion_entrenador].getRegion());
+            vmed.setJL_tipo(cBD.obtenerNombreMedalla(lideres[posicion_entrenador].getId_medalla()));
+        }
+    }
     
 }

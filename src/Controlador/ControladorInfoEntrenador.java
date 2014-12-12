@@ -5,9 +5,10 @@
  */
 
 package Controlador;
-import Vista.*;
 import Modelo.*;
+import Vista.*;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -22,6 +23,7 @@ public class ControladorInfoEntrenador {
     public ControladorInfoEntrenador(VistaEntrenador ven, Entrenador entrenador) throws SQLException{
         this.cBD = new ConexionBD();
         this.entrenador = entrenador;
+            ArrayList<String> medallas = cBD.obtenerMedallasEntrenador(entrenador.getId_entrenador());
             String nombre = entrenador.getNombre();
             String distincion = entrenador.getDistincion();
             int niveles[] = new int[6];
@@ -56,6 +58,7 @@ public class ControladorInfoEntrenador {
             ven.setjTableMovimiento4(nombres_movimientos4);
             ven.setjTableNiveles(niveles);
             ven.setjTablePseudonimos(nombres_pokemon);
+            ven.setJL_Medallas(medallas);
             ven.setVisible(true);
         
     }

@@ -19,6 +19,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
      */
     public VistaPrincipal() {
         initComponents();
+        this.jB_SimularSegundaFase.setEnabled(false);
     }
 
     /**
@@ -43,15 +44,16 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
         jC_TipoSimulacion = new javax.swing.JComboBox();
-        jC_Entrenador1 = new javax.swing.JComboBox();
-        jB_CargarEntrenador1 = new javax.swing.JButton();
-        jC_Entrenador2 = new javax.swing.JComboBox();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jC_TipoSFase = new javax.swing.JComboBox();
         jB_info1 = new javax.swing.JButton();
         jB_info2 = new javax.swing.JButton();
         jB_medallas = new javax.swing.JButton();
+        jL_entrenador1 = new javax.swing.JLabel();
+        jL_entrenador2 = new javax.swing.JLabel();
+        jB_iniciarsesionjugador2 = new javax.swing.JButton();
+        jB_iniciarsesionjugador1 = new javax.swing.JButton();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -81,8 +83,6 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         jC_TipoSimulacion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Usuario/Sistema (Simulado)", "Usuario/Usuario (Turnos)", "Usuario/Sistema (Turnos)" }));
 
-        jB_CargarEntrenador1.setText("Cargar Entrenadores");
-
         jLabel5.setText("Oponente (Segundo Jugador):");
 
         jLabel6.setText("Tipo:");
@@ -105,6 +105,14 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         jB_medallas.setText("Obtener Medallas");
 
+        jL_entrenador1.setText("asd");
+
+        jL_entrenador2.setText("asd");
+
+        jB_iniciarsesionjugador2.setText("Iniciar Sesion");
+
+        jB_iniciarsesionjugador1.setText("Iniciar Sesion");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -113,37 +121,39 @@ public class VistaPrincipal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(172, 172, 172)
+                        .addComponent(jLabel1)
+                        .addGap(2, 2, 2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jB_SimularCombate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jB_SimularSegundaFase, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jB_medallas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jC_TipoSFase, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jC_TipoSimulacion, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(43, 43, 43)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jB_iniciarsesionjugador2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jB_crear_entrenador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jL_entrenador1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jL_entrenador2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jB_iniciarsesionjugador1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(172, 172, 172)
-                                .addComponent(jLabel1))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(29, 29, 29)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jB_SimularCombate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jB_SimularSegundaFase, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jB_medallas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(26, 26, 26)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jC_TipoSFase, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jC_TipoSimulacion, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(43, 43, 43)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jB_CargarEntrenador1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jC_Entrenador2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jC_Entrenador1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jB_crear_entrenador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jB_info1)
-                                    .addComponent(jB_info2))))
-                        .addGap(0, 2, Short.MAX_VALUE)))
+                                .addComponent(jB_info1))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                                .addComponent(jB_info2)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -166,11 +176,16 @@ public class VistaPrincipal extends javax.swing.JFrame {
                             .addComponent(jLabel2))))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jC_Entrenador1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jB_info1))
-                        .addGap(25, 25, 25)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(4, 4, 4)
+                                .addComponent(jB_info1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(9, 9, 9)
+                                .addComponent(jL_entrenador1)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jB_iniciarsesionjugador1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                         .addComponent(jLabel5))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(37, 37, 37)
@@ -179,15 +194,16 @@ public class VistaPrincipal extends javax.swing.JFrame {
                             .addComponent(jLabel6)
                             .addComponent(jC_TipoSFase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jC_Entrenador2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jB_info2)
-                            .addComponent(jB_medallas))))
-                .addGap(58, 58, 58)
-                .addComponent(jB_CargarEntrenador1)
-                .addGap(18, 18, 18)
+                        .addComponent(jB_medallas)))
+                .addGap(14, 14, 14)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jL_entrenador2)
+                    .addComponent(jB_info2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jB_iniciarsesionjugador2)
+                .addGap(53, 53, 53)
                 .addComponent(jB_crear_entrenador)
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addGap(30, 30, 30))
         );
 
         pack();
@@ -208,11 +224,12 @@ public class VistaPrincipal extends javax.swing.JFrame {
    public void agregarListener(ActionListener al) {
        this.jB_SimularCombate.addActionListener(al);
        this.jB_crear_entrenador.addActionListener(al);
-       this.jB_CargarEntrenador1.addActionListener(al);
        this.jB_SimularSegundaFase.addActionListener(al);
        this.jB_info1.addActionListener(al);
        this.jB_info2.addActionListener(al);
        this.jB_medallas.addActionListener(al);
+       this.jB_iniciarsesionjugador2.addActionListener(al);
+       this.jB_iniciarsesionjugador1.addActionListener(al);
        
    }
    
@@ -229,6 +246,12 @@ public class VistaPrincipal extends javax.swing.JFrame {
    public JButton getBotonCrearEntrenador() { 
         return this.jB_crear_entrenador;
     }
+   public JButton getBotoniniciarjugador2() { 
+        return this.jB_iniciarsesionjugador2;
+    }
+   public JButton getBotoniniciarjugador1() { 
+        return this.jB_iniciarsesionjugador1;
+    }
    public JButton getBotonMedallas() { 
         return this.jB_medallas;
     }
@@ -236,11 +259,14 @@ public class VistaPrincipal extends javax.swing.JFrame {
    public int getjC_TipoSimulacion() {
         return jC_TipoSimulacion.getSelectedIndex();
     }
-   public JButton getBotonCargarEntrenador1(){
-       return jB_CargarEntrenador1;
-   }
    public JButton getBotonSimularTorneo(){
        return jB_SimularSegundaFase;
+   }
+   public void setJl_entrenador1(String nombre){
+       this.jL_entrenador1.setText(nombre);
+   }
+   public void setJl_entrenador2(String nombre){
+       this.jL_entrenador2.setText(nombre);
    }
    
    
@@ -248,17 +274,18 @@ public class VistaPrincipal extends javax.swing.JFrame {
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jB_CargarEntrenador1;
     private javax.swing.JButton jB_SimularCombate;
     private javax.swing.JButton jB_SimularSegundaFase;
     private javax.swing.JButton jB_crear_entrenador;
     private javax.swing.JButton jB_info1;
     private javax.swing.JButton jB_info2;
+    private javax.swing.JButton jB_iniciarsesionjugador1;
+    private javax.swing.JButton jB_iniciarsesionjugador2;
     private javax.swing.JButton jB_medallas;
-    private javax.swing.JComboBox jC_Entrenador1;
-    private javax.swing.JComboBox jC_Entrenador2;
     private javax.swing.JComboBox jC_TipoSFase;
     private javax.swing.JComboBox jC_TipoSimulacion;
+    private javax.swing.JLabel jL_entrenador1;
+    private javax.swing.JLabel jL_entrenador2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -272,37 +299,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
 
-    public javax.swing.JComboBox getjC_Entrenador1() {
-        return jC_Entrenador1;
-    }
-    public javax.swing.JComboBox getjC_Entrenador2() {
-        return jC_Entrenador2;
-    }
-    public int getIndexjC_Entrenador1() {
-        return jC_Entrenador1.getSelectedIndex();
-    }
-    public int getIndexjC_Entrenador2() {
-        return jC_Entrenador2.getSelectedIndex();
-    }
-
-    public void setjC_Entrenador1(String entrenador) {
-        this.jC_Entrenador1.addItem(entrenador);
-    }
-    public void setjC_Entrenador2(String entrenador) {
-        this.jC_Entrenador2.addItem(entrenador);
-    }
-    public void removerJc_Entrenador1(){
-        this.jC_Entrenador1.removeAllItems();
-    }
-    public void removerJc_Entrenador2(){
-        this.jC_Entrenador2.removeAllItems();
-    }
-    public String getjC_Nombre1(){
-        return this.jC_Entrenador1.getSelectedItem().toString();
-    }
-    public String getjC_Nombre2(){
-        return this.jC_Entrenador2.getSelectedItem().toString();
-    }
+    
     public int getjC_TipoTorneo(){
         return jC_TipoSFase.getSelectedIndex();
     }

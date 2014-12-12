@@ -160,5 +160,13 @@ public class Entrenador {
     public void setId_medalla(int id_medalla) {
         this.id_medalla = id_medalla;
     }
+
+    public int getId_entrenador() {
+        return id_entrenador;
+    }
+
+    public void setId_entrenador(int id_entrenador) {
+        this.id_entrenador = id_entrenador;
+    }
            
 }

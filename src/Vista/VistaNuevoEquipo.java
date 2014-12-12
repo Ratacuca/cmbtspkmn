@@ -77,6 +77,7 @@ public class VistaNuevoEquipo extends javax.swing.JFrame {
         jText_Pseudonimo6 = new javax.swing.JTextField();
         jText_Pseudonimo4 = new javax.swing.JTextField();
         jText_Pseudonimo5 = new javax.swing.JTextField();
+        jB_Aleatorio = new javax.swing.JButton();
 
         jL_Pokemon1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(jL_Pokemon1);
@@ -149,6 +150,8 @@ public class VistaNuevoEquipo extends javax.swing.JFrame {
 
         jLabel13.setText("Nivel");
 
+        jB_Aleatorio.setText("Aleatorio");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -210,7 +213,10 @@ public class VistaNuevoEquipo extends javax.swing.JFrame {
                                     .addComponent(jS_Nivel6)
                                     .addComponent(jText_Pseudonimo6)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(383, 383, 383)
+                        .addGap(374, 374, 374)
+                        .addComponent(jB_Aleatorio))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(385, 385, 385)
                         .addComponent(jB_Listo)))
                 .addContainerGap(47, Short.MAX_VALUE))
         );
@@ -267,9 +273,11 @@ public class VistaNuevoEquipo extends javax.swing.JFrame {
                     .addComponent(jS_Nivel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jS_Nivel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jS_Nivel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addComponent(jB_Aleatorio)
+                .addGap(18, 18, 18)
                 .addComponent(jB_Listo)
-                .addGap(46, 46, 46))
+                .addGap(34, 34, 34))
         );
 
         pack();
@@ -317,6 +325,7 @@ public class VistaNuevoEquipo extends javax.swing.JFrame {
        this.getjB_movimientos4().addActionListener(al);
        this.getjB_movimientos5().addActionListener(al);
        this.getjB_movimientos6().addActionListener(al);
+       this.getjB_Aleatorio().addActionListener(al);
     }
     public int getjS_Nivel1(){
         return (Integer)jS_Nivel1.getValue();
@@ -356,6 +365,9 @@ public class VistaNuevoEquipo extends javax.swing.JFrame {
     }
     public JButton getjB_Listo(){
         return this.jB_Listo;
+    }
+    public JButton getjB_Aleatorio(){
+        return this.jB_Aleatorio;
     }
     public String getJL_Pokemon1(){
        if (jL_Pokemon1.getSelectedIndex() == -1){
@@ -479,6 +491,7 @@ public class VistaNuevoEquipo extends javax.swing.JFrame {
    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jB_Aleatorio;
     private javax.swing.JButton jB_Listo;
     private javax.swing.JButton jB_movimientos1;
     private javax.swing.JButton jB_movimientos2;

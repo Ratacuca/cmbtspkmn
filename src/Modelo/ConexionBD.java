@@ -42,7 +42,7 @@ public class ConexionBD {
     }
     
     //Guarda a un entrenador en la bd
-    public int guardarEntrenador(String nombre, String categoria, int region) throws SQLException{
+    public int guardarEntrenador(String nombre, String categoria, int region, String password) throws SQLException{
         
         
         ResultSet rst1;
@@ -58,7 +58,7 @@ public class ConexionBD {
         ResultSet rst;
         Statement stmt;
         stmt = conexion.createStatement();
-        String consulta = "INSERT INTO entrenador (id_entrenador, nombre_entrenador, categoria_entrenador, id_region) values ("+id+", '"+nombre+"','"+categoria+"', "+region+")";
+        String consulta = "INSERT INTO entrenador (id_entrenador, nombre_entrenador, categoria_entrenador, id_region, pass_entrenador) values ("+id+", '"+nombre+"','"+categoria+"', "+region+", '"+password+"')";
         int resultado = stmt.executeUpdate(consulta);
         return id;
         
@@ -409,7 +409,7 @@ public class ConexionBD {
             double velocidad = ((rst.getInt("velocidadmax_familiapokemon")-rst.getInt("velocidadbase_familiapokemon"))*nivel)/99 + 
                     rst.getInt("velocidadbase_familiapokemon");
             
-            String nombre = rst.getString("nombre_familiapokemon");
+            String nombre = rst.getString("nombre_familiapokemon").trim();
             Pokemon pokemon = new Pokemon(nombre, nivel,(int)ataque, (int)defensa, (int)ataquesp, (int)defensasp, 
                     (int)vida, (int)vida, (int)velocidad, nombre, rst.getInt("id_familiapokemon"));
         rst.close();
@@ -699,8 +699,70 @@ public class ConexionBD {
         return nombre;
     }
     
+    public String obtenerContraseña(String nombre) throws SQLException{
+       ResultSet rst;
+        Statement stmt;
+        stmt = conexion.createStatement();
+        String consulta = "SELECT pass_entrenador FROM entrenador WHERE nombre_entrenador = '"+nombre+"'";
+        rst = stmt.executeQuery(consulta);
+        rst.next();
+        String pass = rst.getString("pass_entrenador").trim();
+        
+        rst.close();
+        
+        return pass; 
+    }
+    public int obtenerIdEntrenador(String nombre) throws SQLException{
+       ResultSet rst;
+        Statement stmt;
+        stmt = conexion.createStatement();
+        String consulta = "SELECT id_entrenador FROM entrenador WHERE nombre_entrenador = '"+nombre+"'";
+        rst = stmt.executeQuery(consulta);
+        rst.next();
+        int id = rst.getInt("id_entrenador");
+        
+        rst.close();
+        
+        return id; 
+    }
+    public ArrayList<String> obtenerMedallasEntrenador(int id_entrenador) throws SQLException{
+        ArrayList<String> medallas = new ArrayList<>();
+        ResultSet rst;
+        Statement stmt;
+        stmt = conexion.createStatement();
+        String consulta = "SELECT id_medalla FROM medallas_entrenador WHERE id_entrenador = "+id_entrenador+"";
+        rst = stmt.executeQuery(consulta);
+        while(rst.next()){
+            medallas.add(obtenerNombreMedalla(rst.getInt("id_medalla")));
+        }
+        
+        rst.close();
+        
+        return medallas; 
+    }
     
+    public ArrayList<Integer> revisarMedallasEntrenador(int id_entrenador) throws SQLException{
+        ArrayList<Integer> medallas = new ArrayList<>();
+        ResultSet rst;
+        Statement stmt;
+        stmt = conexion.createStatement();
+        String consulta = "SELECT id_medalla FROM medallas_entrenador WHERE id_entrenador = "+id_entrenador+"";
+        rst = stmt.executeQuery(consulta);
+        while(rst.next()){
+          medallas.add(rst.getInt("id_medalla"));
+        }
+        rst.close();
+        
+        return medallas; 
+    }
     
+    public void guardarMedalla(int id_entrenador, int id_medalla) throws SQLException{
+        ResultSet rst;
+        Statement stmt;
+        stmt = conexion.createStatement();
+        String consulta = "INSERT INTO medallas_entrenador (id_entrenador, id_medalla) values ("+id_entrenador+", "+id_medalla+")";
+        int resultado = stmt.executeUpdate(consulta);
+    }
    
     
 }

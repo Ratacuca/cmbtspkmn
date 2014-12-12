@@ -40,10 +40,16 @@ public class ControladorPrincipal implements ActionListener{
     private ControladorRegistros creg;
     
     //Constructor
-    public ControladorPrincipal(VistaPrincipal vp){
+    public ControladorPrincipal(VistaPrincipal vp) throws SQLException{
         vistaPrincipal = vp;
         this.vistaPrincipal.agregarListener(this);
         this.creg = new ControladorRegistros();
+        this.entrenador_activo1 =obtenerEntrenadorBD(56);
+        this.entrenador_activo2 =obtenerEntrenadorBD(56);
+        this.equipo1 = entrenador_activo1.getPokemones();
+        this.equipo2 = entrenador_activo2.getPokemones();
+        vp.setJl_entrenador1(entrenador_activo1.getNombre());
+        vp.setJl_entrenador2(entrenador_activo2.getNombre());
               
     }
     //Botones de la vista principal, aqui el controlador escucha a la vista principal
@@ -76,20 +82,6 @@ public class ControladorPrincipal implements ActionListener{
                 Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        //Boton para cargar los entrenadores en el combobox
-        if (vistaPrincipal.getBotonCargarEntrenador1() == (JButton) e.getSource()){
-            try {
-                creg.guardarAccionUsuario("Usuario eligio cargar los entrenadores desde la base de datos");
-            } catch (IOException ex) {
-                Logger.getLogger(ControladorCombate.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            try {
-                cargarEntrenadores();
-            } catch (SQLException ex) {
-                Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
-        }
         //Boton para simular el torneo
         if (vistaPrincipal.getBotonSimularTorneo() == (JButton) e.getSource()){
             try {
@@ -106,9 +98,7 @@ public class ControladorPrincipal implements ActionListener{
         //Boton para la informacion del primer entrenador
         if(vistaPrincipal.getBotonInfo1() == (JButton) e.getSource()){
            VistaEntrenador ven = new VistaEntrenador();
-           int id_nombre = vistaPrincipal.getIndexjC_Entrenador1()+56;
             try {
-                this.entrenador_activo1 = obtenerEntrenadorBD(id_nombre);
                 ControladorInfoEntrenador cen = new ControladorInfoEntrenador(ven, this.entrenador_activo1);
             } catch (SQLException ex) {
                 Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
@@ -117,9 +107,7 @@ public class ControladorPrincipal implements ActionListener{
         //Boton para la informacion del segundo entrenador
         if(vistaPrincipal.getBotonInfo2() == (JButton) e.getSource()){
             VistaEntrenador ven = new VistaEntrenador();
-           int id_nombre = vistaPrincipal.getIndexjC_Entrenador2()+56;
             try {
-                this.entrenador_activo2 = obtenerEntrenadorBD(id_nombre);
                 ControladorInfoEntrenador cen = new ControladorInfoEntrenador(ven, this.entrenador_activo2);
             } catch (SQLException ex) {
                 Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
@@ -128,14 +116,25 @@ public class ControladorPrincipal implements ActionListener{
         
         //Boton para la obtencion de medallas de gimnasio
         if(vistaPrincipal.getBotonMedallas() == (JButton) e.getSource()){
-            int id_nombre1 = vistaPrincipal.getIndexjC_Entrenador1()+56;
             try {
-                this.entrenador_activo1 = obtenerEntrenadorBD(id_nombre1);
+                ControladorMedallas cmed = new ControladorMedallas(entrenador_activo1, this);
             } catch (SQLException ex) {
                 Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
             }
+        }
+        
+        //Boton para logear al segundo jugador
+        if(vistaPrincipal.getBotoniniciarjugador2() == (JButton) e.getSource()){
             try {
-                ControladorMedallas cmed = new ControladorMedallas(entrenador_activo1, this);
+                ControladorLogin clogin = new ControladorLogin(vistaPrincipal, this, 2);
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        //Lo mismo para el primero
+        if(vistaPrincipal.getBotoniniciarjugador1() == (JButton) e.getSource()){
+            try {
+                ControladorLogin clogin = new ControladorLogin(vistaPrincipal, this, 1);
             } catch (SQLException ex) {
                 Logger.getLogger(ControladorPrincipal.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -201,15 +200,7 @@ public class ControladorPrincipal implements ActionListener{
     //Obtiene los nombres de los entrenadores, crea los objetos y llama al controlador combate para
     //que se haga cargo
     public void generarCombate() throws SQLException{
-        String nombre1 = vistaPrincipal.getjC_Nombre1();
-        String nombre2 = vistaPrincipal.getjC_Nombre2();
-        int id_nombre1 = vistaPrincipal.getIndexjC_Entrenador1()+56;
-        int id_nombre2 = vistaPrincipal.getIndexjC_Entrenador2()+56;
         int tipo_combate = vistaPrincipal.getjC_TipoSimulacion();
-        this.entrenador_activo1 = obtenerEntrenadorBD(id_nombre1);
-        this.entrenador_activo2 = obtenerEntrenadorBD(id_nombre2);
-        this.equipo1 = entrenador_activo1.getPokemones();
-        this.equipo2 = entrenador_activo2.getPokemones();
         ControladorCombate cc = new ControladorCombate(tipo_combate, entrenador_activo1, entrenador_activo2, this);
         System.out.println("Se selecciono simular combate");
     }
@@ -220,35 +211,7 @@ public class ControladorPrincipal implements ActionListener{
         ControladorEntrenador ce = new ControladorEntrenador(vce, this);
         
     }
-    //Para el antiguo bd que obtenia los entrenadores de un texto, ya no es necesario
-    public void leerBDTexto(String ruta) throws FileNotFoundException, IOException{
-        File adquisicion = new File(ruta);
-        FileReader carga = new FileReader(adquisicion);
-        BufferedReader procesador = new BufferedReader(carga);
-        String linea = procesador.readLine();
-        int l = 1;
-        while(linea!=null){
-            String[] linealeida = linea.split(" ");
-            vistaPrincipal.setjC_Entrenador1(linealeida[0]);
-            vistaPrincipal.setjC_Entrenador2(linealeida[0]);
-            l++;
-            linea = procesador.readLine();
-        } 
-        carga.close();
-        procesador.close();
-        
-        }
-    //Carga los entrenadores desde la bd
-    public void cargarEntrenadores() throws SQLException{
-        ConexionBD cBD = new ConexionBD();
-        ArrayList<String> entrenadores = cBD.obtenerNombresEntrenadores();
-        vistaPrincipal.removerJc_Entrenador1();
-        vistaPrincipal.removerJc_Entrenador2();
-        for (int i = 0; i < entrenadores.size(); i++) {
-            vistaPrincipal.setjC_Entrenador1(entrenadores.get(i));
-            vistaPrincipal.setjC_Entrenador2(entrenadores.get(i));
-        }
-    }
+    
     //Crea al entrenador como objeto, con sus pokemon y movimientos
     public Entrenador obtenerEntrenadorBD(int id) throws SQLException{
         ConexionBD cBD = new ConexionBD();
@@ -335,5 +298,11 @@ public class ControladorPrincipal implements ActionListener{
          participantesPrueba[31] = entrenador32;
          return participantesPrueba;
      }
+    public void setEntrenador1(Entrenador entrenador){
+        this.entrenador_activo1 = entrenador;
+    }
+    public void setEntrenador2(Entrenador entrenador){
+        this.entrenador_activo2 = entrenador;
+    }
     
 }

@@ -264,6 +264,13 @@ public class VistaPreviaCombate extends javax.swing.JFrame {
     public void removerJc_Pokemons2(){
         this.jC_Inicial2.removeAllItems();
     }
+    
+    public void desactivarCambioSistema(){
+        this.jB_Equipo2.setEnabled(false);
+    }
+    public void activarCambioSistema(){
+        this.jB_Equipo2.setEnabled(true);
+    }
     /**
      * @param args the command line arguments
      */

@@ -314,7 +314,18 @@ public class VistaAtaque extends javax.swing.JFrame {
         this.setjB_Ataque3(movimientos[2].getNombre());
         this.setjB_Ataque4(movimientos[3].getNombre());
     }
-    
+    public void desactivarAtaque(int posicion){
+        if(posicion == 0) this.jB_Ataque1.setEnabled(false);
+        if(posicion == 1) this.jB_Ataque2.setEnabled(false);
+        if(posicion == 2) this.jB_Ataque3.setEnabled(false);
+        if(posicion == 3) this.jB_Ataque4.setEnabled(false);
+    }
+    public void activarAtaques(){
+        this.jB_Ataque1.setEnabled(true);
+        this.jB_Ataque2.setEnabled(true);
+        this.jB_Ataque3.setEnabled(true);
+        this.jB_Ataque4.setEnabled(true);
+    }
     public void setjL_PP1(int pp, int restante){
         jL_PP1.setText(Integer.toString(restante)+" / "+Integer.toString(pp));
     }

@@ -47,6 +47,7 @@ public class VistaNuevosMovimientos extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jB_listo = new javax.swing.JButton();
+        jB_movimientosAzar = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Movimientos");
@@ -72,6 +73,8 @@ public class VistaNuevosMovimientos extends javax.swing.JFrame {
         jLabel5.setText("Movimiento 4");
 
         jB_listo.setText("Listo");
+
+        jB_movimientosAzar.setText("Al Azar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -101,7 +104,10 @@ public class VistaNuevosMovimientos extends javax.swing.JFrame {
                                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(232, 232, 232)
-                        .addComponent(jB_listo)))
+                        .addComponent(jB_listo))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(223, 223, 223)
+                        .addComponent(jB_movimientosAzar)))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -127,7 +133,9 @@ public class VistaNuevosMovimientos extends javax.swing.JFrame {
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addComponent(jB_movimientosAzar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jB_listo)
                 .addGap(20, 20, 20))
         );
@@ -171,6 +179,7 @@ public class VistaNuevosMovimientos extends javax.swing.JFrame {
     }
     public void agregarListener(ActionListener al) {
         this.jB_listo.addActionListener(al);
+        this.jB_movimientosAzar.addActionListener(al);
     }
     public void setJL_movimientos1(ArrayList<String> valor){
        DefaultListModel modelo = new DefaultListModel();
@@ -235,6 +244,9 @@ public class VistaNuevosMovimientos extends javax.swing.JFrame {
    public JButton getjB_Listo(){
         return this.jB_listo;
     }
+   public JButton getjB_movazar(){
+        return this.jB_movimientosAzar;
+    }
    public void limpiarListas(){
        this.jL_Movimiento1.clearSelection();
        this.jL_Movimiento2.clearSelection();
@@ -257,6 +269,7 @@ public class VistaNuevosMovimientos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jB_listo;
+    private javax.swing.JButton jB_movimientosAzar;
     private javax.swing.JList jL_Movimiento1;
     private javax.swing.JList jL_Movimiento2;
     private javax.swing.JList jL_Movimiento3;

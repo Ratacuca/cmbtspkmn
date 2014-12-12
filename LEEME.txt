@@ -3,10 +3,10 @@ conflictos con valores sin poblacion (Recomendacion: nombre: Combates_Pokemon us
 
 Segundo, poblar la BD con el script poblacion.
 
-Tercero, al iniciar el programa si se uso un user y password diferente al sugerido en la bd se debe modificar en ControladorBD en el 
-paquete Controlador, si no se desea modificar se debe crear la BD con el user: "mario" y la password: "1234" y el nombre: "Combates_Pokemon".
+Tercero, al iniciar el programa si se uso un user y password diferente al sugerido en la bd se debe modificar en ConexionBD en el 
+paquete Modelo, si no se desea modificar se debe crear la BD con el user: "mario" y la password: "1234" y el nombre: "Combates_Pokemon".
 
-Cuarto, al iniciar la aplicacion se debe crear un usuario para usarlo en las simulaciones.
+Cuarto, al iniciar la aplicacion se debe crear un usuario para usarlo en las simulaciones, o por defecto se incluye uno Default.
 
 Los registros de las acciones del usuario y los de simulacion se encuentran en la carpeta base del proyecto.
 

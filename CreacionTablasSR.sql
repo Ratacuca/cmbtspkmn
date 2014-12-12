@@ -49,6 +49,7 @@ create table ENTRENADOR
    ID_REGION            int not null,
    NOMBRE_ENTRENADOR    char(50) not null,
    CATEGORIA_ENTRENADOR char(50) not null,
+   PASS_ENTRENADOR      char(50),
    primary key (ID_ENTRENADOR)
 );
 
@@ -261,7 +262,6 @@ create table TORRE_BATALLA
 create table MEDALLAS_ENTRENADOR
 (
    ID_ENTRENADOR        int not null,
-   ID_MEDALLA           int not null,
-   primary key (ID_ENTRENADOR)
+   ID_MEDALLA           int not null
 );
 
